@@ -1,17 +1,118 @@
+﻿---
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-
----
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="DK App Tools"
+  description="DK App Tools builds practical apps with clear purpose, local-first thinking, and simple user control."
+>
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Independent software brand</p>
+        <h1>Practical apps with clear purpose.</h1>
+        <p class="lead">
+          DK App Tools builds focused apps that do useful things clearly, without
+          unnecessary accounts, noise, or dark-pattern nonsense.
+        </p>
+        <div class="actions">
+          <a class="button" href="/apps">View apps</a>
+          <a class="button secondary" href="/support">Contact support</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="DK App Tools product preview">
+        <div class="product-preview">
+          <div class="preview-topbar">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="preview-body">
+            <p class="preview-kicker">First product</p>
+            <div class="preview-title">Offline FileSecure</div>
+            <div class="preview-list">
+              <div class="preview-item">
+                <span>Account</span>
+                <strong>Not required</strong>
+              </div>
+              <div class="preview-item">
+                <span>Storage</span>
+                <strong>On device</strong>
+              </div>
+              <div class="preview-item">
+                <span>Ads</span>
+                <strong>None</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">Apps</p>
+        <h2>Built around real use, not fake complexity.</h2>
+      </div>
+      <p>
+        The first DK App Tools release is focused on local file protection. More
+        apps may follow the same rule: useful, understandable, and direct.
+      </p>
+    </div>
+    <div class="grid">
+      <article class="card featured">
+        <span class="card-label">Android app</span>
+        <h3>Offline FileSecure</h3>
+        <p>
+          A simple offline vault for files you do not want exposed. Private files.
+          Stored locally. Protected clearly.
+        </p>
+        <div class="actions">
+          <a class="button" href="/apps/offline-filesecure">Learn about Offline FileSecure</a>
+        </div>
+      </article>
+      <article class="card">
+        <span class="card-label">Brand principle</span>
+        <h3>No unnecessary noise</h3>
+        <p>
+          DK App Tools aims for apps that explain what they do and avoid bloated,
+          confusing behavior.
+        </p>
+      </article>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">Foundation</p>
+        <h2>Small brand. Serious standards.</h2>
+      </div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="card-label">Privacy-minded</span>
+        <h3>Clear data behavior</h3>
+        <p>
+          Product pages and policies should explain what happens in plain language,
+          not legal fog.
+        </p>
+      </article>
+      <article class="card">
+        <span class="card-label">Practical</span>
+        <h3>Tools before hype</h3>
+        <p>
+          The goal is not to chase trends. The goal is to ship apps that solve
+          concrete problems well.
+        </p>
+      </article>
+      <article class="card">
+        <span class="card-label">Independent</span>
+        <h3>Built step by step</h3>
+        <p>
+          DK App Tools starts lean, with room to grow without pretending to be a
+          giant corporation on day one.
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
