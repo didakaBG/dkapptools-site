@@ -1,183 +1,230 @@
-﻿﻿---
+---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const apps = [
   {
     title: "Offline FileSecure",
     status: "Available",
-    body: "Local-first Android vault for private files, offline encryption, and clear export control.",
+    body: "Secure your files offline with encryption, password protection, and zero tracking.",
     tags: ["Privacy", "File Tools"],
     icon: "shield",
-    href: "/apps/offline-filesecure"
+    href: "/apps/offline-filesecure",
+    featured: true
   },
   {
     title: "Secure Notes",
-    status: "Planned",
-    body: "Private encrypted notes for people who want simple offline writing without account clutter.",
+    status: "Coming Soon",
+    body: "Encrypted notes that stay private and offline.",
     tags: ["Privacy"],
     icon: "cube",
     href: "#community"
   },
   {
     title: "Batch Image Tools",
-    status: "Idea Stage",
-    body: "Resize, compress, and prepare images in batches with a practical local-first workflow.",
+    status: "Coming Soon",
+    body: "Compress, convert, and resize images in bulk.",
     tags: ["Productivity"],
     icon: "bolt",
     href: "#community"
   },
   {
     title: "APK Analyzer",
-    status: "Research",
-    body: "Inspect Android app packages, permissions, and metadata before installing.",
+    status: "Coming Soon",
+    body: "Analyze Android apps safely before you install.",
     tags: ["Android Tools"],
     icon: "bot",
     href: "#community"
   },
   {
     title: "Future Experiment",
-    status: "Community Vote",
-    body: "A placeholder for the next useful DK App Tools project shaped by polls and feedback.",
-    tags: ["Future"],
+    status: "Coming Soon",
+    body: "We're brewing new ideas. Stay tuned!",
+    tags: ["Future Experiments"],
     icon: "flask",
     href: "#community"
   }
 ];
 
+const categories = [
+  ["Privacy & Security", "Secure your data and protect your privacy.", "8 tools", "shield"],
+  ["File Tools", "Manage, convert, and secure your files.", "6 tools", "folder"],
+  ["Productivity", "Tools to help you get more done.", "5 tools", "rocket"],
+  ["Android Tools", "Utilities for Android users & developers.", "4 tools", "bot"],
+  ["Future Experiments", "Experimental ideas becoming reality.", "3 tools", "flask"]
+];
 
-
+const articles = [
+  ["Privacy", "Why Offline Security Still Matters", "Staying safe doesn't always require the cloud. Here's why offline-first tools give you more control.", "May 12, 2024", "5 min read", "lock"],
+  ["Productivity", "10 Small Habits That Boost Your Productivity", "Simple daily habits and tools that can help you focus and get more done.", "May 6, 2024", "6 min read", "work"],
+  ["Android", "How to Analyze Android Apps Safely", "A beginner-friendly guide to checking permissions and staying secure.", "Apr 30, 2024", "4 min read", "android"]
+];
 ---
 <BaseLayout
   title="DK App Tools | Practical software hub"
   description="Practical software, useful content, and community-shaped app ideas from DK App Tools."
 >
-  <section class="home-hero" aria-labelledby="home-title">
-    <div class="hero-copy">
-      <p class="eyebrow">Independent software hub</p>
-      <h1 id="home-title">Practical software.<br />Useful tools. <span>Built for real users.</span></h1>
-      <p class="hero-lead">DK App Tools is a hub of practical apps, useful articles, and community-shaped software ideas.</p>
-
-      <div class="hero-actions">
-        <a href="/apps" class="button primary">Explore Apps <span aria-hidden="true">→</span></a>
-        <a href="/articles" class="button secondary">Read Articles</a>
-        <a href="#community" class="button ghost">Suggest an Idea</a>
-      </div>
-
-      <div class="hero-metrics" aria-label="DK App Tools highlights">
-        <div><strong>1</strong><span>App Available</span></div>
-        <div><strong>20+</strong><span>Articles & Guides</span></div>
-        <div><strong>100%</strong><span>Community Driven</span></div>
-      </div>
-    </div>
-
-    <div class="hero-art" aria-hidden="true">
-      <div class="orbit-shell">
-        <div class="orbit-ring ring-one"></div>
-        <div class="orbit-ring ring-two"></div>
-        <div class="dk-cube">DK</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="hub-overview" aria-label="DK App Tools hub areas">
-    <a href="/apps" class="hub-tile apps-tile">
-      <div class="tile-visual"><i class="ui-icon grid"></i></div>
-      <h2>Apps</h2>
-      <p>Discover practical tools built for privacy, productivity, and everyday tasks.</p>
-      <span>Browse apps →</span>
-    </a>
-
-    <a href="/articles" class="hub-tile articles-tile">
-      <div class="tile-visual"><i class="ui-icon doc"></i></div>
-      <h2>Articles</h2>
-      <p>Guides, how-tos, and insights to help you use technology with more control.</p>
-      <span>Read articles →</span>
-    </a>
-
-    <a href="#community" class="hub-tile community-tile">
-      <div class="tile-visual"><i class="ui-icon users"></i></div>
-      <h2>Community</h2>
-      <p>Share feedback, vote on ideas, and shape what gets built next.</p>
-      <span>Join community →</span>
-    </a>
-  </section>
-
-  <section class="page-section" id="apps-preview">
-    <div class="section-heading">
-      <h2>Featured Apps</h2>
-      <a href="/apps">View all apps →</a>
-    </div>
-
-    <div class="app-strip">
-      {apps.map((app) => (
-        <a href={app.href} class:list={["app-card", app.status === "Available" ? "available" : "upcoming"]}>
-          <div class="card-topline">
-            <div class:list={["app-icon", app.icon]}><i class:list={["ui-icon", app.icon]}></i></div>
-            <span class="status-pill">{app.status}</span>
-          </div>
-          <h3>{app.title}</h3>
-          <p>{app.body}</p>
-          <div class="tag-row">
-            {app.tags.map((tag) => <span>{tag}</span>)}
-          </div>
-        </a>
-      ))}
-    </div>
-  </section>
-  <section class="page-section editorial-preview" id="articles-preview">
-    <div class="section-heading">
-      <h2>Featured Reading</h2>
-      <a href="/articles">Open articles →</a>
-    </div>
-
-    <div class="article-grid">
-      <a href="/articles" class="article-card">
-        <div class="article-thumb privacy">
-          <div class="thumb-icon"><i class="ui-icon lock"></i></div>
-        </div>
-        <div class="article-body">
-          <span>PRIVACY GUIDE</span>
-          <h3>Why Offline Security Still Matters</h3>
-          <p>A practical introduction to local-first thinking, private files, and offline control.</p>
-          <small>Featured guide · 5 min read</small>
-        </div>
-      </a>
-
-      <a href="/articles" class="article-card">
-        <div class="article-thumb productivity">
-          <div class="thumb-icon"><i class="ui-icon bolt"></i></div>
-        </div>
-        <div class="article-body">
-          <span>PRODUCTIVITY</span>
-          <h3>10 Habits That Boost Productivity</h3>
-          <p>Practical workflow ideas to stay focused and get more done throughout your day.</p>
-          <small>Article · 4 min read</small>
-        </div>
-      </a>
-
-      <a href="/articles" class="article-card">
-        <div class="article-thumb android">
-          <div class="thumb-icon"><i class="ui-icon bot"></i></div>
-        </div>
-        <div class="article-body">
-          <span>ANDROID</span>
-          <h3>Analyze Android Apps Safely</h3>
-          <p>Beginner-friendly safety checks and permissions analysis before installing packages.</p>
-          <small>Guide · 6 min read</small>
-        </div>
-      </a>
-    </div>
-  </section>
-  <section class="page-section community-preview" id="community">
-    <div class="community-card">
+  <div class="home-dashboard">
+    <section class="hd-hero" aria-labelledby="home-title">
       <div>
-        <p class="eyebrow">Community direction</p>
-        <h2>Help shape what DK App Tools builds next.</h2>
-        <p>Vote on practical app ideas, suggest features, and help prioritize the roadmap without turning the homepage into a full dashboard.</p>
+        <h1 id="home-title">
+          Practical software.<br />
+          Useful tools. <span>Built for real users.</span>
+        </h1>
+        <p class="hd-lead">
+          DK App Tools is a hub of practical apps, insightful articles, and a community that shapes what we build next.
+        </p>
+        <div class="hd-cta-row">
+          <a class="hd-cta hd-primary" href="/apps">Explore Apps <span aria-hidden="true">-&gt;</span></a>
+          <a class="hd-cta" href="/articles">Read Articles</a>
+          <a class="hd-cta" href="#community">Suggest an Idea</a>
+        </div>
+        <div class="hd-metrics" aria-label="DK App Tools highlights">
+          <span>1 App Available</span>
+          <span>Articles &amp; Guides</span>
+          <span>Community Driven</span>
+        </div>
       </div>
-      <div class="community-actions">
-        <a href="/support" class="button primary">Suggest an idea →</a>
-        <a href="/articles" class="button secondary">Read the roadmap notes</a>
+
+      <div class="hd-hero-stage" aria-hidden="true">
+        <div class="hd-ghost-notes">
+          &gt; Deadline<br />
+          &gt; Explore<br />
+          &gt; Categories<br />
+          &gt; Docs
+        </div>
+        <div class="hd-orbit"></div>
+        <div class="hd-dk-tile">DK</div>
+        <div class="hd-platform"><span></span><span></span><span></span></div>
+        <div class="hd-mini-card hd-left hd-shield"><i class="ui-icon shield"></i></div>
+        <div class="hd-mini-card hd-left hd-users"><i class="ui-icon users"></i></div>
+        <div class="hd-mini-card hd-right hd-doc"><i class="ui-icon doc"></i></div>
+        <div class="hd-mini-card hd-right hd-code"><i class="ui-icon code"></i></div>
       </div>
-    </div>
-  </section></BaseLayout>
+    </section>
+
+    <section class="hd-hub-grid" aria-label="DK App Tools hub areas">
+      <a class="hd-hub-card" href="/apps">
+        <div class="hd-hub-art">
+          <span class="hd-floating"><i class="ui-icon grid"></i></span>
+          <div class="hd-cube-stack"><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="hd-hub-copy">
+          <h2>Apps</h2>
+          <p>Discover practical tools built for privacy, productivity, and everyday tasks.</p>
+          <span>Browse Apps <b aria-hidden="true">-&gt;</b></span>
+        </div>
+      </a>
+
+      <a class="hd-hub-card" href="/articles">
+        <div class="hd-hub-art hd-gray">
+          <span class="hd-floating"><i class="ui-icon doc"></i></span>
+          <div class="hd-paper"></div>
+        </div>
+        <div class="hd-hub-copy">
+          <h2>Articles</h2>
+          <p>Guides, how-tos, and insights to help you get the most out of technology.</p>
+          <span>Read articles <b aria-hidden="true">-&gt;</b></span>
+        </div>
+      </a>
+
+      <a class="hd-hub-card" href="#community">
+        <div class="hd-hub-art hd-green">
+          <span class="hd-floating"><i class="ui-icon bot"></i></span>
+          <div class="hd-people"><span></span><span></span><span></span></div>
+        </div>
+        <div class="hd-hub-copy">
+          <h2>Community</h2>
+          <p>Join the conversation, share feedback, and vote on what we build next.</p>
+          <span>Join community <b aria-hidden="true">-&gt;</b></span>
+        </div>
+      </a>
+    </section>
+
+    <section class="hd-section" aria-labelledby="featured-title">
+      <div class="hd-section-head">
+        <h2 id="featured-title">Featured Apps</h2>
+        <a href="/apps">View all apps <span aria-hidden="true">-&gt;</span></a>
+      </div>
+      <div class="hd-apps-strip">
+        {apps.map((app) => (
+          <a href={app.href} class:list={["hd-app-card", app.featured ? "hd-featured" : "hd-placeholder"]}>
+            <span class:list={["hd-badge", app.featured ? "" : "hd-soon"]}>{app.status}</span>
+            <div class="hd-app-visual"><i class:list={["ui-icon", app.icon]}></i></div>
+            <div class="hd-app-title-row">
+              <h3>{app.title}</h3>
+              {app.featured && <span class="hd-version">v1.0.0</span>}
+            </div>
+            <p>{app.body}</p>
+            <div class="hd-tags">
+              {app.tags.map((tag) => <span>{tag}</span>)}
+            </div>
+            {app.featured && <span class="hd-view-app">View app <b aria-hidden="true">-&gt;</b></span>}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="hd-section" id="categories" aria-labelledby="categories-title">
+      <div class="hd-section-head">
+        <h2 id="categories-title">Browse Categories</h2>
+        <a href="/apps">View all categories <span aria-hidden="true">-&gt;</span></a>
+      </div>
+      <div class="hd-cats">
+        {categories.map(([title, body, count, icon]) => (
+          <a class="hd-cat-card" href="/apps">
+            <span class="hd-mini-icon"><i class:list={["ui-icon", icon]}></i></span>
+            <span>
+              <h3>{title}</h3>
+              <p>{body}</p>
+              <small>{count}</small>
+            </span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="hd-section" aria-labelledby="articles-title">
+      <div class="hd-section-head">
+        <h2 id="articles-title">Latest Articles</h2>
+        <a href="/articles">View all articles <span aria-hidden="true">-&gt;</span></a>
+      </div>
+      <div class="hd-article-grid">
+        {articles.map(([category, title, body, date, readTime, type]) => (
+          <a class="hd-article-card" href="/articles">
+            <div class:list={["hd-thumb", `hd-${type}`]}></div>
+            <div>
+              <span class:list={["hd-pill", category === "Android" ? "hd-green-pill" : ""]}>{category}</span>
+              <h3>{title}</h3>
+              <p>{body}</p>
+              <div class="hd-article-meta"><span>{date}</span><span>{readTime}</span></div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="hd-bottom-grid" id="community" aria-label="Community poll and reasons">
+      <div class="hd-panel">
+        <h2>What should DK App Tools build next?</h2>
+        <p>Vote for your most wanted tool.</p>
+        <div class="hd-poll">
+          <div class="hd-poll-row"><span class="hd-tiny">P</span><span><span class="hd-poll-name">Secure Notes (Encrypted)</span><span class="hd-bar"><span style="width: 42%"></span></span></span><strong>42%</strong><small>320 votes</small></div>
+          <div class="hd-poll-row"><span class="hd-tiny">B</span><span><span class="hd-poll-name">Batch Image Tools</span><span class="hd-bar"><span style="width: 28%"></span></span></span><strong>28%</strong><small>214 votes</small></div>
+          <div class="hd-poll-row"><span class="hd-tiny">L</span><span><span class="hd-poll-name">Password Manager</span><span class="hd-bar"><span style="width: 18%; background:#777"></span></span></span><strong>18%</strong><small>137 votes</small></div>
+          <div class="hd-poll-row"><span class="hd-tiny">O</span><span><span class="hd-poll-name">Other Ideas (Comment)</span><span class="hd-bar"><span style="width: 12%; background:#777"></span></span></span><strong>12%</strong><small>91 votes</small></div>
+        </div>
+        <a class="hd-ghost-btn" href="/support">Suggest an idea <span aria-hidden="true">-&gt;</span></a>
+      </div>
+
+      <div class="hd-panel">
+        <h2>Why DK App Tools?</h2>
+        <div class="hd-reasons">
+          <article><span class="hd-mini-icon"><i class="ui-icon shield"></i></span><span><h3>Privacy First</h3><p>We build offline-first tools that respect your data and keep you in control.</p></span></article>
+          <article><span class="hd-mini-icon"><i class="ui-icon target"></i></span><span><h3>Practical &amp; Focused</h3><p>No bloat. No noise. Just useful tools that solve real problems.</p></span></article>
+          <article><span class="hd-mini-icon"><i class="ui-icon users"></i></span><span><h3>Community Driven</h3><p>Your feedback shapes what we build and improve next.</p></span></article>
+          <article><span class="hd-mini-icon hd-aqua"><i class="ui-icon eye"></i></span><span><h3>Transparent</h3><p>Open communication, clear roadmaps, and honest updates.</p></span></article>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
