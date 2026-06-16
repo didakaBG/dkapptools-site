@@ -1,277 +1,224 @@
 ﻿---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const apps = [
+  {
+    title: "Offline FileSecure",
+    status: "Available",
+    body: "Protect private files locally with clear offline behavior and no account requirement.",
+    tags: ["Privacy", "File Tools"],
+    icon: "shield",
+    href: "/apps/offline-filesecure"
+  },
+  {
+    title: "Secure Notes",
+    status: "Coming Soon",
+    body: "Encrypted notes that stay private and simple.",
+    tags: ["Privacy"],
+    icon: "cube",
+    href: "#community"
+  },
+  {
+    title: "Batch Image Tools",
+    status: "Coming Soon",
+    body: "Compress, convert, and resize images in bulk.",
+    tags: ["Productivity"],
+    icon: "bolt",
+    href: "#community"
+  },
+  {
+    title: "APK Analyzer",
+    status: "Coming Soon",
+    body: "Inspect Android packages before you install.",
+    tags: ["Android Tools"],
+    icon: "bot",
+    href: "#community"
+  },
+  {
+    title: "Future Experiment",
+    status: "Idea Stage",
+    body: "Community-voted ideas becoming practical tools.",
+    tags: ["Future"],
+    icon: "flask",
+    href: "#community"
+  }
+];
+
+const categories = [
+  ["Privacy & Security", "Secure your data and protect your privacy.", "1 app", "shield"],
+  ["File Tools", "Manage, convert, and protect files locally.", "1 app", "folder"],
+  ["Productivity", "Small tools that help you get more done.", "Planned", "rocket"],
+  ["Android Tools", "Useful helpers for Android users.", "Planned", "bot"],
+  ["Future Experiments", "Experimental ideas shaped by feedback.", "Idea stage", "flask"]
+];
+
+const articles = [
+  ["PRIVACY", "Why Offline Security Still Matters", "Why local-first tools still matter for private files.", "privacy", "5 min read"],
+  ["PRODUCTIVITY", "10 Small Habits That Boost Your Productivity", "Simple routines and tools that reduce friction.", "productivity", "6 min read"],
+  ["ANDROID", "How to Analyze Android Apps Safely", "A beginner-friendly guide to app safety checks.", "android", "4 min read"]
+];
+
+const poll = [
+  ["Secure Notes", "42%", "320 votes", "42"],
+  ["Batch Image Tools", "28%", "214 votes", "28"],
+  ["Password Manager", "18%", "137 votes", "18"],
+  ["Other Ideas", "12%", "91 votes", "12"]
+];
 ---
 <BaseLayout
-  title="DK App Tools | Brand Hub"
-  description="Practical software. Useful tools. Built for real users."
+  title="DK App Tools | Practical software hub"
+  description="Practical software, useful content, and community-shaped app ideas from DK App Tools."
 >
-  <!-- 2. Hero -->
-  <section class="hero compact-hero">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <h1>Practical software. Useful tools.<br/><span class="text-gold">Built for real users.</span></h1>
-        <p class="lead">
-          DK App Tools is a hub of practical apps, useful articles, and community-shaped software ideas.
-        </p>
-        <div class="actions">
-          <a href="/apps" class="button primary">Explore Apps</a>
-          <a href="/articles" class="button secondary">Read Articles</a>
-          <a href="/#community" class="button secondary">Suggest an Idea</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat"><span class="stat-num">1</span> App Available</div>
-          <div class="stat"><span class="stat-num">20+</span> Articles & Guides</div>
-          <div class="stat"><span class="stat-num">100%</span> Community Driven</div>
-        </div>
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="hero-copy">
+      <p class="eyebrow">Independent software hub</p>
+      <h1 id="home-title">Practical software.<br />Useful tools. <span>Built for real users.</span></h1>
+      <p class="hero-lead">DK App Tools is a hub of practical apps, useful articles, and community-shaped software ideas.</p>
+
+      <div class="hero-actions">
+        <a href="/apps" class="button primary">Explore Apps <span aria-hidden="true">в†’</span></a>
+        <a href="/articles" class="button secondary">Read Articles</a>
+        <a href="#community" class="button ghost">Suggest an Idea</a>
       </div>
-      <div class="hero-visual">
-        <div class="art-container">
-          <div class="art-glow"></div>
-          <div class="art-ring ring-1"></div>
-          <div class="art-ring ring-2"></div>
-          <div class="art-ring ring-3"></div>
-          <div class="art-badge">DK</div>
-          <div class="art-float float-1">
-            <div class="css-icon-lock"></div>
+
+      <div class="hero-metrics" aria-label="DK App Tools highlights">
+        <div><strong>1</strong><span>App Available</span></div>
+        <div><strong>20+</strong><span>Articles & Guides</span></div>
+        <div><strong>100%</strong><span>Community Driven</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="orbit-card orbit-card-a"><i class="ui-icon shield"></i></div>
+      <div class="orbit-card orbit-card-b"><i class="ui-icon file"></i></div>
+      <div class="orbit-card orbit-card-c"><i class="ui-icon users"></i></div>
+      <div class="orbit-card orbit-card-d"><i class="ui-icon code"></i></div>
+      <div class="orbit-shell">
+        <div class="orbit-ring ring-one"></div>
+        <div class="orbit-ring ring-two"></div>
+        <div class="orbit-ring ring-three"></div>
+        <div class="orbit-platform"></div>
+        <div class="dk-cube">DK</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hub-overview" aria-label="DK App Tools hub areas">
+    <a href="/apps" class="hub-tile apps-tile">
+      <div class="tile-visual"><i class="ui-icon grid"></i></div>
+      <h2>Apps</h2>
+      <p>Discover practical tools built for privacy, productivity, and everyday tasks.</p>
+      <span>Browse apps в†’</span>
+    </a>
+
+    <a href="/articles" class="hub-tile articles-tile">
+      <div class="tile-visual"><i class="ui-icon doc"></i></div>
+      <h2>Articles</h2>
+      <p>Guides, how-tos, and insights to help you use technology with more control.</p>
+      <span>Read articles в†’</span>
+    </a>
+
+    <a href="#community" class="hub-tile community-tile">
+      <div class="tile-visual"><i class="ui-icon users"></i></div>
+      <h2>Community</h2>
+      <p>Share feedback, vote on ideas, and shape what gets built next.</p>
+      <span>Join community в†’</span>
+    </a>
+  </section>
+
+  <section class="page-section" id="apps-preview">
+    <div class="section-heading">
+      <h2>Featured Apps</h2>
+      <a href="/apps">View all apps в†’</a>
+    </div>
+
+    <div class="app-strip">
+      {apps.map((app) => (
+        <a href={app.href} class:list={["app-card", app.status === "Available" ? "available" : "upcoming"]}>
+          <div class="card-topline">
+            <div class:list={["app-icon", app.icon]}><i class:list={["ui-icon", app.icon]}></i></div>
+            <span class="status-pill">{app.status}</span>
           </div>
-          <div class="art-float float-2">
-            <div class="css-icon-file"></div>
+          <h3>{app.title}</h3>
+          <p>{app.body}</p>
+          <div class="tag-row">
+            {app.tags.map((tag) => <span>{tag}</span>)}
           </div>
-          <div class="art-float float-3">
-            <div class="css-icon-gear"></div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-section" id="categories">
+    <div class="section-heading">
+      <h2>Browse Categories</h2>
+      <a href="/apps">View all categories в†’</a>
+    </div>
+
+    <div class="category-strip">
+      {categories.map(([title, body, meta, icon]) => (
+        <a href="/apps" class="category-card">
+          <div class="category-icon"><i class:list={["ui-icon", icon]}></i></div>
+          <h3>{title}</h3>
+          <p>{body}</p>
+          <small>{meta}</small>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-heading">
+      <h2>Latest Articles</h2>
+      <a href="/articles">View all articles в†’</a>
+    </div>
+
+    <div class="article-grid">
+      {articles.map(([tag, title, body, visual, time]) => (
+        <a href="/articles" class="article-card">
+          <div class:list={["article-thumb", visual]}>
+            <div class="thumb-icon"><i class:list={["ui-icon", visual === "android" ? "bot" : visual === "productivity" ? "monitor" : "lock"]}></i></div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. Hub cards -->
-  <section class="section hub-cards-section">
-    <div class="grid-3">
-      <a href="/apps" class="hub-card">
-        <div class="hub-icon apps-icon">
-          <div class="hub-icon-inner grid-icon"></div>
-        </div>
-        <h3>Apps</h3>
-        <p>Browse the growing catalog of independent software products.</p>
-        <span class="hub-link">Explore catalog &rarr;</span>
-      </a>
-      <a href="/articles" class="hub-card">
-        <div class="hub-icon articles-icon">
-          <div class="hub-icon-inner doc-icon"></div>
-        </div>
-        <h3>Articles</h3>
-        <p>Read guides, privacy notes, and practical software content.</p>
-        <span class="hub-link">Read latest &rarr;</span>
-      </a>
-      <a href="/#community" class="hub-card">
-        <div class="hub-icon community-icon">
-          <div class="hub-icon-inner chat-icon"></div>
-        </div>
-        <h3>Community</h3>
-        <p>Vote on polls, provide feedback, and shape future ideas.</p>
-        <span class="hub-link">Join discussion &rarr;</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- 4. Featured Apps -->
-  <section class="section">
-    <div class="section-header-row">
-      <div class="header-title-bar">
-        <h2>Featured Apps</h2>
-      </div>
-      <a href="/apps" class="view-all">View all apps &rarr;</a>
-    </div>
-    <div class="grid-featured-apps">
-      <div class="app-card available">
-        <div class="app-header">
-          <div class="app-icon"><div class="css-icon-shield"></div></div>
-          <div class="app-status">Available</div>
-        </div>
-        <div class="app-body">
-          <h3>Offline FileSecure</h3>
-          <p>Local file protection and encryption.</p>
-          <div class="app-tags">
-            <span class="app-tag">Privacy</span>
-            <span class="app-tag">File Tools</span>
+          <div class="article-body">
+            <span>{tag}</span>
+            <h3>{title}</h3>
+            <p>{body}</p>
+            <small>{time}</small>
           </div>
-        </div>
-      </div>
-      <div class="app-card coming-soon">
-        <div class="app-header">
-          <div class="app-icon placeholder-icon"></div>
-          <div class="app-status">Coming Soon</div>
-        </div>
-        <div class="app-body">
-          <h3>Secure Notes</h3>
-          <p>Private encrypted note taking.</p>
-        </div>
-      </div>
-      <div class="app-card coming-soon">
-        <div class="app-header">
-          <div class="app-icon placeholder-icon"></div>
-          <div class="app-status">Coming Soon</div>
-        </div>
-        <div class="app-body">
-          <h3>Batch Image Tools</h3>
-          <p>Local bulk image processor.</p>
-        </div>
-      </div>
-      <div class="app-card coming-soon">
-        <div class="app-header">
-          <div class="app-icon placeholder-icon"></div>
-          <div class="app-status">Coming Soon</div>
-        </div>
-        <div class="app-body">
-          <h3>APK Analyzer</h3>
-          <p>Deep dive into android packages.</p>
-        </div>
-      </div>
+        </a>
+      ))}
     </div>
   </section>
 
-  <!-- 5. Browse Categories -->
-  <section class="section" id="categories">
-    <div class="section-header-row">
-      <div class="header-title-bar">
-        <h2>Browse Categories</h2>
-      </div>
-    </div>
-    <div class="grid-categories">
-      <a href="#" class="category-card">
-        <div class="cat-icon"><div class="css-icon-shield"></div></div>
-        <div class="cat-info">
-          <h4>Privacy & Security</h4>
-          <p>Local-first vaults</p>
-          <span class="cat-status">1 App Available</span>
-        </div>
-      </a>
-      <a href="#" class="category-card">
-        <div class="cat-icon"><div class="css-icon-file"></div></div>
-        <div class="cat-info">
-          <h4>File Tools</h4>
-          <p>Local management</p>
-          <span class="cat-status">1 App Available</span>
-        </div>
-      </a>
-      <a href="#" class="category-card">
-        <div class="cat-icon"><div class="css-icon-gear"></div></div>
-        <div class="cat-info">
-          <h4>Productivity</h4>
-          <p>Workflow optimization</p>
-          <span class="cat-status">Planned</span>
-        </div>
-      </a>
-      <a href="#" class="category-card">
-        <div class="cat-icon"><div class="thumb-art-bot small-bot"></div></div>
-        <div class="cat-info">
-          <h4>Android Tools</h4>
-          <p>System utilities</p>
-          <span class="cat-status">Planned</span>
-        </div>
-      </a>
-      <a href="#" class="category-card">
-        <div class="cat-icon cat-icon-future"></div>
-        <div class="cat-info">
-          <h4>Future Experiments</h4>
-          <p>Community voted</p>
-          <span class="cat-status">Idea Stage</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- 6. Latest Articles -->
-  <section class="section">
-    <div class="section-header-row">
-      <div class="header-title-bar">
-        <h2>Latest Articles</h2>
-      </div>
-      <a href="/articles" class="view-all">View all &rarr;</a>
-    </div>
-    <div class="grid-3">
-      <a href="/articles" class="article-card">
-        <div class="css-thumb thumb-1">
-          <div class="thumb-bg-circuit"></div>
-          <div class="thumb-art-lock"></div>
-        </div>
-        <div class="article-content">
-          <h3>Why Offline Security Still Matters</h3>
-          <p>Understanding the value of local-first encryption.</p>
-        </div>
-      </a>
-      <a href="/articles" class="article-card">
-        <div class="css-thumb thumb-2">
-          <div class="thumb-bg-desk"></div>
-          <div class="thumb-art-desk"></div>
-        </div>
-        <div class="article-content">
-          <h3>10 Small Habits That Boost Your Productivity</h3>
-          <p>Practical ways to optimize your daily software workflow.</p>
-        </div>
-      </a>
-      <a href="/articles" class="article-card">
-        <div class="css-thumb thumb-3">
-          <div class="thumb-bg-bot"></div>
-          <div class="thumb-art-bot"><div class="bot-eye"></div></div>
-        </div>
-        <div class="article-content">
-          <h3>How to Analyze Android Apps Safely</h3>
-          <p>A beginner's guide to inspecting APK contents.</p>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- 7. Bottom split section -->
-  <section class="section split-section" id="community">
-    <div class="split-panel poll-panel">
-      <div class="header-title-bar">
+  <section class="bottom-grid page-section" id="community">
+    <div class="poll-panel">
+      <div class="section-heading compact-heading">
         <h2>What should DK App Tools build next?</h2>
       </div>
-      <p class="poll-desc">Have a say in the development roadmap.</p>
-      <div class="poll-items">
-        <div class="poll-item">
-          <div class="poll-info"><span>Secure Notes</span><span>42%</span></div>
-          <div class="poll-bar-bg"><div class="poll-bar-fill" style="width: 42%"></div></div>
-        </div>
-        <div class="poll-item">
-          <div class="poll-info"><span>Batch Image Tools</span><span>28%</span></div>
-          <div class="poll-bar-bg"><div class="poll-bar-fill" style="width: 28%"></div></div>
-        </div>
-        <div class="poll-item">
-          <div class="poll-info"><span>Password Manager</span><span>18%</span></div>
-          <div class="poll-bar-bg"><div class="poll-bar-fill" style="width: 18%"></div></div>
-        </div>
-        <div class="poll-item">
-          <div class="poll-info"><span>Other Ideas</span><span>12%</span></div>
-          <div class="poll-bar-bg"><div class="poll-bar-fill" style="width: 12%"></div></div>
-        </div>
+      <p class="panel-lead">Vote for your most wanted tool and help shape the roadmap.</p>
+
+      <div class="poll-list">
+        {poll.map(([label, percent, votes, width]) => (
+          <div class="poll-row">
+            <div class="poll-info"><span>{label}</span><strong>{percent}</strong></div>
+            <div class="poll-track"><span style={`width: ${width}%`}></span></div>
+            <small>{votes}</small>
+          </div>
+        ))}
       </div>
+
+      <a class="panel-link" href="/support">View all polls & results в†’</a>
     </div>
 
-    <div class="split-panel principles-panel">
-      <div class="header-title-bar">
-        <h2>Why DK App Tools</h2>
+    <div class="why-panel">
+      <div class="section-heading compact-heading">
+        <h2>Why DK App Tools?</h2>
       </div>
-      <div class="principles-grid">
-        <div class="principle-card">
-          <h4>Privacy First</h4>
-          <p>Local-first processing. No hidden tracking.</p>
-        </div>
-        <div class="principle-card">
-          <h4>Practical & Focused</h4>
-          <p>Tools designed to solve specific problems.</p>
-        </div>
-        <div class="principle-card">
-          <h4>Community Driven</h4>
-          <p>Features shaped by real user feedback.</p>
-        </div>
-        <div class="principle-card">
-          <h4>Transparent</h4>
-          <p>Clear business models and honest app pages.</p>
-        </div>
+      <div class="principle-grid">
+        <div><i class="ui-icon shield"></i><h3>Privacy First</h3><p>Local-first tools that keep user control clear.</p></div>
+        <div><i class="ui-icon target"></i><h3>Practical & Focused</h3><p>No bloat. No noise. Just useful tools.</p></div>
+        <div><i class="ui-icon users"></i><h3>Community Driven</h3><p>Feedback shapes what gets built next.</p></div>
+        <div><i class="ui-icon eye"></i><h3>Transparent</h3><p>Clear pages, honest claims, and simple support.</p></div>
       </div>
     </div>
   </section>
