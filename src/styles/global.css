@@ -1119,3 +1119,425 @@ h1, h2, h3, h4 {
   }
 }
 /* === DK HOME OVERRIDES END === */
+/* === DK COMPACT REFERENCE PASS START === */
+:root {
+  --dk-page-max: 1160px;
+  --dk-section-gap: 66px;
+  --dk-card-radius: 14px;
+}
+
+.site-header,
+.site-footer,
+.hero,
+.section {
+  max-width: var(--dk-page-max) !important;
+}
+
+.site-header {
+  padding-top: 18px !important;
+  padding-bottom: 14px !important;
+  min-height: 54px !important;
+}
+
+.site-header .brand,
+.brand {
+  gap: 10px !important;
+}
+
+.logo,
+.dk-logo,
+.brand-mark {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  border-radius: 8px !important;
+  font-size: 0.72rem !important;
+}
+
+.site-nav,
+.nav-links {
+  gap: 26px !important;
+}
+
+.site-nav a,
+.nav-links a {
+  font-size: 0.82rem !important;
+}
+
+.header-cta,
+.site-header .button,
+.site-header .cta,
+.site-header .get-updates {
+  min-height: 34px !important;
+  padding: 8px 15px !important;
+  font-size: 0.78rem !important;
+}
+
+.hero {
+  padding-top: 50px !important;
+  padding-bottom: 38px !important;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.88fr) !important;
+  align-items: center !important;
+  gap: 58px !important;
+  min-height: 0 !important;
+}
+
+.hero-content h1 {
+  font-size: clamp(3.15rem, 5.2vw, 4.45rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.055em !important;
+  margin: 0 0 22px !important;
+  max-width: 660px !important;
+}
+
+.hero-content .lead,
+.lead {
+  max-width: 520px !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 26px !important;
+}
+
+.actions {
+  gap: 12px !important;
+  margin-bottom: 30px !important;
+}
+
+.button,
+.actions .button {
+  min-height: 40px !important;
+  padding: 11px 20px !important;
+  border-radius: 8px !important;
+  font-size: 0.82rem !important;
+}
+
+.hero-stats {
+  margin-top: 26px !important;
+  padding-top: 24px !important;
+  gap: 48px !important;
+  max-width: 520px !important;
+}
+
+.stat {
+  font-size: 0.76rem !important;
+}
+
+.stat-num {
+  font-size: 1.22rem !important;
+  margin-bottom: 6px !important;
+}
+
+.hero-visual {
+  min-height: 360px !important;
+  height: 360px !important;
+}
+
+.art-container {
+  width: 360px !important;
+  height: 360px !important;
+  margin: 0 auto !important;
+}
+
+.art-badge {
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 16px !important;
+  font-size: 1.35rem !important;
+}
+
+.art-ring.ring-1,
+.ring-1 {
+  width: 190px !important;
+  height: 190px !important;
+}
+
+.art-ring.ring-2,
+.ring-2 {
+  width: 285px !important;
+  height: 285px !important;
+}
+
+.art-ring.ring-3,
+.ring-3 {
+  width: 360px !important;
+  height: 360px !important;
+}
+
+.art-float {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 12px !important;
+}
+
+.section {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: var(--dk-section-gap) !important;
+  margin-bottom: 0 !important;
+}
+
+.hub-cards-section {
+  margin-top: 56px !important;
+}
+
+.grid-3,
+.grid-featured-apps,
+.grid-categories {
+  gap: 18px !important;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.hub-card {
+  min-height: 192px !important;
+  padding: 28px 30px !important;
+  border-radius: var(--dk-card-radius) !important;
+}
+
+.hub-card h3 {
+  font-size: 1.15rem !important;
+  margin: 16px 0 10px !important;
+}
+
+.hub-card p {
+  font-size: 0.87rem !important;
+  line-height: 1.55 !important;
+  margin-bottom: 18px !important;
+}
+
+.hub-icon {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 12px !important;
+}
+
+.section-header-row {
+  margin-bottom: 18px !important;
+  padding-bottom: 12px !important;
+}
+
+.header-title-bar h2,
+.section h2 {
+  font-size: clamp(1.55rem, 2vw, 2rem) !important;
+  letter-spacing: -0.035em !important;
+}
+
+.header-title-bar::before {
+  width: 4px !important;
+  height: 28px !important;
+  margin-right: 12px !important;
+}
+
+.grid-featured-apps {
+  grid-template-columns: 1.2fr repeat(3, 1fr) !important;
+}
+
+.app-card {
+  min-height: 158px !important;
+  padding: 20px !important;
+  border-radius: var(--dk-card-radius) !important;
+}
+
+.app-header {
+  margin-bottom: 28px !important;
+}
+
+.app-icon,
+.placeholder-icon {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 11px !important;
+}
+
+.app-status {
+  font-size: 0.64rem !important;
+  padding: 4px 8px !important;
+  border-radius: 999px !important;
+}
+
+.app-body h3 {
+  font-size: 1rem !important;
+  margin-bottom: 7px !important;
+}
+
+.app-body p {
+  font-size: 0.78rem !important;
+  line-height: 1.42 !important;
+  margin-bottom: 10px !important;
+}
+
+.app-tags {
+  gap: 6px !important;
+}
+
+.app-tag {
+  font-size: 0.66rem !important;
+  padding: 4px 8px !important;
+}
+
+.grid-categories {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+}
+
+.category-card {
+  min-height: 126px !important;
+  padding: 18px !important;
+  border-radius: var(--dk-card-radius) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+}
+
+.cat-icon {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 10px !important;
+  flex: 0 0 auto !important;
+}
+
+.cat-info h4 {
+  font-size: 0.9rem !important;
+  margin: 0 0 6px !important;
+}
+
+.cat-info p {
+  font-size: 0.75rem !important;
+  line-height: 1.35 !important;
+  margin: 0 0 8px !important;
+}
+
+.cat-status {
+  font-size: 0.68rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+.article-card {
+  min-height: 230px !important;
+  border-radius: var(--dk-card-radius) !important;
+}
+
+.css-thumb {
+  height: 118px !important;
+}
+
+.article-content {
+  padding: 20px !important;
+}
+
+.article-content h3 {
+  font-size: 0.95rem !important;
+  line-height: 1.25 !important;
+  margin-bottom: 8px !important;
+}
+
+.article-content p {
+  font-size: 0.78rem !important;
+  line-height: 1.42 !important;
+}
+
+.split-section {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 20px !important;
+  margin-top: 72px !important;
+}
+
+.split-panel {
+  padding: 28px !important;
+  border-radius: var(--dk-card-radius) !important;
+}
+
+.split-panel h2 {
+  font-size: 1.65rem !important;
+  line-height: 1.05 !important;
+}
+
+.poll-desc {
+  margin: 10px 0 20px !important;
+  font-size: 0.85rem !important;
+}
+
+.poll-items {
+  gap: 12px !important;
+}
+
+.poll-item {
+  padding: 13px 14px !important;
+}
+
+.principle-grid,
+.why-grid {
+  gap: 12px !important;
+}
+
+.principle-card,
+.why-card {
+  padding: 18px !important;
+  min-height: 112px !important;
+}
+
+.site-footer {
+  margin-top: 72px !important;
+  padding-top: 36px !important;
+  padding-bottom: 36px !important;
+}
+
+.footer-grid {
+  gap: 40px !important;
+}
+
+.footer-bottom {
+  padding-top: 28px !important;
+  margin-top: 28px !important;
+}
+
+@media (max-width: 1000px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .hero-visual {
+    min-height: 300px !important;
+    height: 300px !important;
+  }
+
+  .art-container {
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  .grid-featured-apps,
+  .grid-categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .grid-3,
+  .grid-featured-apps,
+  .grid-categories,
+  .split-section {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-content h1 {
+    font-size: 2.75rem !important;
+  }
+
+  .hero-stats {
+    gap: 22px !important;
+  }
+
+  .section {
+    margin-top: 48px !important;
+  }
+}
+/* === DK COMPACT REFERENCE PASS END === */
