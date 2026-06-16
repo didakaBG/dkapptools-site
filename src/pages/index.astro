@@ -2,117 +2,277 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout
-  title="DK App Tools"
-  description="DK App Tools builds practical apps with clear purpose, local-first thinking, and simple user control."
+  title="DK App Tools | Brand Hub"
+  description="Practical software. Useful tools. Built for real users."
 >
-  <section class="hero">
+  <!-- 2. Hero -->
+  <section class="hero compact-hero">
     <div class="hero-grid">
-      <div>
-        <p class="eyebrow">Independent software brand</p>
-        <h1>Practical apps with clear purpose.</h1>
+      <div class="hero-content">
+        <h1>Practical software. Useful tools.<br/><span class="text-gold">Built for real users.</span></h1>
         <p class="lead">
-          DK App Tools builds focused apps that do useful things clearly, without
-          unnecessary accounts, noise, or dark-pattern nonsense.
+          DK App Tools is a hub of practical apps, useful articles, and community-shaped software ideas.
         </p>
         <div class="actions">
-          <a class="button" href="/apps">View apps</a>
-          <a class="button secondary" href="/support">Contact support</a>
+          <a href="/apps" class="button primary">Explore Apps</a>
+          <a href="/articles" class="button secondary">Read Articles</a>
+          <a href="/#community" class="button secondary">Suggest an Idea</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">1</span> App Available</div>
+          <div class="stat"><span class="stat-num">20+</span> Articles & Guides</div>
+          <div class="stat"><span class="stat-num">100%</span> Community Driven</div>
         </div>
       </div>
-      <aside class="hero-panel" aria-label="DK App Tools product preview">
-        <div class="product-preview">
-          <div class="preview-topbar">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+      <div class="hero-visual">
+        <div class="art-container">
+          <div class="art-glow"></div>
+          <div class="art-ring ring-1"></div>
+          <div class="art-ring ring-2"></div>
+          <div class="art-ring ring-3"></div>
+          <div class="art-badge">DK</div>
+          <div class="art-float float-1">
+            <div class="css-icon-lock"></div>
           </div>
-          <div class="preview-body">
-            <p class="preview-kicker">First product</p>
-            <div class="preview-title">Offline FileSecure</div>
-            <div class="preview-list">
-              <div class="preview-item">
-                <span>Account</span>
-                <strong>Not required</strong>
-              </div>
-              <div class="preview-item">
-                <span>Storage</span>
-                <strong>On device</strong>
-              </div>
-              <div class="preview-item">
-                <span>Ads</span>
-                <strong>None</strong>
-              </div>
-            </div>
+          <div class="art-float float-2">
+            <div class="css-icon-file"></div>
+          </div>
+          <div class="art-float float-3">
+            <div class="css-icon-gear"></div>
           </div>
         </div>
-      </aside>
+      </div>
     </div>
   </section>
-  <section class="section">
-    <div class="section-header">
-      <div>
-        <p class="eyebrow">Apps</p>
-        <h2>Built around real use, not fake complexity.</h2>
-      </div>
-      <p>
-        The first DK App Tools release is focused on local file protection. More
-        apps may follow the same rule: useful, understandable, and direct.
-      </p>
-    </div>
-    <div class="grid">
-      <article class="card featured">
-        <span class="card-label">Android app</span>
-        <h3>Offline FileSecure</h3>
-        <p>
-          A simple offline vault for files you do not want exposed. Private files.
-          Stored locally. Protected clearly.
-        </p>
-        <div class="actions">
-          <a class="button" href="/apps/offline-filesecure">Learn about Offline FileSecure</a>
+
+  <!-- 3. Hub cards -->
+  <section class="section hub-cards-section">
+    <div class="grid-3">
+      <a href="/apps" class="hub-card">
+        <div class="hub-icon apps-icon">
+          <div class="hub-icon-inner grid-icon"></div>
         </div>
-      </article>
-      <article class="card">
-        <span class="card-label">Brand principle</span>
-        <h3>No unnecessary noise</h3>
-        <p>
-          DK App Tools aims for apps that explain what they do and avoid bloated,
-          confusing behavior.
-        </p>
-      </article>
+        <h3>Apps</h3>
+        <p>Browse the growing catalog of independent software products.</p>
+        <span class="hub-link">Explore catalog &rarr;</span>
+      </a>
+      <a href="/articles" class="hub-card">
+        <div class="hub-icon articles-icon">
+          <div class="hub-icon-inner doc-icon"></div>
+        </div>
+        <h3>Articles</h3>
+        <p>Read guides, privacy notes, and practical software content.</p>
+        <span class="hub-link">Read latest &rarr;</span>
+      </a>
+      <a href="/#community" class="hub-card">
+        <div class="hub-icon community-icon">
+          <div class="hub-icon-inner chat-icon"></div>
+        </div>
+        <h3>Community</h3>
+        <p>Vote on polls, provide feedback, and shape future ideas.</p>
+        <span class="hub-link">Join discussion &rarr;</span>
+      </a>
     </div>
   </section>
+
+  <!-- 4. Featured Apps -->
   <section class="section">
-    <div class="section-header">
-      <div>
-        <p class="eyebrow">Foundation</p>
-        <h2>Small brand. Serious standards.</h2>
+    <div class="section-header-row">
+      <div class="header-title-bar">
+        <h2>Featured Apps</h2>
+      </div>
+      <a href="/apps" class="view-all">View all apps &rarr;</a>
+    </div>
+    <div class="grid-featured-apps">
+      <div class="app-card available">
+        <div class="app-header">
+          <div class="app-icon"><div class="css-icon-shield"></div></div>
+          <div class="app-status">Available</div>
+        </div>
+        <div class="app-body">
+          <h3>Offline FileSecure</h3>
+          <p>Local file protection and encryption.</p>
+          <div class="app-tags">
+            <span class="app-tag">Privacy</span>
+            <span class="app-tag">File Tools</span>
+          </div>
+        </div>
+      </div>
+      <div class="app-card coming-soon">
+        <div class="app-header">
+          <div class="app-icon placeholder-icon"></div>
+          <div class="app-status">Coming Soon</div>
+        </div>
+        <div class="app-body">
+          <h3>Secure Notes</h3>
+          <p>Private encrypted note taking.</p>
+        </div>
+      </div>
+      <div class="app-card coming-soon">
+        <div class="app-header">
+          <div class="app-icon placeholder-icon"></div>
+          <div class="app-status">Coming Soon</div>
+        </div>
+        <div class="app-body">
+          <h3>Batch Image Tools</h3>
+          <p>Local bulk image processor.</p>
+        </div>
+      </div>
+      <div class="app-card coming-soon">
+        <div class="app-header">
+          <div class="app-icon placeholder-icon"></div>
+          <div class="app-status">Coming Soon</div>
+        </div>
+        <div class="app-body">
+          <h3>APK Analyzer</h3>
+          <p>Deep dive into android packages.</p>
+        </div>
       </div>
     </div>
-    <div class="grid">
-      <article class="card">
-        <span class="card-label">Privacy-minded</span>
-        <h3>Clear data behavior</h3>
-        <p>
-          Product pages and policies should explain what happens in plain language,
-          not legal fog.
-        </p>
-      </article>
-      <article class="card">
-        <span class="card-label">Practical</span>
-        <h3>Tools before hype</h3>
-        <p>
-          The goal is not to chase trends. The goal is to ship apps that solve
-          concrete problems well.
-        </p>
-      </article>
-      <article class="card">
-        <span class="card-label">Independent</span>
-        <h3>Built step by step</h3>
-        <p>
-          DK App Tools starts lean, with room to grow without pretending to be a
-          giant corporation on day one.
-        </p>
-      </article>
+  </section>
+
+  <!-- 5. Browse Categories -->
+  <section class="section" id="categories">
+    <div class="section-header-row">
+      <div class="header-title-bar">
+        <h2>Browse Categories</h2>
+      </div>
+    </div>
+    <div class="grid-categories">
+      <a href="#" class="category-card">
+        <div class="cat-icon"><div class="css-icon-shield"></div></div>
+        <div class="cat-info">
+          <h4>Privacy & Security</h4>
+          <p>Local-first vaults</p>
+          <span class="cat-status">1 App Available</span>
+        </div>
+      </a>
+      <a href="#" class="category-card">
+        <div class="cat-icon"><div class="css-icon-file"></div></div>
+        <div class="cat-info">
+          <h4>File Tools</h4>
+          <p>Local management</p>
+          <span class="cat-status">1 App Available</span>
+        </div>
+      </a>
+      <a href="#" class="category-card">
+        <div class="cat-icon"><div class="css-icon-gear"></div></div>
+        <div class="cat-info">
+          <h4>Productivity</h4>
+          <p>Workflow optimization</p>
+          <span class="cat-status">Planned</span>
+        </div>
+      </a>
+      <a href="#" class="category-card">
+        <div class="cat-icon"><div class="thumb-art-bot small-bot"></div></div>
+        <div class="cat-info">
+          <h4>Android Tools</h4>
+          <p>System utilities</p>
+          <span class="cat-status">Planned</span>
+        </div>
+      </a>
+      <a href="#" class="category-card">
+        <div class="cat-icon cat-icon-future"></div>
+        <div class="cat-info">
+          <h4>Future Experiments</h4>
+          <p>Community voted</p>
+          <span class="cat-status">Idea Stage</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. Latest Articles -->
+  <section class="section">
+    <div class="section-header-row">
+      <div class="header-title-bar">
+        <h2>Latest Articles</h2>
+      </div>
+      <a href="/articles" class="view-all">View all &rarr;</a>
+    </div>
+    <div class="grid-3">
+      <a href="/articles" class="article-card">
+        <div class="css-thumb thumb-1">
+          <div class="thumb-bg-circuit"></div>
+          <div class="thumb-art-lock"></div>
+        </div>
+        <div class="article-content">
+          <h3>Why Offline Security Still Matters</h3>
+          <p>Understanding the value of local-first encryption.</p>
+        </div>
+      </a>
+      <a href="/articles" class="article-card">
+        <div class="css-thumb thumb-2">
+          <div class="thumb-bg-desk"></div>
+          <div class="thumb-art-desk"></div>
+        </div>
+        <div class="article-content">
+          <h3>10 Small Habits That Boost Your Productivity</h3>
+          <p>Practical ways to optimize your daily software workflow.</p>
+        </div>
+      </a>
+      <a href="/articles" class="article-card">
+        <div class="css-thumb thumb-3">
+          <div class="thumb-bg-bot"></div>
+          <div class="thumb-art-bot"><div class="bot-eye"></div></div>
+        </div>
+        <div class="article-content">
+          <h3>How to Analyze Android Apps Safely</h3>
+          <p>A beginner's guide to inspecting APK contents.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 7. Bottom split section -->
+  <section class="section split-section" id="community">
+    <div class="split-panel poll-panel">
+      <div class="header-title-bar">
+        <h2>What should DK App Tools build next?</h2>
+      </div>
+      <p class="poll-desc">Have a say in the development roadmap.</p>
+      <div class="poll-items">
+        <div class="poll-item">
+          <div class="poll-info"><span>Secure Notes</span><span>42%</span></div>
+          <div class="poll-bar-bg"><div class="poll-bar-fill" style="width: 42%"></div></div>
+        </div>
+        <div class="poll-item">
+          <div class="poll-info"><span>Batch Image Tools</span><span>28%</span></div>
+          <div class="poll-bar-bg"><div class="poll-bar-fill" style="width: 28%"></div></div>
+        </div>
+        <div class="poll-item">
+          <div class="poll-info"><span>Password Manager</span><span>18%</span></div>
+          <div class="poll-bar-bg"><div class="poll-bar-fill" style="width: 18%"></div></div>
+        </div>
+        <div class="poll-item">
+          <div class="poll-info"><span>Other Ideas</span><span>12%</span></div>
+          <div class="poll-bar-bg"><div class="poll-bar-fill" style="width: 12%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-panel principles-panel">
+      <div class="header-title-bar">
+        <h2>Why DK App Tools</h2>
+      </div>
+      <div class="principles-grid">
+        <div class="principle-card">
+          <h4>Privacy First</h4>
+          <p>Local-first processing. No hidden tracking.</p>
+        </div>
+        <div class="principle-card">
+          <h4>Practical & Focused</h4>
+          <p>Tools designed to solve specific problems.</p>
+        </div>
+        <div class="principle-card">
+          <h4>Community Driven</h4>
+          <p>Features shaped by real user feedback.</p>
+        </div>
+        <div class="principle-card">
+          <h4>Transparent</h4>
+          <p>Clear business models and honest app pages.</p>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>

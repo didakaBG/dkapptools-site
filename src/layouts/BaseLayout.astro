@@ -1,8 +1,8 @@
-﻿---
+﻿﻿---
 import "../styles/global.css";
 const {
-  title = "DK App Tools",
-  description = "Practical apps from DK App Tools."
+  title = "DK App Tools | Brand Hub",
+  description = "Practical software. Useful tools. Built for real users."
 } = Astro.props;
 ---
 <!doctype html>
@@ -15,21 +15,64 @@ const {
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/">DK App Tools</a>
+      <div class="header-left">
+        <a class="brand" href="/">
+          <span class="brand-badge">DK</span>
+          <span class="brand-text">DK App Tools</span>
+        </a>
+      </div>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="/apps">Apps</a>
+        <a href="/#categories">Categories</a>
         <a href="/articles">Articles</a>
+        <a href="/#community">Community</a>
         <a href="/support">Support</a>
       </nav>
+      <div class="header-right">
+        <button class="icon-button" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <a href="#subscribe" class="button header-cta">Get Updates</a>
+      </div>
     </header>
     <main>
       <slot />
     </main>
     <footer class="site-footer">
-      <p>© 2026 DK App Tools. Practical apps built with clear purpose.</p>
-      <div class="footer-links">
-        <a href="/privacy/offline-filesecure">Privacy Policy</a>
-        <a href="/support">Support</a>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <span class="brand-badge">DK</span>
+            <span class="brand-text">DK App Tools</span>
+          </a>
+          <p>Practical apps. Useful content. Built independently.</p>
+        </div>
+        <div class="footer-col">
+          <strong>Explore</strong>
+          <a href="/apps">Apps</a>
+          <a href="/#categories">Categories</a>
+          <a href="/articles">Articles</a>
+        </div>
+        <div class="footer-col">
+          <strong>Support</strong>
+          <a href="/support">Help Center</a>
+          <a href="/#community">Community</a>
+          <a href="/support">Contact</a>
+        </div>
+        <div class="footer-col subscribe-col" id="subscribe">
+          <strong>Stay Updated</strong>
+          <form class="subscribe-form" action="#" onsubmit="event.preventDefault()">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit" class="button primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 DK App Tools. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="/privacy/offline-filesecure">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
       </div>
     </footer>
   </body>
