@@ -1,4 +1,4 @@
-﻿---
+﻿﻿---
 import "../styles/global.css";
 const {
   title = "DK App Tools | Practical software hub",
@@ -44,61 +44,22 @@ const {
     </main>
 
     <footer class="site-footer">
-      <div class="footer-shell">
-        <div class="footer-brand-block">
-          <a class="brand" href="/">
-            <span class="brand-badge">DK</span>
-            <span class="brand-text">DK App Tools</span>
-          </a>
-          <p>Practical software, useful tools, and a community-shaped product roadmap.</p>
-          <div class="social-row" aria-label="Social links">
-            <a href="/support" aria-label="Support">?</a>
-            <a href="/articles" aria-label="Articles">A</a>
-            <a href="/#community" aria-label="Community">C</a>
-            <a href="mailto:dkapps.support@proton.me" aria-label="Email">@</a>
-          </div>
+      <div class="footer-compact">
+        <div class="footer-brand">
+          <span class="brand-badge" style="width: 28px; height: 28px; font-size: 0.7rem;">DK</span>
+          <strong>DK App Tools</strong>
+          <span class="separator">|</span>
+          <span class="tagline">Independent software hub</span>
         </div>
-
-        <div class="footer-col">
-          <strong>Explore</strong>
+        <nav class="footer-nav" aria-label="Footer navigation">
           <a href="/apps">Apps</a>
-          <a href="/#categories">Categories</a>
           <a href="/articles">Articles</a>
           <a href="/#community">Community</a>
-        </div>
-
-        <div class="footer-col">
-          <strong>Support</strong>
-          <a href="/support">Help center</a>
-          <a href="mailto:dkapps.support@proton.me">Contact</a>
-          <a href="/#community">Suggest an idea</a>
-          <a href="/privacy/offline-filesecure">Privacy</a>
-        </div>
-
-        <div class="footer-col">
-          <strong>Company</strong>
-          <a href="/">Principles</a>
-          <a href="/apps/offline-filesecure">First app</a>
-          <a href="/articles">Guides</a>
-          <a href="/support">Roadmap feedback</a>
-        </div>
-
-        <div class="footer-subscribe" id="subscribe">
-          <strong>Stay Updated</strong>
-          <p>Get updates about new apps, articles, and community polls.</p>
-          <form class="subscribe-form" action="#" onsubmit="event.preventDefault()">
-            <input type="email" placeholder="Enter your email" aria-label="Email address" required />
-            <button type="submit" class="button primary">Subscribe</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>В© 2026 DK App Tools. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="/privacy/offline-filesecure">Privacy Policy</a>
           <a href="/support">Support</a>
-          <span>English</span>
+          <a href="/privacy/offline-filesecure">Privacy</a>
+        </nav>
+        <div class="footer-legal">
+          © 2026 DK App Tools.
         </div>
       </div>
     </footer>

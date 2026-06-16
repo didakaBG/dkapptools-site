@@ -1,4 +1,4 @@
-﻿---
+﻿﻿---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const apps = [
@@ -71,15 +71,9 @@ const apps = [
     </div>
 
     <div class="hero-art" aria-hidden="true">
-      <div class="orbit-card orbit-card-a"><i class="ui-icon shield"></i></div>
-      <div class="orbit-card orbit-card-b"><i class="ui-icon file"></i></div>
-      <div class="orbit-card orbit-card-c"><i class="ui-icon users"></i></div>
-      <div class="orbit-card orbit-card-d"><i class="ui-icon code"></i></div>
       <div class="orbit-shell">
         <div class="orbit-ring ring-one"></div>
         <div class="orbit-ring ring-two"></div>
-        <div class="orbit-ring ring-three"></div>
-        <div class="orbit-platform"></div>
         <div class="dk-cube">DK</div>
       </div>
     </div>
@@ -133,34 +127,45 @@ const apps = [
   <section class="page-section editorial-preview" id="articles-preview">
     <div class="section-heading">
       <h2>Featured Reading</h2>
-      <a href="/articles">Open articles в†’</a>
+      <a href="/articles">Open articles →</a>
     </div>
 
-    <div class="editorial-grid">
-      <a href="/articles" class="featured-article-card">
+    <div class="article-grid">
+      <a href="/articles" class="article-card">
         <div class="article-thumb privacy">
           <div class="thumb-icon"><i class="ui-icon lock"></i></div>
         </div>
         <div class="article-body">
           <span>PRIVACY GUIDE</span>
           <h3>Why Offline Security Still Matters</h3>
-          <p>A practical introduction to local-first thinking, private files, and why offline tools still matter.</p>
-          <small>Featured guide В· 5 min read</small>
+          <p>A practical introduction to local-first thinking, private files, and offline control.</p>
+          <small>Featured guide · 5 min read</small>
         </div>
       </a>
 
-      <div class="article-side-list" aria-label="More articles">
-        <a href="/articles">
+      <a href="/articles" class="article-card">
+        <div class="article-thumb productivity">
+          <div class="thumb-icon"><i class="ui-icon bolt"></i></div>
+        </div>
+        <div class="article-body">
           <span>PRODUCTIVITY</span>
-          <strong>10 Small Habits That Boost Your Productivity</strong>
-          <small>Practical workflow ideas</small>
-        </a>
-        <a href="/articles">
+          <h3>10 Habits That Boost Productivity</h3>
+          <p>Practical workflow ideas to stay focused and get more done throughout your day.</p>
+          <small>Article · 4 min read</small>
+        </div>
+      </a>
+
+      <a href="/articles" class="article-card">
+        <div class="article-thumb android">
+          <div class="thumb-icon"><i class="ui-icon bot"></i></div>
+        </div>
+        <div class="article-body">
           <span>ANDROID</span>
-          <strong>How to Analyze Android Apps Safely</strong>
-          <small>Beginner-friendly safety checks</small>
-        </a>
-      </div>
+          <h3>Analyze Android Apps Safely</h3>
+          <p>Beginner-friendly safety checks and permissions analysis before installing packages.</p>
+          <small>Guide · 6 min read</small>
+        </div>
+      </a>
     </div>
   </section>
   <section class="page-section community-preview" id="community">
@@ -171,7 +176,7 @@ const apps = [
         <p>Vote on practical app ideas, suggest features, and help prioritize the roadmap without turning the homepage into a full dashboard.</p>
       </div>
       <div class="community-actions">
-        <a href="/support" class="button primary">Suggest an idea в†’</a>
+        <a href="/support" class="button primary">Suggest an idea →</a>
         <a href="/articles" class="button secondary">Read the roadmap notes</a>
       </div>
     </div>
