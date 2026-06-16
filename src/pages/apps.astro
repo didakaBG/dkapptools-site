@@ -1,146 +1,35 @@
 ﻿---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const apps = [
-  {
-    title: "Offline FileSecure",
-    status: "Available",
-    body: "Local-first Android vault for private files, offline encryption, and clear export control.",
-    tags: ["Privacy", "File Tools"],
-    icon: "shield",
-    href: "/apps/offline-filesecure"
-  },
-  {
-    title: "Secure Notes",
-    status: "Planned",
-    body: "Private encrypted notes for simple offline writing without account clutter.",
-    tags: ["Privacy"],
-    icon: "cube",
-    href: "#ideas"
-  },
-  {
-    title: "Batch Image Tools",
-    status: "Idea Stage",
-    body: "Resize, compress, and prepare images in batches with a practical local-first workflow.",
-    tags: ["Productivity"],
-    icon: "bolt",
-    href: "#ideas"
-  },
-  {
-    title: "APK Analyzer",
-    status: "Research",
-    body: "Inspect Android app packages, permissions, and metadata before installing.",
-    tags: ["Android Tools"],
-    icon: "bot",
-    href: "#ideas"
-  },
-  {
-    title: "Community Lab",
-    status: "Community Vote",
-    body: "A placeholder for the next useful DK App Tools project shaped by polls and feedback.",
-    tags: ["Future"],
-    icon: "flask",
-    href: "#ideas"
-  }
-];
-
-const categories = [
-  ["Privacy & Security", "Local-first tools for private files, clear control, and safer everyday storage.", "1 app available", "shield"],
-  ["File Utilities", "Practical tools to protect, prepare, compress, convert, and organize files.", "Planned", "folder"],
-  ["Android Tools", "Helpers for Android users, APK checks, permissions, and device-focused utilities.", "Research", "bot"],
-  ["Productivity", "Small focused tools that reduce friction and help you get practical work done.", "Idea stage", "rocket"],
-  ["Community Lab", "Polls, experiments, and future app ideas shaped by real user feedback.", "Community vote", "flask"]
-];
 ---
 <BaseLayout
   title="Apps | DK App Tools"
-  description="Browse DK App Tools apps, planned utilities, categories, and future software ideas."
+  description="Apps created by DK App Tools."
 >
-  <section class="page-section apps-page-intro">
-    <p class="eyebrow">App catalog</p>
-    <h1>Focused tools, organized clearly.</h1>
+  <section class="section">
+    <p class="eyebrow">Apps</p>
+    <h1>Focused tools, built one at a time.</h1>
     <p class="lead">
-      DK App Tools is a growing catalog of practical apps. The homepage gives a quick overview;
-      this page is where available, planned, and community-shaped tools belong.
+      DK App Tools apps are designed around practical use, clear behavior, and
+      respect for the user.
     </p>
-
-    <div class="hero-metrics apps-metrics" aria-label="Catalog summary">
-      <div><strong>1</strong><span>Available app</span></div>
-      <div><strong>4</strong><span>Planned / research ideas</span></div>
-      <div><strong>5</strong><span>Working categories</span></div>
+    <div class="grid">
+      <article class="card">
+        <h3>Offline FileSecure</h3>
+        <p>
+          A local-first file vault for Android. No account. No cloud upload. No ads.
+          Files added to the vault are stored encrypted on your device.
+        </p>
+        <div class="actions">
+          <a class="button" href="/apps/offline-filesecure">View app</a>
+        </div>
+      </article>
+      <article class="card">
+        <h3>More apps coming later</h3>
+        <p>
+          Future DK App Tools products will follow the same principle: practical,
+          focused, and easy to understand.
+        </p>
+      </article>
     </div>
-  </section>
-
-  <section class="page-section">
-    <div class="section-heading">
-      <h2>Browse by category</h2>
-      <a href="#catalog">Jump to catalog в†’</a>
-    </div>
-
-    <div class="category-strip">
-      {categories.map(([title, body, meta, icon]) => (
-        <a href="#catalog" class="category-card">
-          <div class="category-icon"><i class:list={["ui-icon", icon]}></i></div>
-          <h3>{title}</h3>
-          <p>{body}</p>
-          <small>{meta}</small>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section class="page-section" id="catalog">
-    <div class="section-heading">
-      <h2>Available now</h2>
-      <a href="/apps/offline-filesecure">View first app в†’</a>
-    </div>
-
-    <div class="app-strip apps-page-strip available-only">
-      {apps.slice(0, 1).map((app) => (
-        <a href={app.href} class:list={["app-card", "available", "apps-page-featured-card"]}>
-          <div class="card-topline">
-            <div class:list={["app-icon", app.icon]}><i class:list={["ui-icon", app.icon]}></i></div>
-            <span class="status-pill">{app.status}</span>
-          </div>
-          <h3>{app.title}</h3>
-          <p>{app.body}</p>
-          <div class="tag-row">
-            {app.tags.map((tag) => <span>{tag}</span>)}
-          </div>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section class="page-section" id="ideas">
-    <div class="section-heading">
-      <h2>Planned and community-shaped ideas</h2>
-      <a href="/support">Suggest an idea в†’</a>
-    </div>
-
-    <div class="app-strip apps-page-strip">
-      {apps.slice(1).map((app) => (
-        <a href={app.href} class="app-card upcoming">
-          <div class="card-topline">
-            <div class:list={["app-icon", app.icon]}><i class:list={["ui-icon", app.icon]}></i></div>
-            <span class="status-pill">{app.status}</span>
-          </div>
-          <h3>{app.title}</h3>
-          <p>{app.body}</p>
-          <div class="tag-row">
-            {app.tags.map((tag) => <span>{tag}</span>)}
-          </div>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section class="page-section apps-principle-note">
-    <p class="eyebrow">Catalog principle</p>
-    <h2>Core privacy stays clear. Future Pro features should add convenience, not confusion.</h2>
-    <p>
-      Product pages should explain what each app does, what is available now, and what is still planned.
-      Paid features should be presented as capacity or convenience, not as a different security promise.
-    </p>
   </section>
 </BaseLayout>
