@@ -44,26 +44,8 @@ const apps = [
   }
 ];
 
-const categories = [
-  ["Privacy & Security", "Secure your data and protect your privacy.", "1 app", "shield"],
-  ["File Tools", "Manage, convert, and protect files locally.", "1 app", "folder"],
-  ["Productivity", "Small tools that help you get more done.", "Planned", "rocket"],
-  ["Android Tools", "Useful helpers for Android users.", "Planned", "bot"],
-  ["Future Experiments", "Experimental ideas shaped by feedback.", "Idea stage", "flask"]
-];
 
-const articles = [
-  ["PRIVACY", "Why Offline Security Still Matters", "Why local-first tools still matter for private files.", "privacy", "5 min read"],
-  ["PRODUCTIVITY", "10 Small Habits That Boost Your Productivity", "Simple routines and tools that reduce friction.", "productivity", "6 min read"],
-  ["ANDROID", "How to Analyze Android Apps Safely", "A beginner-friendly guide to app safety checks.", "android", "4 min read"]
-];
 
-const poll = [
-  ["Secure Notes", "42%", "320 votes", "42"],
-  ["Batch Image Tools", "28%", "214 votes", "28"],
-  ["Password Manager", "18%", "137 votes", "18"],
-  ["Other Ideas", "12%", "91 votes", "12"]
-];
 ---
 <BaseLayout
   title="DK App Tools | Practical software hub"
@@ -148,78 +130,49 @@ const poll = [
       ))}
     </div>
   </section>
-
-  <section class="page-section" id="categories">
+  <section class="page-section editorial-preview" id="articles-preview">
     <div class="section-heading">
-      <h2>Browse Categories</h2>
-      <a href="/apps">View all categories →</a>
+      <h2>Featured Reading</h2>
+      <a href="/articles">Open articles в†’</a>
     </div>
 
-    <div class="category-strip">
-      {categories.map(([title, body, meta, icon]) => (
-        <a href="/apps" class="category-card">
-          <div class="category-icon"><i class:list={["ui-icon", icon]}></i></div>
-          <h3>{title}</h3>
-          <p>{body}</p>
-          <small>{meta}</small>
+    <div class="editorial-grid">
+      <a href="/articles" class="featured-article-card">
+        <div class="article-thumb privacy">
+          <div class="thumb-icon"><i class="ui-icon lock"></i></div>
+        </div>
+        <div class="article-body">
+          <span>PRIVACY GUIDE</span>
+          <h3>Why Offline Security Still Matters</h3>
+          <p>A practical introduction to local-first thinking, private files, and why offline tools still matter.</p>
+          <small>Featured guide В· 5 min read</small>
+        </div>
+      </a>
+
+      <div class="article-side-list" aria-label="More articles">
+        <a href="/articles">
+          <span>PRODUCTIVITY</span>
+          <strong>10 Small Habits That Boost Your Productivity</strong>
+          <small>Practical workflow ideas</small>
         </a>
-      ))}
-    </div>
-  </section>
-
-  <section class="page-section">
-    <div class="section-heading">
-      <h2>Latest Articles</h2>
-      <a href="/articles">View all articles →</a>
-    </div>
-
-    <div class="article-grid">
-      {articles.map(([tag, title, body, visual, time]) => (
-        <a href="/articles" class="article-card">
-          <div class:list={["article-thumb", visual]}>
-            <div class="thumb-icon"><i class:list={["ui-icon", visual === "android" ? "bot" : visual === "productivity" ? "monitor" : "lock"]}></i></div>
-          </div>
-          <div class="article-body">
-            <span>{tag}</span>
-            <h3>{title}</h3>
-            <p>{body}</p>
-            <small>{time}</small>
-          </div>
+        <a href="/articles">
+          <span>ANDROID</span>
+          <strong>How to Analyze Android Apps Safely</strong>
+          <small>Beginner-friendly safety checks</small>
         </a>
-      ))}
-    </div>
-  </section>
-
-  <section class="bottom-grid page-section" id="community">
-    <div class="poll-panel">
-      <div class="section-heading compact-heading">
-        <h2>What should DK App Tools build next?</h2>
-      </div>
-      <p class="panel-lead">Vote for your most wanted tool and help shape the roadmap.</p>
-
-      <div class="poll-list">
-        {poll.map(([label, percent, votes, width]) => (
-          <div class="poll-row">
-            <div class="poll-info"><span>{label}</span><strong>{percent}</strong></div>
-            <div class="poll-track"><span style={`width: ${width}%`}></span></div>
-            <small>{votes}</small>
-          </div>
-        ))}
-      </div>
-
-      <a class="panel-link" href="/support">View all polls & results →</a>
-    </div>
-
-    <div class="why-panel">
-      <div class="section-heading compact-heading">
-        <h2>Why DK App Tools?</h2>
-      </div>
-      <div class="principle-grid">
-        <div><i class="ui-icon shield"></i><h3>Privacy First</h3><p>Local-first tools that keep user control clear.</p></div>
-        <div><i class="ui-icon target"></i><h3>Practical & Focused</h3><p>No bloat. No noise. Just useful tools.</p></div>
-        <div><i class="ui-icon users"></i><h3>Community Driven</h3><p>Feedback shapes what gets built next.</p></div>
-        <div><i class="ui-icon eye"></i><h3>Transparent</h3><p>Clear pages, honest claims, and simple support.</p></div>
       </div>
     </div>
   </section>
-</BaseLayout>
+  <section class="page-section community-preview" id="community">
+    <div class="community-card">
+      <div>
+        <p class="eyebrow">Community direction</p>
+        <h2>Help shape what DK App Tools builds next.</h2>
+        <p>Vote on practical app ideas, suggest features, and help prioritize the roadmap without turning the homepage into a full dashboard.</p>
+      </div>
+      <div class="community-actions">
+        <a href="/support" class="button primary">Suggest an idea в†’</a>
+        <a href="/articles" class="button secondary">Read the roadmap notes</a>
+      </div>
+    </div>
+  </section></BaseLayout>
