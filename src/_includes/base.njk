@@ -1,0 +1,75 @@
+﻿---
+siteName: DK App Tools
+supportEmail: dkapps.support@proton.me
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or site.siteName }}</title>
+  <meta name="description" content="{{ description or 'DK App Tools builds practical privacy-first software and useful app guides.' }}">
+  <meta name="theme-color" content="#0b0d10">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg dk-navbar sticky-top">
+    <div class="container-xl">
+      <a class="navbar-brand dk-brand" href="/" aria-label="DK App Tools home">
+        <span class="dk-mark">DK</span>
+        <span class="dk-brand-text">DK App Tools</span>
+      </a>
+      <button class="navbar-toggler dk-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="/apps/">Apps</a></li>
+          <li class="nav-item"><a class="nav-link" href="/articles/">Articles</a></li>
+          <li class="nav-item"><a class="nav-link" href="/support/">Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="/privacy/offline-filesecure/">Privacy</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-sm dk-btn-outline" href="/support/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="dk-footer py-5 mt-5">
+    <div class="container-xl">
+      <div class="row gy-4 align-items-start">
+        <div class="col-lg-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="dk-mark dk-mark-sm">DK</span>
+            <strong>DK App Tools</strong>
+          </div>
+          <p class="dk-muted mb-0">Practical software, privacy-first tools, and clear support resources for apps built under the DK App Tools brand.</p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h2 class="footer-title">Pages</h2>
+          <ul class="footer-links">
+            <li><a href="/apps/">Apps</a></li>
+            <li><a href="/articles/">Articles</a></li>
+            <li><a href="/support/">Support</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h2 class="footer-title">Contact</h2>
+          <ul class="footer-links">
+            <li><a href="mailto:{{ site.supportEmail }}">{{ site.supportEmail }}</a></li>
+            <li><a href="/privacy/offline-filesecure/">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="dk-footer-line mt-4 pt-4 small dk-muted">В© 2026 DK App Tools. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿---
+layout: base.njk
+title: Articles | DK App Tools
+description: Articles and updates from DK App Tools.
+permalink: /articles/index.html
+---
+<section class="dk-section">
+  <div class="container-xl">
+    <p class="dk-kicker mb-3">Articles</p>
+    <h1 class="display-4 fw-bold mb-4">Guides and updates.</h1>
+    <div class="row g-4">
+      {% for post in collections.articles %}
+        <div class="col-md-6 col-lg-4">
+          <a class="dk-card d-block" href="{{ post.url }}">
+            <span class="dk-chip mb-3">{{ post.data.category or "Article" }}</span>
+            <h2 class="h4 dk-app-title">{{ post.data.title }}</h2>
+            <p>{{ post.data.description }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
