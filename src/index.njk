@@ -3,42 +3,52 @@ layout: base.njk
 title: DK App Tools | Practical software for real users
 description: Practical privacy-first apps, support resources, and articles from DK App Tools.
 ---
-<section class="dk-hero">
+<section class="dk-hero dk-dashboard-hero">
   <div class="container-xl">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <p class="dk-kicker mb-3">DK App Tools</p>
-        <h1 class="dk-title mb-4">
-          <span class="d-block">Practical software.</span>
-          <span class="d-block">Useful tools.</span>
-          <span class="dk-title-accent d-block">Built for real users.</span>
-        </h1>
-        <p class="dk-lead mb-4">A premium software hub for privacy-first apps, useful articles, support resources, and community-shaped tools that stay practical.</p>
-        <div class="dk-hero-actions d-flex flex-column flex-sm-row gap-3">
-          <a class="btn dk-btn-outline" href="/apps/offline-filesecure/">View Offline FileSecure</a>
-          <a class="btn btn-outline-light rounded-pill px-4" href="/support/">Contact support</a>
+    <div class="dk-hero-shell">
+      <div class="row align-items-center g-4 g-xl-5">
+        <div class="col-lg-5">
+          <p class="dk-kicker mb-3">DK App Tools</p>
+          <h1 class="dk-title mb-4">
+            <span class="d-block">Practical software.</span>
+            <span class="d-block">Useful tools.</span>
+            <span class="dk-title-accent d-block">Built for real users.</span>
+          </h1>
+          <p class="dk-lead mb-4">A premium software hub for privacy-first apps, useful articles, support resources, and community-shaped tools that stay practical.</p>
+          <div class="dk-hero-actions d-flex flex-column flex-sm-row gap-3">
+            <a class="btn dk-btn-outline" href="/apps/offline-filesecure/">View Offline FileSecure</a>
+            <a class="btn btn-outline-light rounded-pill px-4" href="/support/">Contact support</a>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="dk-hero-panel" aria-label="DK App Tools visual platform">
+            <div class="dk-ghost-notes">
+              &gt; Apps<br>
+              &gt; Privacy<br>
+              &gt; Articles<br>
+              &gt; Community
+            </div>
+            <div class="dk-orbit">
+              <span class="dk-ring one"></span>
+              <span class="dk-ring two"></span>
+              <span class="dk-ring three"></span>
+              <span class="dk-core">DK</span>
+            </div>
+            <div class="dk-platform-lines"><span></span><span></span><span></span></div>
+            <div class="dk-mini-node dk-node-a">A</div>
+            <div class="dk-mini-node dk-node-b">N</div>
+            <div class="dk-mini-node dk-node-c">C</div>
+            <div class="dk-floating-card dk-float-a"><strong><span class="dk-status-dot"></span>Offline FileSecure</strong><small>Available privacy-first app.</small></div>
+            <div class="dk-floating-card dk-float-b"><strong>Built around users</strong><small>Apps, articles, support, and votes.</small></div>
+            <div class="dk-visual-meter"><span style="width: 68%"></span></div>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6">
-        <div class="dk-hero-panel" aria-label="DK App Tools visual platform">
-          <div class="dk-ghost-notes">
-            &gt; Apps<br>
-            &gt; Privacy<br>
-            &gt; Articles<br>
-            &gt; Support
-          </div>
-          <div class="dk-orbit">
-            <span class="dk-ring one"></span>
-            <span class="dk-ring two"></span>
-            <span class="dk-ring three"></span>
-            <span class="dk-core">DK</span>
-          </div>
-          <div class="dk-platform-lines"><span></span><span></span><span></span></div>
-          <div class="dk-mini-node dk-node-a">A</div>
-          <div class="dk-mini-node dk-node-b">S</div>
-          <div class="dk-floating-card dk-float-a"><strong><span class="dk-status-dot"></span>Offline-first tools</strong><small>Apps designed around user control.</small></div>
-          <div class="dk-floating-card dk-float-b"><strong>Private by design</strong><small>No noisy tracking-first experience.</small></div>
-        </div>
+      <div class="dk-status-rail row g-3 mt-4">
+        <div class="col-6 col-lg-3"><div class="dk-stat"><strong>1</strong><span>available app</span></div></div>
+        <div class="col-6 col-lg-3"><div class="dk-stat"><strong>4</strong><span>planned tools</span></div></div>
+        <div class="col-6 col-lg-3"><div class="dk-stat"><strong>5</strong><span>core categories</span></div></div>
+        <div class="col-6 col-lg-3"><div class="dk-stat"><strong>0</strong><span>tracking-first noise</span></div></div>
       </div>
     </div>
   </div>
@@ -48,24 +58,33 @@ description: Practical privacy-first apps, support resources, and articles from 
   <div class="container-xl">
     <div class="row g-4">
       <div class="col-md-4">
-        <a class="dk-card d-block" href="/apps/">
-          <span class="dk-icon mb-4">A</span>
-          <h2 class="h4 dk-app-title">Apps</h2>
-          <p>Discover practical DK tools built for privacy, productivity, and everyday digital tasks.</p>
+        <a class="dk-card dk-hub-card" href="/apps/">
+          <div class="dk-hub-art dk-hub-apps"><span class="dk-icon">A</span><i></i><i></i><i></i></div>
+          <div class="dk-hub-copy">
+            <h2 class="h4 dk-app-title">Apps</h2>
+            <p>Discover practical DK tools built for privacy, productivity, and everyday digital tasks.</p>
+            <span>Browse apps -&gt;</span>
+          </div>
         </a>
       </div>
       <div class="col-md-4">
-        <a class="dk-card d-block" href="/articles/">
-          <span class="dk-icon mb-4">N</span>
-          <h2 class="h4 dk-app-title">Articles</h2>
-          <p>Guides, product updates, and practical notes for people who want clearer tools.</p>
+        <a class="dk-card dk-hub-card" href="/articles/">
+          <div class="dk-hub-art dk-hub-articles"><span class="dk-icon">N</span><i></i></div>
+          <div class="dk-hub-copy">
+            <h2 class="h4 dk-app-title">Articles</h2>
+            <p>Guides, product updates, and practical notes for people who want clearer tools.</p>
+            <span>Read articles -&gt;</span>
+          </div>
         </a>
       </div>
       <div class="col-md-4">
-        <a class="dk-card d-block" href="/support/">
-          <span class="dk-icon mb-4">S</span>
-          <h2 class="h4 dk-app-title">Support</h2>
-          <p>Find contact details, privacy information, and focused app support resources.</p>
+        <a class="dk-card dk-hub-card" href="/support/">
+          <div class="dk-hub-art dk-hub-community"><span class="dk-icon">C</span><i></i><i></i><i></i></div>
+          <div class="dk-hub-copy">
+            <h2 class="h4 dk-app-title">Community</h2>
+            <p>Vote on ideas, ask for support, and help shape the next practical utility.</p>
+            <span>Join in -&gt;</span>
+          </div>
         </a>
       </div>
     </div>
@@ -77,13 +96,13 @@ description: Practical privacy-first apps, support resources, and articles from 
     <div class="dk-section-heading d-flex flex-column flex-lg-row justify-content-between gap-3">
       <div>
         <p class="dk-kicker mb-2">Featured Apps</p>
-        <h2 class="display-6 mb-0">A focused app shelf, starting with privacy.</h2>
+        <h2 class="display-6 mb-0">A focused product strip for practical tools.</h2>
       </div>
-      <p class="dk-muted mb-0 col-lg-4">Offline FileSecure is available first, with practical companion utilities planned around real user needs.</p>
+      <p class="dk-muted mb-0 col-lg-4">Offline FileSecure is available first, with companion utilities planned around privacy, Android, and productivity workflows.</p>
     </div>
 
-    <div class="row g-4">
-      <div class="col-lg-5">
+    <div class="row g-3 g-xl-4 dk-app-strip">
+      <div class="col-lg-4">
         <article class="dk-card dk-app-card featured">
           <span class="dk-chip mb-3">Available</span>
           <div class="dk-app-visual">FS</div>
@@ -93,18 +112,18 @@ description: Practical privacy-first apps, support resources, and articles from 
           <a class="btn dk-btn-outline mt-4 align-self-start" href="/apps/offline-filesecure/">Open product page</a>
         </article>
       </div>
-      <div class="col-sm-6 col-lg-3">
+      <div class="col-sm-6 col-lg-2">
         <article class="dk-card dk-app-card compact">
-          <span class="dk-chip mb-3">Planned</span>
+          <span class="dk-chip mb-3">Coming soon</span>
           <div class="dk-app-visual">SN</div>
-          <h3 class="dk-app-title h4">Secure Notes</h3>
-          <p>Private notes concept for future DK tools.</p>
-          <div class="dk-tag-row"><span>Privacy</span><span>Notes</span></div>
+          <h3 class="dk-app-title h5">Secure Notes</h3>
+          <p>Encrypted notes that stay local and private.</p>
+          <div class="dk-tag-row"><span>Privacy</span></div>
         </article>
       </div>
       <div class="col-sm-6 col-lg-2">
         <article class="dk-card dk-app-card compact">
-          <span class="dk-chip mb-3">Research</span>
+          <span class="dk-chip mb-3">Coming soon</span>
           <div class="dk-app-visual">BI</div>
           <h3 class="dk-app-title h5">Batch Image Tools</h3>
           <p>Compress, convert, and resize images in bulk.</p>
@@ -113,11 +132,20 @@ description: Practical privacy-first apps, support resources, and articles from 
       </div>
       <div class="col-sm-6 col-lg-2">
         <article class="dk-card dk-app-card compact">
-          <span class="dk-chip mb-3">Lab</span>
+          <span class="dk-chip mb-3">Coming soon</span>
           <div class="dk-app-visual">APK</div>
           <h3 class="dk-app-title h5">APK Analyzer</h3>
           <p>Explore Android packages with safer checks.</p>
           <div class="dk-tag-row"><span>Android</span></div>
+        </article>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <article class="dk-card dk-app-card compact dk-app-card-dim">
+          <span class="dk-chip mb-3">Future</span>
+          <div class="dk-app-visual">FX</div>
+          <h3 class="dk-app-title h5">Future Experiment</h3>
+          <p>Small utility ideas shaped by feedback.</p>
+          <div class="dk-tag-row"><span>Lab</span></div>
         </article>
       </div>
     </div>
@@ -133,18 +161,21 @@ description: Practical privacy-first apps, support resources, and articles from 
       </div>
       <a class="btn dk-btn-outline align-self-lg-start" href="/apps/">View all categories</a>
     </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg">
+    <div class="row g-3 g-xl-4 dk-category-grid">
+      <div class="col-md-6 col-xl">
         <a class="dk-card dk-category-card" href="/apps/"><span class="dk-icon">P</span><span><h3 class="h5 dk-app-title">Privacy &amp; Security</h3><p>Protect files, notes, and sensitive workflows.</p><small class="dk-category-count">8 tools</small></span></a>
       </div>
-      <div class="col-md-6 col-lg">
+      <div class="col-md-6 col-xl">
         <a class="dk-card dk-category-card" href="/apps/"><span class="dk-icon">F</span><span><h3 class="h5 dk-app-title">File Tools</h3><p>Manage, convert, and secure everyday files.</p><small class="dk-category-count">6 tools</small></span></a>
       </div>
-      <div class="col-md-6 col-lg">
-        <a class="dk-card dk-category-card" href="/apps/"><span class="dk-icon">W</span><span><h3 class="h5 dk-app-title">Productivity</h3><p>Utilities that reduce friction and busywork.</p><small class="dk-category-count">5 tools</small></span></a>
+      <div class="col-md-6 col-xl">
+        <a class="dk-card dk-category-card" href="/apps/"><span class="dk-icon">A</span><span><h3 class="h5 dk-app-title">Android Tools</h3><p>Utilities for Android users and developers.</p><small class="dk-category-count">4 tools</small></span></a>
       </div>
-      <div class="col-md-6 col-lg">
-        <a class="dk-card dk-category-card" href="/apps/"><span class="dk-icon">D</span><span><h3 class="h5 dk-app-title">Android Tools</h3><p>Practical utilities for Android users.</p><small class="dk-category-count">4 tools</small></span></a>
+      <div class="col-md-6 col-xl">
+        <a class="dk-card dk-category-card" href="/apps/"><span class="dk-icon">W</span><span><h3 class="h5 dk-app-title">Productivity</h3><p>Tools that reduce friction and busywork.</p><small class="dk-category-count">5 tools</small></span></a>
+      </div>
+      <div class="col-md-6 col-xl">
+        <a class="dk-card dk-category-card" href="/apps/"><span class="dk-icon">X</span><span><h3 class="h5 dk-app-title">Future</h3><p>Experiments and community-shaped ideas.</p><small class="dk-category-count">3 tools</small></span></a>
       </div>
     </div>
   </div>
@@ -152,23 +183,47 @@ description: Practical privacy-first apps, support resources, and articles from 
 
 <section class="dk-section">
   <div class="container-xl">
+    <div class="dk-section-heading d-flex flex-column flex-lg-row justify-content-between gap-3">
+      <div>
+        <p class="dk-kicker mb-2">Latest Articles</p>
+        <h2 class="display-6 mb-0">Guides and platform notes.</h2>
+      </div>
+      <a class="btn dk-btn-outline align-self-lg-start" href="/articles/">View all articles</a>
+    </div>
+    <div class="row g-4 dk-article-grid">
+      <div class="col-md-6 col-lg-4">
+        <article class="dk-card dk-article-card"><div class="dk-article-thumb dk-thumb-lock"></div><span class="dk-chip mb-3">Privacy</span><h3 class="h5 dk-app-title">Why offline-first security still matters</h3><p>Cloud tools are useful, but local-first workflows give users more control over sensitive files.</p><small>5 min read</small></article>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <article class="dk-card dk-article-card"><div class="dk-article-thumb dk-thumb-work"></div><span class="dk-chip mb-3">Productivity</span><h3 class="h5 dk-app-title">Small utilities that reduce everyday friction</h3><p>Focused tools can remove repeated tasks without turning into noisy platforms.</p><small>6 min read</small></article>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <article class="dk-card dk-article-card"><div class="dk-article-thumb dk-thumb-android"></div><span class="dk-chip mb-3">Android</span><h3 class="h5 dk-app-title">How to think about Android app safety</h3><p>A practical starting point for reviewing permissions and understanding app behavior.</p><small>4 min read</small></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dk-section dk-bottom-section">
+  <div class="container-xl">
     <div class="row g-4 dk-panel-grid">
-      <div class="col-lg-5">
+      <div class="col-lg-4">
         <div class="dk-card h-100">
           <p class="dk-kicker mb-2">Articles</p>
-          <h2 class="h1 fw-bold dk-app-title">Updates and practical notes.</h2>
+          <h2 class="h2 fw-bold dk-app-title">Updates and practical notes.</h2>
           <p>Articles cover product updates, privacy-first workflows, and simple guides for using DK App Tools products.</p>
           <a class="btn dk-btn-outline mt-2" href="/articles/">Read articles</a>
         </div>
       </div>
-      <div class="col-lg-4">
-        <div class="dk-card h-100">
+      <div class="col-lg-5">
+        <div class="dk-card h-100 dk-poll-card">
           <p class="dk-kicker mb-2">Community</p>
           <h2 class="h3 dk-app-title">What should we build next?</h2>
           <p class="mb-3">Vote for focused tools that fit the DK App Tools roadmap.</p>
           <div class="dk-poll-row"><span class="dk-tiny">N</span><span>Secure Notes<span class="dk-bar"><span style="width: 42%"></span></span></span><strong>42%</strong></div>
           <div class="dk-poll-row"><span class="dk-tiny">B</span><span>Batch Image Tools<span class="dk-bar"><span style="width: 28%"></span></span></span><strong>28%</strong></div>
           <div class="dk-poll-row"><span class="dk-tiny">A</span><span>APK Analyzer<span class="dk-bar"><span style="width: 18%"></span></span></span><strong>18%</strong></div>
+          <a class="btn dk-btn-outline mt-4" href="/support/">Suggest an idea</a>
         </div>
       </div>
       <div class="col-lg-3">
