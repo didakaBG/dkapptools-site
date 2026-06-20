@@ -5,42 +5,78 @@ description: Browse DK App Tools applications.
 permalink: /apps/index.html
 activeNav: apps
 ---
-<section class="page-shell">
-  <header class="page-hero surface-panel">
-    <p class="kicker">Apps</p>
-    <h1>Practical software, organized clearly.</h1>
-    <p>Browse available DK App Tools products and future utility areas.</p>
+<section class="page-shell apps-page">
+  <header class="app-page-intro">
+    <h1>Apps</h1>
+    <p>Available DK tools and upcoming app ideas.</p>
   </header>
 
-  <section class="compact-panel">
-    <div class="filter-row" aria-label="App categories">
-      <span class="filter-chip active">All apps</span>
-      <span class="filter-chip">Available</span>
-      <span class="filter-chip">Coming soon</span>
-      <span class="filter-chip">Privacy tools</span>
-      <span class="filter-chip">Utilities</span>
-    </div>
-
+  <section class="compact-panel catalog-panel">
     <div class="app-grid catalog-grid">
-      <a class="app-card live wide" href="/apps/offline-filesecure/">
-        <span class="app-icon app-lock" aria-hidden="true"></span>
-        <span class="chip">Available</span>
-        <strong>Offline FileSecure</strong>
-        <p>Private files. Stored locally. Protected clearly.</p>
-        <em>Open product page</em>
-      </a>
-      <article class="app-card"><span class="app-icon app-note" aria-hidden="true"></span><strong>Secure Notes</strong><p>Private note tools.</p><em>Coming soon</em></article>
+      <article class="app-card live wide featured-app-card">
+        <div class="featured-app-copy">
+          <strong>Offline FileSecure</strong>
+          <p>A local Android file vault for protected copies of private files - built without accounts, cloud upload, ads, or tracking.</p>
+          <div class="product-details" aria-label="Offline FileSecure basics">
+            <div>
+              <span class="detail-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M7 5.5h6l4 4v9H7z"></path>
+                  <path d="M13 5.5v4h4"></path>
+                  <path d="M9.5 15.5h5"></path>
+                </svg>
+              </span>
+              <span class="detail-copy">
+                <strong>Local storage</strong>
+                <span>Protected copies stay on this device.</span>
+              </span>
+            </div>
+            <div>
+              <span class="detail-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M8 11V8a4 4 0 0 1 8 0v3"></path>
+                  <path d="M7 11h10v8H7z"></path>
+                  <path d="M12 14.5v2"></path>
+                </svg>
+              </span>
+              <span class="detail-copy">
+                <strong>Vault access</strong>
+                <span>Unlock with PIN. Use your recovery key only for local PIN reset.</span>
+              </span>
+            </div>
+            <div>
+              <span class="detail-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M5 8.5 12 5l7 3.5-7 3.5z"></path>
+                  <path d="m5 12 7 3.5L19 12"></path>
+                  <path d="m5 15.5 7 3.5 7-3.5"></path>
+                </svg>
+              </span>
+              <span class="detail-copy">
+                <strong>Plan options</strong>
+                <span>Free core vault. Pro adds organization features.</span>
+              </span>
+            </div>
+          </div>
+          <div class="featured-actions">
+            <a class="gold-button" href="/apps/offline-filesecure/">Open product page</a>
+            <a class="privacy-link" href="/privacy/offline-filesecure/">Privacy details</a>
+          </div>
+        </div>
+        <div class="vault-preview" aria-hidden="true">
+          <div class="vault-phone">
+            <span class="vault-lock"></span>
+            <span class="vault-line strong"></span>
+            <span class="vault-line"></span>
+            <span class="vault-file"></span>
+            <span class="vault-file"></span>
+            <span class="vault-file muted"></span>
+          </div>
+        </div>
+      </article>
+      <article class="app-card"><span class="app-icon app-note" aria-hidden="true"></span><strong>Secure NoteKeeper</strong><p>Private note tools.</p><em>Coming soon</em></article>
       <article class="app-card"><span class="app-icon app-media" aria-hidden="true"></span><strong>Media Vault</strong><p>Private media organization.</p><em>Coming soon</em></article>
       <article class="app-card"><span class="app-icon app-dev" aria-hidden="true"></span><strong>Dev Toolbox</strong><p>Focused developer utilities.</p><em>Coming soon</em></article>
-    </div>
-  </section>
-
-  <section class="compact-panel">
-    <div class="section-head"><p class="kicker">Product areas</p></div>
-    <div class="resource-grid">
-      <article class="resource-card"><span class="resource-icon" aria-hidden="true"></span><strong>Privacy tools</strong><p>Local-first products for user control.</p></article>
-      <article class="resource-card"><span class="resource-icon" aria-hidden="true"></span><strong>Utilities</strong><p>Small tools that solve focused problems.</p></article>
-      <article class="resource-card"><span class="resource-icon" aria-hidden="true"></span><strong>Developer tools</strong><p>Future utilities for builders.</p></article>
     </div>
   </section>
 </section>
