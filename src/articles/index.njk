@@ -1,23 +1,42 @@
-﻿---
+---
 layout: base.njk
 title: Articles | DK App Tools
 description: Articles and updates from DK App Tools.
 permalink: /articles/index.html
+activeNav: articles
 ---
-<section class="dk-section">
-  <div class="container-xl">
-    <p class="dk-kicker mb-3">Articles</p>
-    <h1 class="display-4 fw-bold mb-4">Guides and updates.</h1>
-    <div class="row g-4">
+<section class="page-shell">
+  <header class="page-hero surface-panel">
+    <p class="kicker">Articles</p>
+    <h1>Guides and practical notes.</h1>
+    <p>Short articles about privacy, local-first workflows, Android habits, and useful tools.</p>
+  </header>
+
+  <section class="compact-panel">
+    <div class="article-list-grid">
       {% for post in collections.articles %}
-        <div class="col-md-6 col-lg-4">
-          <a class="dk-card d-block" href="{{ post.url }}">
-            <span class="dk-chip mb-3">{{ post.data.category or "Article" }}</span>
-            <h2 class="h4 dk-app-title">{{ post.data.title }}</h2>
-            <p>{{ post.data.description }}</p>
-          </a>
-        </div>
+        <a class="article-card article-list-card" href="{{ post.url }}">
+          <img src="/assets/img/article-offline-first.webp" alt="" loading="lazy">
+          <span class="chip">{{ post.data.category or "Article" }}</span>
+          <strong>{{ post.data.title }}</strong>
+          <p>{{ post.data.description }}</p>
+          <em>Read article</em>
+        </a>
       {% endfor %}
+      <a class="article-card article-list-card" href="/articles/">
+        <img src="/assets/img/article-local-vaults.webp" alt="" loading="lazy">
+        <span class="chip">Privacy</span>
+        <strong>How local file vaults protect privacy</strong>
+        <p>Local storage keeps your files yours.</p>
+        <em>Coming soon</em>
+      </a>
+      <a class="article-card article-list-card" href="/articles/">
+        <img src="/assets/img/article-android-privacy.webp" alt="" loading="lazy">
+        <span class="chip">Android</span>
+        <strong>Android privacy habits that actually help</strong>
+        <p>Small settings changes can make a real difference.</p>
+        <em>Coming soon</em>
+      </a>
     </div>
-  </div>
+  </section>
 </section>

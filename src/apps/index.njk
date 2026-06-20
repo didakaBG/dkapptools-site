@@ -1,22 +1,46 @@
-﻿---
+---
 layout: base.njk
 title: Apps | DK App Tools
 description: Browse DK App Tools applications.
 permalink: /apps/index.html
+activeNav: apps
 ---
-<section class="dk-section">
-  <div class="container-xl">
-    <p class="dk-kicker mb-3">Apps</p>
-    <h1 class="display-4 fw-bold mb-4">Software built for practical privacy.</h1>
-    <div class="row g-4">
-      <div class="col-lg-6">
-        <article class="dk-card dk-app-card featured">
-          <span class="dk-chip mb-4">Available first</span>
-          <h2 class="dk-app-title">Offline FileSecure</h2>
-          <p>An offline local vault for private files. No account, no cloud upload, no ads, and no tracking-first experience.</p>
-          <a class="btn dk-btn-outline mt-3" href="/apps/offline-filesecure/">Open product page</a>
-        </article>
-      </div>
+<section class="page-shell">
+  <header class="page-hero surface-panel">
+    <p class="kicker">Apps</p>
+    <h1>Practical software, organized clearly.</h1>
+    <p>Browse available DK App Tools products and future utility areas.</p>
+  </header>
+
+  <section class="compact-panel">
+    <div class="filter-row" aria-label="App categories">
+      <span class="filter-chip active">All apps</span>
+      <span class="filter-chip">Available</span>
+      <span class="filter-chip">Coming soon</span>
+      <span class="filter-chip">Privacy tools</span>
+      <span class="filter-chip">Utilities</span>
     </div>
-  </div>
+
+    <div class="app-grid catalog-grid">
+      <a class="app-card live wide" href="/apps/offline-filesecure/">
+        <span class="app-icon app-lock" aria-hidden="true"></span>
+        <span class="chip">Available</span>
+        <strong>Offline FileSecure</strong>
+        <p>Private files. Stored locally. Protected clearly.</p>
+        <em>Open product page</em>
+      </a>
+      <article class="app-card"><span class="app-icon app-note" aria-hidden="true"></span><strong>Secure Notes</strong><p>Private note tools.</p><em>Coming soon</em></article>
+      <article class="app-card"><span class="app-icon app-media" aria-hidden="true"></span><strong>Media Vault</strong><p>Private media organization.</p><em>Coming soon</em></article>
+      <article class="app-card"><span class="app-icon app-dev" aria-hidden="true"></span><strong>Dev Toolbox</strong><p>Focused developer utilities.</p><em>Coming soon</em></article>
+    </div>
+  </section>
+
+  <section class="compact-panel">
+    <div class="section-head"><p class="kicker">Product areas</p></div>
+    <div class="resource-grid">
+      <article class="resource-card"><span class="resource-icon" aria-hidden="true"></span><strong>Privacy tools</strong><p>Local-first products for user control.</p></article>
+      <article class="resource-card"><span class="resource-icon" aria-hidden="true"></span><strong>Utilities</strong><p>Small tools that solve focused problems.</p></article>
+      <article class="resource-card"><span class="resource-icon" aria-hidden="true"></span><strong>Developer tools</strong><p>Future utilities for builders.</p></article>
+    </div>
+  </section>
 </section>

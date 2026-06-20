@@ -1,16 +1,53 @@
-﻿---
+---
 layout: base.njk
 title: Support | DK App Tools
 description: Contact DK App Tools support.
 permalink: /support/index.html
+activeNav: support
 ---
-<section class="dk-section">
-  <div class="container-xl">
-    <p class="dk-kicker mb-3">Support</p>
-    <h1 class="display-4 fw-bold mb-4">Need help?</h1>
-    <div class="dk-card col-lg-8">
-      <p class="dk-muted">For support, privacy questions, or product feedback, contact us by email.</p>
-      <a class="btn dk-btn-outline" href="mailto:dkapps.support@proton.me">dkapps.support@proton.me</a>
+<section class="page-shell">
+  <header class="page-hero support-hero surface-panel">
+    <div>
+      <p class="kicker">Support</p>
+      <h1>Find answers and contact DK App Tools.</h1>
+      <p>Use the help sections below or contact support directly.</p>
     </div>
-  </div>
+    <div class="support-art" aria-hidden="true"></div>
+  </header>
+
+  <section class="support-grid">
+    <div class="compact-panel">
+      <div class="section-head"><p class="kicker">Search help</p></div>
+      <label class="search-box">
+        <span>Search for help articles</span>
+        <input type="search" placeholder="Search help..." aria-label="Search help">
+      </label>
+    </div>
+
+    <div class="compact-panel contact-card">
+      <div class="section-head"><p class="kicker">Contact us</p></div>
+      <strong>dkapps.support@proton.me</strong>
+      <p>Please include the app name, device model, Android version, and a clear description of the issue.</p>
+    </div>
+
+    <div class="compact-panel">
+      <div class="section-head"><p class="kicker">Quick access</p></div>
+      <div class="quick-grid">
+        <a href="/support/">Getting started</a>
+        <a href="/support/">App questions</a>
+        <a href="/privacy/offline-filesecure/">Privacy questions</a>
+        <a href="mailto:dkapps.support@proton.me">Contact support</a>
+      </div>
+    </div>
+
+    <div class="compact-panel">
+      <div class="section-head"><p class="kicker">Frequently asked questions</p></div>
+      <div class="faq-list">
+        <button>What is DK App Tools?</button>
+        <button>Are my files stored by DK App Tools?</button>
+        <button>How does Offline FileSecure protect files?</button>
+        <button>Which platforms do your apps support?</button>
+      </div>
+    </div>
+  </section>
 </section>
