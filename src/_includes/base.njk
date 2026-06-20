@@ -40,36 +40,52 @@ supportEmail: dkapps.support@proton.me
     {{ content | safe }}
   </main>
 
-  <footer class="dk-footer py-5 mt-5">
-    <div class="container-xl">
-      <div class="row gy-4 align-items-start">
-        <div class="col-lg-6">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <span class="dk-mark dk-mark-sm">DK</span>
-            <strong>DK App Tools</strong>
-          </div>
-          <p class="dk-muted mb-0">Practical software, privacy-first tools, and clear support resources for apps built under the DK App Tools brand.</p>
-        </div>
-        <div class="col-6 col-lg-3">
-          <h2 class="footer-title">Pages</h2>
-          <ul class="footer-links">
-            <li><a href="/apps/">Apps</a></li>
-            <li><a href="/articles/">Articles</a></li>
-            <li><a href="/support/">Support</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-3">
-          <h2 class="footer-title">Contact</h2>
-          <ul class="footer-links">
-            <li><a href="mailto:{{ site.supportEmail }}">{{ site.supportEmail }}</a></li>
-            <li><a href="/privacy/offline-filesecure/">Privacy Policy</a></li>
-          </ul>
-        </div>
+  <footer class="dk-footer">
+  <div class="container-xl">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-5">
+        <a class="dk-brand d-inline-flex align-items-center gap-2 mb-3" href="/">
+          <span class="dk-brand-mark">DK</span>
+          <span>DK App Tools</span>
+        </a>
+        <p class="dk-muted mb-0">
+          Practical software, privacy-first tools, and clear support pages for real users.
+        </p>
       </div>
-      <div class="dk-footer-line mt-4 pt-4 small dk-muted">В© 2026 DK App Tools. All rights reserved.</div>
+
+      <div class="col-6 col-lg-2">
+        <h2 class="h6 dk-footer-title">Pages</h2>
+        <ul class="dk-footer-links">
+          <li><a href="/apps/">Apps</a></li>
+          <li><a href="/articles/">Articles</a></li>
+          <li><a href="/support/">Support</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <h2 class="h6 dk-footer-title">Product</h2>
+        <ul class="dk-footer-links">
+          <li><a href="/apps/offline-filesecure/">Offline FileSecure</a></li>
+          <li><a href="/privacy/offline-filesecure/">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3">
+        <h2 class="h6 dk-footer-title">Contact</h2>
+        <ul class="dk-footer-links">
+          <li><a href="mailto:dkapps.support@proton.me">dkapps.support@proton.me</a></li>
+        </ul>
+      </div>
     </div>
-  </footer>
+
+    <div class="dk-footer-bottom">
+      <span>© 2026 DK App Tools.</span>
+      <span>Independent software project.</span>
+    </div>
+  </div>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
