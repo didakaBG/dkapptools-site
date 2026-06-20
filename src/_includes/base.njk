@@ -28,10 +28,10 @@ supportEmail: dkapps.support@proton.me
 
       <div class="collapse navbar-collapse nav-collapse" id="mainNav">
         <ul class="nav-list">
-          <li><a class="{% if activeNav == 'apps' %}is-active{% endif %}" href="/apps/">Apps</a></li>
-          <li><a class="{% if activeNav == 'articles' %}is-active{% endif %}" href="/articles/">Articles</a></li>
-          <li><a class="{% if activeNav == 'support' %}is-active{% endif %}" href="/support/">Support</a></li>
-          <li><a class="{% if activeNav == 'privacy' %}is-active{% endif %}" href="/privacy/offline-filesecure/">Privacy</a></li>
+          <li><a class="{% if activeNav == 'apps' %}is-active{% endif %}" href="/apps/"{% if activeNav == 'apps' %} aria-current="page"{% endif %}>Apps</a></li>
+          <li><a class="{% if activeNav == 'articles' %}is-active{% endif %}" href="/articles/"{% if activeNav == 'articles' %} aria-current="page"{% endif %}>Articles</a></li>
+          <li><a class="{% if activeNav == 'support' %}is-active{% endif %}" href="/support/"{% if activeNav == 'support' %} aria-current="page"{% endif %}>Support</a></li>
+          <li><a class="{% if activeNav == 'privacy' %}is-active{% endif %}" href="/privacy/offline-filesecure/"{% if activeNav == 'privacy' %} aria-current="page"{% endif %}>Privacy</a></li>
         </ul>
       </div>
     </nav>
