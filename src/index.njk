@@ -1,213 +1,111 @@
-﻿---
+---
 layout: base.njk
 title: DK App Tools | Practical apps and digital tools
 description: DK App Tools is a compact software hub for practical apps, privacy-first utilities, articles, and support.
 permalink: /index.html
 ---
-<main class="dk-shot-home">
-  <section class="dk-shot-hero">
-    <div class="dk-shot-hero-copy">
-      <p class="dk-shot-kicker">Practical tools</p>
+<main class="dk-home site-shell">
+  <section class="home-hero surface-panel">
+    <div class="home-hero-copy">
+      <p class="eyebrow">Practical tools</p>
       <h1>DK App Tools</h1>
-      <p class="dk-shot-lead">
-        Practical apps and tools designed to help you manage your digital life with control and peace of mind.
-      </p>
+      <p class="lead-copy">Practical apps and tools designed to help you manage your digital life with control and peace of mind.</p>
 
-      <div class="dk-shot-principles">
-        <div>
-          <span>◇</span>
-          <strong>Private by design</strong>
-        </div>
-        <div>
-          <span>▣</span>
-          <strong>Offline by default</strong>
-        </div>
-        <div>
-          <span>▦</span>
-          <strong>Built for everyday use</strong>
-        </div>
+      <div class="principle-row" aria-label="DK App Tools principles">
+        <div><span>◇</span><strong>Private by design</strong></div>
+        <div><span>▣</span><strong>Offline by default</strong></div>
+        <div><span>▦</span><strong>Built for everyday use</strong></div>
       </div>
     </div>
 
-    <div class="dk-shot-hero-visual">
-      <img
-        src="/assets/img/home-hero-showcase.webp"
-        alt="DK App Tools connected device showcase with phone, laptop, keyboard, and command console"
-        loading="eager"
-      >
+    <div class="home-hero-art">
+      <img src="/assets/img/home-hero-showcase.webp" alt="DK App Tools connected device showcase with phone, laptop, keyboard, and command console" loading="eager">
     </div>
   </section>
 
-  <section class="dk-shot-panel">
-    <div class="dk-shot-section-head">
-      <p class="dk-shot-kicker">Apps</p>
+  <section class="surface-panel compact-panel">
+    <div class="section-heading">
+      <p class="eyebrow">Apps</p>
     </div>
 
-    <div class="dk-shot-app-grid">
-      <a class="dk-shot-app-card is-live" href="/apps/offline-filesecure/">
-        <span class="dk-shot-app-icon lock">▣</span>
+    <div class="app-strip">
+      <a class="app-card live" href="/apps/offline-filesecure/">
+        <span class="app-icon live-icon">▣</span>
         <strong>Offline FileSecure</strong>
         <p>Encrypt and protect your files, 100% offline. You're in control.</p>
         <em>Learn more →</em>
       </a>
-
-      <article class="dk-shot-app-card">
-        <span class="dk-shot-app-icon muted">◇</span>
-        <strong>Secure NoteKeeper</strong>
-        <p></p>
-        <em>Coming soon</em>
-      </article>
-
-      <article class="dk-shot-app-card">
-        <span class="dk-shot-app-icon muted">▢</span>
-        <strong>Media Vault</strong>
-        <p></p>
-        <em>Coming soon</em>
-      </article>
-
-      <article class="dk-shot-app-card">
-        <span class="dk-shot-app-icon muted">↻</span>
-        <strong>Sync Bridge</strong>
-        <p></p>
-        <em>Coming soon</em>
-      </article>
-
-      <article class="dk-shot-app-card">
-        <span class="dk-shot-app-icon muted">&gt;_</span>
-        <strong>Dev Toolbox</strong>
-        <p></p>
-        <em>Coming soon</em>
-      </article>
-
-      <article class="dk-shot-app-card">
-        <span class="dk-shot-app-icon muted">▦</span>
-        <strong>More Tools</strong>
-        <p></p>
-        <em>Coming soon</em>
-      </article>
+      <article class="app-card muted"><span class="app-icon">◇</span><strong>Secure NoteKeeper</strong><p></p><em>Coming soon</em></article>
+      <article class="app-card muted"><span class="app-icon">▢</span><strong>Media Vault</strong><p></p><em>Coming soon</em></article>
+      <article class="app-card muted"><span class="app-icon">↻</span><strong>Sync Bridge</strong><p></p><em>Coming soon</em></article>
+      <article class="app-card muted"><span class="app-icon">&gt;_</span><strong>Dev Toolbox</strong><p></p><em>Coming soon</em></article>
+      <article class="app-card muted"><span class="app-icon">▦</span><strong>More Tools</strong><p></p><em>Coming soon</em></article>
     </div>
   </section>
 
-  <section class="dk-shot-panel">
-    <div class="dk-shot-section-head with-link">
-      <p class="dk-shot-kicker">Latest articles</p>
+  <section class="surface-panel compact-panel">
+    <div class="section-heading with-link">
+      <p class="eyebrow">Latest articles</p>
       <a href="/articles/">View all articles →</a>
     </div>
 
-    <div class="dk-shot-article-carousel" data-shot-carousel>
-      <button class="dk-shot-carousel-button" type="button" data-shot-prev aria-label="Previous articles">‹</button>
-
-      <div class="dk-shot-article-window">
-        <div class="dk-shot-article-track">
-          <a class="dk-shot-article-card" href="/articles/why-offline-first-matters/">
+    <div class="article-carousel" data-article-carousel>
+      <button class="carousel-arrow" type="button" data-prev aria-label="Previous articles">‹</button>
+      <div class="article-window">
+        <div class="article-track">
+          <a class="article-card" href="/articles/why-offline-first-matters/">
             <img src="/assets/img/article-offline-first.webp" alt="" loading="lazy">
-            <span class="dk-shot-chip">Security</span>
+            <span class="chip">Security</span>
             <strong>Why offline-first security still matters</strong>
             <p>Staying offline is one of the most effective ways to protect your data.</p>
             <em>5 min read</em>
           </a>
-
-          <a class="dk-shot-article-card" href="/articles/">
+          <a class="article-card" href="/articles/">
             <img src="/assets/img/article-local-vaults.webp" alt="" loading="lazy">
-            <span class="dk-shot-chip">Privacy</span>
+            <span class="chip">Privacy</span>
             <strong>How local file vaults protect privacy</strong>
             <p>Local storage keeps your files yours — no cloud, no leaks.</p>
             <em>6 min read</em>
           </a>
-
-          <a class="dk-shot-article-card" href="/articles/">
+          <a class="article-card" href="/articles/">
             <img src="/assets/img/article-android-privacy.webp" alt="" loading="lazy">
-            <span class="dk-shot-chip">Android</span>
+            <span class="chip">Android</span>
             <strong>Android privacy habits that actually help</strong>
             <p>Small settings changes can make a real difference.</p>
             <em>4 min read</em>
           </a>
         </div>
       </div>
-
-      <button class="dk-shot-carousel-button" type="button" data-shot-next aria-label="Next articles">›</button>
-    </div>
-
-    <div class="dk-shot-dots" data-shot-dots aria-hidden="true">
-      <button class="active" type="button"></button>
-      <button type="button"></button>
-      <button type="button"></button>
+      <button class="carousel-arrow" type="button" data-next aria-label="Next articles">›</button>
     </div>
   </section>
 
-  <section class="dk-shot-panel dk-shot-resources">
-    <div class="dk-shot-section-head">
-      <p class="dk-shot-kicker">Resources</p>
+  <section class="surface-panel compact-panel resources-panel">
+    <div class="section-heading">
+      <p class="eyebrow">Resources</p>
     </div>
-
-    <div class="dk-shot-resource-grid">
-      <a href="/articles/" class="dk-shot-resource-card">
-        <span>□</span>
-        <strong>Articles</strong>
-        <p>In-depth guides and practical tips.</p>
-        <em>Browse articles →</em>
-      </a>
-
-      <a href="/support/" class="dk-shot-resource-card">
-        <span>◎</span>
-        <strong>Support</strong>
-        <p>Find answers and get help.</p>
-        <em>Visit support →</em>
-      </a>
-
-      <a href="/privacy/offline-filesecure/" class="dk-shot-resource-card">
-        <span>◇</span>
-        <strong>Privacy</strong>
-        <p>Clear information about your privacy.</p>
-        <em>Read policy →</em>
-      </a>
+    <div class="resource-grid">
+      <a class="resource-card" href="/articles/"><span>□</span><strong>Articles</strong><p>In-depth guides and practical tips.</p><em>Browse articles →</em></a>
+      <a class="resource-card" href="/support/"><span>◎</span><strong>Support</strong><p>Find answers and get help.</p><em>Visit support →</em></a>
+      <a class="resource-card" href="/privacy/offline-filesecure/"><span>◇</span><strong>Privacy</strong><p>Clear information about your privacy.</p><em>Read policy →</em></a>
     </div>
   </section>
 </main>
 
 <script>
 (() => {
-  const carousel = document.querySelector("[data-shot-carousel]");
-  if (!carousel) return;
-
-  const track = carousel.querySelector(".dk-shot-article-track");
+  const root = document.querySelector('[data-article-carousel]');
+  if (!root) return;
+  const track = root.querySelector('.article-track');
   const cards = Array.from(track.children);
-  const prev = carousel.querySelector("[data-shot-prev]");
-  const next = carousel.querySelector("[data-shot-next]");
-  const dots = Array.from(document.querySelectorAll("[data-shot-dots] button"));
-
+  const prev = root.querySelector('[data-prev]');
+  const next = root.querySelector('[data-next]');
   let index = 0;
-
-  function update() {
-    const card = cards[index];
-    if (!card) return;
-
-    card.scrollIntoView({
-      behavior: "smooth",
-      inline: "start",
-      block: "nearest"
-    });
-
-    dots.forEach((dot, dotIndex) => {
-      dot.classList.toggle("active", dotIndex === index);
-    });
+  function move(delta) {
+    index = (index + delta + cards.length) % cards.length;
+    cards[index].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
   }
-
-  prev.addEventListener("click", () => {
-    index = index <= 0 ? cards.length - 1 : index - 1;
-    update();
-  });
-
-  next.addEventListener("click", () => {
-    index = index >= cards.length - 1 ? 0 : index + 1;
-    update();
-  });
-
-  dots.forEach((dot, dotIndex) => {
-    dot.addEventListener("click", () => {
-      index = dotIndex;
-      update();
-    });
-  });
+  prev.addEventListener('click', () => move(-1));
+  next.addEventListener('click', () => move(1));
 })();
 </script>
