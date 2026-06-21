@@ -982,6 +982,110 @@ a:hover { color: var(--gold-2); }
 .privacy-policy-page {
   width: min(920px, calc(100vw - 2rem));
 }
+.privacy-hub-page {
+  width: min(980px, calc(100vw - 2rem));
+}
+.privacy-hub-hero {
+  margin-bottom: 0;
+}
+.privacy-hub-section {
+  padding: clamp(1rem, 2.2vw, 1.35rem);
+}
+.privacy-hub-intro h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  line-height: 1.2;
+}
+.privacy-hub-intro p,
+.privacy-hub-note {
+  max-width: 620px;
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.privacy-policy-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 520px);
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+.privacy-app-card {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid rgba(240,182,66,0.18);
+  border-radius: 16px;
+  color: inherit;
+  background:
+    radial-gradient(circle at 32px 24px, rgba(240,182,66,0.11), transparent 6rem),
+    linear-gradient(145deg, rgba(255,255,255,0.058), rgba(255,255,255,0.014)),
+    rgba(255,255,255,0.018);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.24), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.privacy-app-card img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 22px rgba(0,0,0,0.32)) drop-shadow(0 0 12px rgba(240,182,66,0.13));
+}
+.privacy-card-copy {
+  min-width: 0;
+  display: grid;
+  gap: 0.22rem;
+}
+.privacy-card-copy strong,
+.privacy-approach-grid strong {
+  color: var(--text);
+  font-size: 0.98rem;
+  line-height: 1.25;
+}
+.privacy-card-copy small {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 820;
+  text-transform: uppercase;
+}
+.privacy-card-copy span {
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+.privacy-card-copy em {
+  margin-top: 0.35rem;
+  color: var(--gold-2);
+  font-style: normal;
+  font-size: 0.84rem;
+  font-weight: 760;
+}
+.privacy-approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.privacy-approach-grid article {
+  min-width: 0;
+  padding: 0.9rem;
+  border: 1px solid rgba(255,255,255,0.075);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.024);
+}
+.privacy-approach-grid p {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.privacy-hub-note {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.075);
+}
 .policy-document {
   padding: clamp(1.2rem, 3vw, 2.2rem);
 }
@@ -1538,7 +1642,8 @@ a:hover { color: var(--gold-2); }
   }
   .article-list-grid,
   .support-grid,
-  .privacy-layout {
+  .privacy-layout,
+  .privacy-approach-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1643,6 +1748,17 @@ a:hover { color: var(--gold-2); }
   .ofs-shot-frame img,
   .ofs-shot-pair .ofs-shot-frame img {
     max-height: 520px;
+  }
+  .privacy-policy-grid {
+    grid-template-columns: 1fr;
+  }
+  .privacy-app-card {
+    grid-template-columns: 56px minmax(0, 1fr);
+    padding: 0.85rem;
+  }
+  .privacy-app-card img {
+    width: 56px;
+    height: 56px;
   }
   .vault-preview {
     min-height: 220px;
