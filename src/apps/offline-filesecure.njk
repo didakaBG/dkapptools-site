@@ -5,36 +5,178 @@ description: Offline FileSecure is a local-first file vault for Android.
 permalink: /apps/offline-filesecure/index.html
 activeNav: apps
 ---
-<section class="page-shell">
-  <header class="page-hero product-hero surface-panel">
-    <div>
+<section class="page-shell ofs-page">
+  <header class="page-hero ofs-hero surface-panel">
+    <div class="ofs-hero-lockup">
+      <img class="ofs-hero-icon" src="/assets/img/offline-filesecure-icon-clean.png" alt="">
       <p class="kicker">Offline FileSecure</p>
-      <h1>Private files. Stored locally. Protected clearly.</h1>
-      <p>A local Android vault for private files - no account, no cloud upload by DK App Tools, no ads.</p>
-      <div class="button-row">
-        <a class="gold-button" href="/privacy/offline-filesecure/">View privacy policy</a>
-        <a class="plain-button" href="/support/">Contact support</a>
-      </div>
     </div>
-    <div class="product-card-visual" aria-hidden="true">
-      <span>FS</span>
+    <h1>Private file vault for Android</h1>
+    <p>Store protected copies of private files locally on your device, with no account, no cloud upload, no ads, and no tracking.</p>
+    <div class="button-row">
+      <a class="gold-button" href="/privacy/offline-filesecure/">View privacy policy</a>
+      <a class="plain-button" href="/support/">Contact support</a>
     </div>
   </header>
 
-  <section class="compact-panel">
-    <div class="section-head"><p class="kicker">Product focus</p></div>
-    <div class="resource-grid">
-      <article class="resource-card"><span class="resource-icon" aria-hidden="true"></span><strong>Local vault</strong><p>Vault files live on the Android device.</p></article>
-      <article class="resource-card"><span class="resource-icon" aria-hidden="true"></span><strong>User control</strong><p>You decide what enters or leaves the vault.</p></article>
-      <article class="resource-card"><span class="resource-icon" aria-hidden="true"></span><strong>Clear boundaries</strong><p>Exported copies are outside the protected vault.</p></article>
+  <section class="ofs-flow compact-panel" aria-label="Protection flow">
+    <span>Choose file</span>
+    <span>Encrypted copy</span>
+    <span>Local vault storage</span>
+    <span>Preview or export by choice</span>
+  </section>
+
+  <section class="ofs-section compact-panel">
+    <div class="ofs-copy">
+      <p class="kicker">Add protected copies</p>
+      <h2>Add files without moving the original</h2>
+      <p>Adding to the vault creates a protected encrypted copy. The original file remains where it was unless you delete it yourself, and every import is started by you.</p>
+    </div>
+    <figure class="ofs-shot-frame">
+      <img src="/assets/img/apps/offline-filesecure/screenshots/04_import_add_copy.png" alt="Offline FileSecure import screen showing add protected copy options" loading="lazy">
+      <figcaption>Import creates a protected encrypted copy while the original file remains under your control.</figcaption>
+    </figure>
+  </section>
+
+  <section class="ofs-section ofs-section-alt compact-panel">
+    <div class="ofs-copy">
+      <p class="kicker">Organize private files</p>
+      <h2>Keep vault files understandable as they grow</h2>
+      <p>Files are stored inside the vault. Pro adds convenience and organization features such as a category dashboard, image thumbnail setting, recently added organization, and batch import.</p>
+      <p>Pro does not provide stronger encryption; it gives you more room and better ways to manage the same core local vault model.</p>
+    </div>
+    <div class="ofs-shot-pair">
+      <figure class="ofs-shot-frame">
+        <img src="/assets/img/apps/offline-filesecure/screenshots/09_files_overview.png" alt="Offline FileSecure files overview screen" loading="lazy">
+        <figcaption>Files stay organized inside the local vault.</figcaption>
+      </figure>
+      <figure class="ofs-shot-frame">
+        <img src="/assets/img/apps/offline-filesecure/screenshots/10_category_dashboard.png" alt="Offline FileSecure category dashboard screen" loading="lazy">
+        <figcaption>Pro organization helps sort protected files without changing the core protection model.</figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="compact-panel">
-    <div class="section-head"><p class="kicker">Free vs Pro</p></div>
-    <div class="two-col">
-      <article class="plan-card"><span class="chip">Free</span><strong>Start with up to 10 files.</strong><p>Same local protection model, smaller vault.</p></article>
-      <article class="plan-card"><span class="chip">Pro</span><strong>More room and better organization.</strong><p>Capacity and convenience, not stronger encryption.</p></article>
+  <section class="ofs-section compact-panel">
+    <div class="ofs-copy">
+      <p class="kicker">Preview inside the vault</p>
+      <h2>View supported file types in-app</h2>
+      <p>Supported common file types can be previewed inside Offline FileSecure. The preview flow is designed to avoid making external apps the default path, without claiming every file type is supported.</p>
     </div>
+    <div class="ofs-shot-pair">
+      <figure class="ofs-shot-frame">
+        <img src="/assets/img/apps/offline-filesecure/screenshots/11_image_preview.png" alt="Offline FileSecure image preview screen" loading="lazy">
+        <figcaption>Supported previews open inside Offline FileSecure.</figcaption>
+      </figure>
+      <figure class="ofs-shot-frame">
+        <img src="/assets/img/apps/offline-filesecure/screenshots/12_pdf_preview.png" alt="Offline FileSecure PDF preview screen" loading="lazy">
+        <figcaption>Preview support is for common supported file types, not every possible file.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="ofs-info ofs-encryption compact-panel">
+    <div class="ofs-encryption-copy">
+      <p class="kicker">Encrypted by design</p>
+      <h2>Protected copies, not just hidden files</h2>
+      <p>Offline FileSecure does not simply hide files behind a PIN screen. When you add a file, the app creates a protected encrypted copy inside the app's private vault storage. Encryption and decryption happen on your device, and vault files are encrypted with authenticated encryption so the app can detect if protected data has been changed or corrupted.</p>
+      <ul class="ofs-check-list">
+        <li>Files are encrypted inside the local vault.</li>
+        <li>The Vault PIN controls access to the app.</li>
+        <li>Vault keys are protected using Android device security features where supported.</li>
+        <li>Large files are processed in chunks instead of loading the whole file at once.</li>
+        <li>Exported copies are decrypted files outside the vault and should be handled carefully.</li>
+      </ul>
+    </div>
+    <div class="ofs-encrypted-card" aria-hidden="true">
+      <div class="ofs-encrypted-head">
+        <img src="/assets/img/offline-filesecure-icon-clean.png" alt="">
+        <div>
+          <strong>Encrypted vault copy</strong>
+          <span>Rental_Agreement_2026.pdf</span>
+        </div>
+      </div>
+      <div class="ofs-encrypted-status">
+        <span>Stored in local vault</span>
+        <span>Authenticated encryption</span>
+        <span>Protected on device</span>
+      </div>
+      <div class="ofs-encrypted-structure">
+        <div><span>File header</span><strong></strong></div>
+        <div><span>Protected metadata</span><strong></strong></div>
+        <div class="chunk-row"><span>Encrypted chunks</span><i></i><i></i><i></i></div>
+        <div><span>Integrity check</span><strong></strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ofs-section ofs-section-alt compact-panel">
+    <div class="ofs-copy">
+      <p class="kicker">Security and privacy controls</p>
+      <h2>Local protection with clear settings</h2>
+      <p>Offline FileSecure uses a vault PIN, optional biometric unlock, screen protection setting, auto-lock, and visible encryption details. The Vault PIN controls access to the app, while vault files themselves are stored encrypted.</p>
+      <p>The model is local and offline: no account, no cloud upload, no ads, and no tracking.</p>
+      <p>DK App Tools cannot remotely recover vault files for you.</p>
+    </div>
+    <div class="ofs-shot-pair">
+      <figure class="ofs-shot-frame">
+        <img src="/assets/img/apps/offline-filesecure/screenshots/03_security_settings.png" alt="Offline FileSecure security settings screen" loading="lazy">
+        <figcaption>Security settings help control how the vault behaves on the device.</figcaption>
+      </figure>
+      <figure class="ofs-shot-frame">
+        <img src="/assets/img/apps/offline-filesecure/screenshots/17_encryption_details.png" alt="Offline FileSecure encryption details screen" loading="lazy">
+        <figcaption>Encryption details make the local protection model visible.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="ofs-section compact-panel">
+    <div class="ofs-copy">
+      <p class="kicker">Export only when you choose</p>
+      <h2>Protected files leave the vault by explicit export</h2>
+      <p>Files stay protected inside the vault until you choose to export them. Exported files are decrypted copies outside vault protection, so choose export locations carefully.</p>
+    </div>
+    <figure class="ofs-shot-frame">
+      <img src="/assets/img/apps/offline-filesecure/screenshots/07_export_confirmation.png" alt="Offline FileSecure export confirmation screen" loading="lazy">
+      <figcaption>Export creates a decrypted copy outside vault protection.</figcaption>
+    </figure>
+  </section>
+
+  <section class="ofs-info compact-panel">
+    <p class="kicker">Free vs Pro</p>
+    <h2>Same core protection, more room with Pro</h2>
+    <div class="ofs-plan-grid">
+      <article>
+        <span class="chip">Free</span>
+        <strong>Same core local vault protection</strong>
+        <ul>
+          <li>Same core local vault protection</li>
+          <li>Up to 10 protected files</li>
+        </ul>
+      </article>
+      <article>
+        <span class="chip">Pro</span>
+        <strong>More room and convenience</strong>
+        <ul>
+          <li>No file-count limit</li>
+          <li>Batch import</li>
+          <li>Category dashboard</li>
+          <li>Image thumbnail setting</li>
+          <li>Recently added organization</li>
+        </ul>
+      </article>
+    </div>
+    <p class="ofs-note">Pro is more room and convenience, not stronger security.</p>
+  </section>
+
+  <section class="ofs-info ofs-serious compact-panel">
+    <p class="kicker">Important boundaries</p>
+    <h2>What stays your responsibility</h2>
+    <ul class="ofs-check-list">
+      <li>Original files are not automatically deleted.</li>
+      <li>Exported copies are decrypted files outside vault protection.</li>
+      <li>Keep your vault PIN and recovery key safe.</li>
+      <li>DK App Tools cannot remotely recover vault files.</li>
+    </ul>
   </section>
 </section>
