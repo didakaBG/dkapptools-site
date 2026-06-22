@@ -12,8 +12,7 @@ activeNav: articles
     <p>Clear articles about offline-first design, Android file safety, and how DK App Tools thinks about practical software.</p>
   </header>
 
-  {% set publishedArticles = collections.articles | rejectattr("data.published", "sameas", false) %}
-  {% set latest = publishedArticles | first %}
+  {% set latest = collections.publishedArticles | first %}
   {% if latest %}
     <section class="compact-panel articles-featured-panel" aria-labelledby="latest-article-heading">
       <div class="articles-section-head">
@@ -52,7 +51,7 @@ activeNav: articles
     </div>
 
     <div class="article-list-grid">
-      {% for post in publishedArticles %}
+      {% for post in collections.publishedArticles %}
         <a class="article-card article-list-card" href="{{ post.url }}">
           <img src="{{ post.data.cardImage or post.data.image or '/assets/img/article-offline-first.webp' }}" alt="{{ post.data.cardImageAlt or '' }}" loading="lazy">
           <span class="article-card-meta">

@@ -1,4 +1,4 @@
-﻿---
+---
 siteName: DK App Tools
 supportEmail: dkapps.support@proton.me
 ---
@@ -80,24 +80,14 @@ supportEmail: dkapps.support@proton.me
         url: "/articles/",
         keywords: "articles guides privacy local first android tools"
       },
+      {% for article in collections.publishedArticles %}
       {
-        title: "Why offline-first matters",
-        description: "Why offline-first tools can reduce exposure and keep sensitive work closer to the device.",
-        url: "/articles/why-offline-first-matters/",
-        keywords: "offline first privacy local device article"
+        title: {{ article.data.title | dump | safe }},
+        description: {{ article.data.description | dump | safe }},
+        url: {{ article.url | dump | safe }},
+        keywords: {{ ("article articles " + (article.data.category or "") + " " + ((article.data.tags or []) | join(" ")) + " " + (article.data.relatedApp or "")) | dump | safe }}
       },
-      {
-        title: "Offline FileSecure: what a local encrypted vault means",
-        description: "A plain-English explanation of Offline FileSecure's local vault model and what it does, and does not, change about file safety.",
-        url: "/articles/offline-filesecure-local-vault-explained/",
-        keywords: "offline filesecure local encrypted vault android file safety encryption article"
-      },
-      {
-        title: "Keeping private files safer on Android without cloud upload",
-        description: "Practical Android habits for reducing exposure when you want to keep sensitive files local.",
-        url: "/articles/private-files-safer-on-android/",
-        keywords: "android private files safer cloud upload local file safety privacy article"
-      },
+      {% endfor %}
       {
         title: "Support",
         description: "Support information for DK App Tools products.",
@@ -221,4 +211,3 @@ supportEmail: dkapps.support@proton.me
   </script>
 </body>
 </html>
-

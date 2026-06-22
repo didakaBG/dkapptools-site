@@ -50,8 +50,7 @@ activeNav: search
       url: "/articles/",
       keywords: "articles guides privacy local first android tools"
     },
-    {% set publishedArticles = collections.articles | rejectattr("data.published", "sameas", false) %}
-    {% for article in publishedArticles %}
+    {% for article in collections.publishedArticles %}
     {
       title: {{ article.data.title | dump | safe }},
       description: {{ article.data.description | dump | safe }},
