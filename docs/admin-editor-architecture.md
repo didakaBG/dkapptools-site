@@ -1,4 +1,4 @@
-﻿# DK App Tools Admin Panel / Editor Architecture Plan
+# DK App Tools Admin Panel / Editor Architecture Plan
 
 ## Status
 
@@ -296,6 +296,13 @@ Goal:
 - keep the public site controlled and professional
 
 V1 maintenance mode can be static config based.
+
+Initial foundation config:
+
+- file: `src/_data/site.json`
+- `maintenanceMode: false` by default
+- `maintenanceMessage` stores the public update message
+- no public layout behavior is enabled yet
 
 Future admin maintenance toggle can update the config through a safe GitHub-backed workflow.
 
