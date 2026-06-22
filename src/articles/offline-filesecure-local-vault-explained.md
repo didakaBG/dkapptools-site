@@ -11,6 +11,9 @@ tags:
   - Android
 relatedApp: Offline FileSecure
 image: /assets/img/article-local-vaults.webp
+published: true
+cardImage: /assets/img/article-local-vaults.webp
+cardImageAlt: "Abstract local encrypted vault card illustration"
 permalink: /articles/offline-filesecure-local-vault-explained/index.html
 activeNav: articles
 ---

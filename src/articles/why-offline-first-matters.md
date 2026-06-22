@@ -11,6 +11,9 @@ tags:
   - Local tools
 relatedApp: Offline FileSecure
 image: /assets/img/article-offline-first.webp
+published: true
+cardImage: /assets/img/article-offline-first.webp
+cardImageAlt: "Abstract offline-first security card illustration"
 permalink: /articles/why-offline-first-matters/index.html
 activeNav: articles
 ---

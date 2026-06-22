@@ -11,6 +11,9 @@ tags:
   - Offline-first
 relatedApp: Offline FileSecure
 image: /assets/img/article-android-privacy.webp
+published: true
+cardImage: /assets/img/article-android-privacy.webp
+cardImageAlt: "Abstract Android privacy card illustration"
 permalink: /articles/private-files-safer-on-android/index.html
 activeNav: articles
 ---
