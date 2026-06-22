@@ -1,41 +1,52 @@
 ---
 layout: base.njk
 title: Why offline-first security still matters
-description: A short note about local-first privacy tools.
+description: Why offline-first tools can reduce unnecessary exposure and make private workflows easier to reason about.
 date: 2026-06-18
+dateLabel: June 18, 2026
 category: Security
+tags:
+  - Offline-first
+  - Privacy
+  - Local tools
+relatedApp: Offline FileSecure
+image: /assets/img/article-offline-first.webp
 permalink: /articles/why-offline-first-matters/index.html
 activeNav: articles
 ---
 <section class="article-page">
-  <aside class="article-aside">
-    <div class="mini-panel">
-      <p class="kicker">On this page</p>
-      <a href="#intro">Introduction</a>
-      <a href="#case">The case</a>
-      <a href="#threats">Threats</a>
-      <a href="#takeaways">Takeaways</a>
-    </div>
-  </aside>
-
   <article class="article-reader surface-panel">
-    <span class="chip">Security</span>
-    <h1 id="intro">Why offline-first security still matters</h1>
-    <p class="article-meta">5 min read</p>
-    <img class="article-hero-img" src="/assets/img/article-offline-first.webp" alt="" loading="eager">
+    <header class="article-note-header">
+      <span class="chip">{{ category }}</span>
+      <h1 id="intro">Why offline-first security still matters</h1>
+      <p class="article-summary">{{ description }}</p>
+      <p class="article-meta">{{ dateLabel }} &middot; 3 min read &middot; {{ relatedApp }}</p>
+    </header>
 
-    <p>We live in a world that never stops syncing. Messages, files, photos, and settings often move across services before users notice where they went.</p>
-    <p>Offline-first tools offer a different starting point: keep sensitive work close to the device first, then share only when the user chooses.</p>
+    <p>Useful privacy tools often start by asking a plain question: does this file need to leave the device at all?</p>
 
-    <h2 id="case">The case for offline-first</h2>
-    <p>Local-first design reduces unnecessary exposure. It does not make software magical, but it removes many account, server, and tracking assumptions from the product.</p>
+    <section class="article-note-card">
+      <h2>Key idea</h2>
+      <p>Offline-first software starts with a narrower default: sensitive work stays on the device unless the user deliberately sends it somewhere else.</p>
+    </section>
 
-    <blockquote>Security is not only about stronger walls. It is also about deciding when a gate needs to exist.</blockquote>
+    <h2 id="case">Why the default matters</h2>
+    <p>Many modern tools sync files, settings, and activity because that makes cross-device use convenient. Convenience is useful, but it can also create extra copies, account dependencies, server exposure, and recovery paths the user did not actively choose.</p>
+    <p>A local-first workflow is easier to reason about. The file begins on the device. Sharing, exporting, or uploading becomes a visible action instead of a quiet background assumption.</p>
 
-    <h2 id="threats">Threats in a connected world</h2>
-    <p>Connected services can be useful, but they also create more surface area: accounts, shared servers, provider outages, and background data collection.</p>
+    <section class="article-card-grid">
+      <div class="article-note-card">
+        <h2>What this means</h2>
+        <p>Fewer services need access to the work by default, and the user has a clearer moment to decide when a file should leave the device.</p>
+      </div>
+      <div class="article-note-card">
+        <h2>What it does not mean</h2>
+        <p>Offline-first is not a guarantee of safety. A compromised phone, weak screen lock, or careless export can still expose private files.</p>
+      </div>
+    </section>
 
-    <h2 id="takeaways">Key takeaways</h2>
-    <p>For private workflows, simple local tools can feel more honest and easier to understand than always-online platforms.</p>
+    <h2 id="takeaways">Good habits</h2>
+    <p>Use local tools when a file does not need collaboration or backup through a cloud account. Keep the phone updated, use a strong device lock, and treat every export as a new copy that needs its own care.</p>
+    <p>For private workflows, the benefit is clarity: fewer automatic paths, fewer surprises, and more deliberate decisions.</p>
   </article>
 </section>

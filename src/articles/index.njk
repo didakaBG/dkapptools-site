@@ -1,42 +1,88 @@
 ---
 layout: base.njk
 title: Articles | DK App Tools
-description: Articles and updates from DK App Tools.
+description: Practical DK App Tools articles about privacy, offline-first workflows, Android file safety, and local tools.
 permalink: /articles/index.html
 activeNav: articles
 ---
-<section class="page-shell">
-  <header class="page-hero surface-panel">
+<section class="page-shell articles-hub">
+  <header class="page-hero surface-panel articles-hero">
     <p class="kicker">Articles</p>
-    <h1>Guides and practical notes.</h1>
-    <p>Short articles about privacy, local-first workflows, Android habits, and useful tools.</p>
+    <h1>Practical notes for local, privacy-conscious tools.</h1>
+    <p>Clear articles about offline-first design, Android file safety, and how DK App Tools thinks about practical software.</p>
   </header>
 
-  <section class="compact-panel">
+  {% set latest = collections.articles | first %}
+  {% if latest %}
+    <section class="compact-panel articles-featured-panel" aria-labelledby="latest-article-heading">
+      <div class="articles-section-head">
+        <p class="kicker">Latest</p>
+        <h2 id="latest-article-heading">Featured article</h2>
+      </div>
+
+      <a class="featured-article-card" href="{{ latest.url }}">
+        <span class="article-card-media">
+          <img src="{{ latest.data.image or '/assets/img/article-offline-first.webp' }}" alt="" loading="eager">
+        </span>
+        <span class="featured-article-copy">
+          <span class="article-card-meta">
+            <span class="chip">{{ latest.data.category or "Article" }}</span>
+            <span>{{ latest.data.dateLabel }}</span>
+          </span>
+          <strong>{{ latest.data.title }}</strong>
+          <span>{{ latest.data.description }}</span>
+          {% if latest.data.tags %}
+            <span class="article-topic-row" aria-label="Topics">
+              {% for tag in latest.data.tags %}
+                <small>{{ tag }}</small>
+              {% endfor %}
+            </span>
+          {% endif %}
+          <em>Read article</em>
+        </span>
+      </a>
+    </section>
+  {% endif %}
+
+  <section class="compact-panel articles-list-panel" aria-labelledby="article-list-heading">
+    <div class="articles-section-head">
+      <p class="kicker">Library</p>
+      <h2 id="article-list-heading">Published articles</h2>
+    </div>
+
     <div class="article-list-grid">
       {% for post in collections.articles %}
         <a class="article-card article-list-card" href="{{ post.url }}">
-          <img src="/assets/img/article-offline-first.webp" alt="" loading="lazy">
-          <span class="chip">{{ post.data.category or "Article" }}</span>
+          <img src="{{ post.data.image or '/assets/img/article-offline-first.webp' }}" alt="" loading="lazy">
+          <span class="article-card-meta">
+            <span class="chip">{{ post.data.category or "Article" }}</span>
+            <span>{{ post.data.dateLabel }}</span>
+          </span>
           <strong>{{ post.data.title }}</strong>
           <p>{{ post.data.description }}</p>
+          {% if post.data.tags %}
+            <span class="article-topic-row" aria-label="Topics">
+              {% for tag in post.data.tags %}
+                <small>{{ tag }}</small>
+              {% endfor %}
+            </span>
+          {% endif %}
           <em>Read article</em>
         </a>
       {% endfor %}
-      <a class="article-card article-list-card" href="/articles/">
-        <img src="/assets/img/article-local-vaults.webp" alt="" loading="lazy">
-        <span class="chip">Privacy</span>
-        <strong>How local file vaults protect privacy</strong>
-        <p>Local storage keeps your files yours.</p>
-        <em>Coming soon</em>
-      </a>
-      <a class="article-card article-list-card" href="/articles/">
-        <img src="/assets/img/article-android-privacy.webp" alt="" loading="lazy">
-        <span class="chip">Android</span>
-        <strong>Android privacy habits that actually help</strong>
-        <p>Small settings changes can make a real difference.</p>
-        <em>Coming soon</em>
-      </a>
+    </div>
+  </section>
+
+  <section class="compact-panel articles-topics-panel" aria-labelledby="article-topics-heading">
+    <div class="articles-section-head">
+      <p class="kicker">Topics</p>
+      <h2 id="article-topics-heading">What this section covers</h2>
+    </div>
+    <div class="article-topic-grid">
+      <span>Offline-first design</span>
+      <span>Android file safety</span>
+      <span>Local encrypted vaults</span>
+      <span>Privacy-conscious workflows</span>
     </div>
   </section>
 </section>
