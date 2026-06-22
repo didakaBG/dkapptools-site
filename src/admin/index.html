@@ -1,12 +1,457 @@
-﻿<!doctype html>
-<html>
+<!doctype html>
+<html lang="bg">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DK App Tools Admin</title>
+  <title>Админ панел | DK App Tools</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d0f12;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-strong: rgba(255, 255, 255, 0.1);
+      --border: rgba(255, 255, 255, 0.14);
+      --text: #f4efe6;
+      --muted: #b9afa2;
+      --gold: #d8aa55;
+      --gold-soft: rgba(216, 170, 85, 0.14);
+      --danger: #ffb4a8;
+      --ok: #b8f0c2;
+      --shadow: rgba(0, 0, 0, 0.42);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(216, 170, 85, 0.16), transparent 34rem),
+        radial-gradient(circle at 80% 12%, rgba(255, 255, 255, 0.08), transparent 28rem),
+        linear-gradient(135deg, #0b0d10 0%, #11161c 44%, #0d0f12 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .admin-shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 48px;
+    }
+
+    .admin-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(216, 170, 85, 0.42);
+      border-radius: 14px;
+      color: var(--gold);
+      background: linear-gradient(135deg, rgba(216, 170, 85, 0.18), rgba(255, 255, 255, 0.04));
+      box-shadow: 0 18px 40px var(--shadow);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-subtitle {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid rgba(216, 170, 85, 0.3);
+      border-radius: 999px;
+      background: var(--gold-soft);
+      color: var(--gold);
+      font-size: 0.88rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-main {
+      padding: clamp(22px, 4vw, 38px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 16px;
+      padding: 7px 10px;
+      border: 1px solid rgba(216, 170, 85, 0.28);
+      border-radius: 999px;
+      background: rgba(216, 170, 85, 0.1);
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+    }
+
+    .hero-copy {
+      margin: 18px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.6vw, 1.16rem);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    .button-primary {
+      color: #15110a;
+      background: linear-gradient(135deg, #f0c978, #c9953b);
+      box-shadow: 0 18px 40px rgba(216, 170, 85, 0.18);
+    }
+
+    .button-secondary {
+      border-color: var(--border);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .button-disabled {
+      border-color: rgba(255, 255, 255, 0.1);
+      color: rgba(244, 239, 230, 0.45);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 14px;
+      padding: 18px;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: rgba(216, 170, 85, 0.16);
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .flow-step h2,
+    .flow-step h3,
+    .mini-card h3,
+    .editor-card h2 {
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+
+    .flow-step p,
+    .mini-card p,
+    .editor-card p,
+    .setting-card p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .mini-card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .mini-icon {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 14px;
+      border-radius: 14px;
+      background: rgba(216, 170, 85, 0.12);
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .editor-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
+      gap: 20px;
+    }
+
+    .editor-card,
+    .setting-card {
+      padding: 22px;
+    }
+
+    .field-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .field-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+    }
+
+    .field-row strong {
+      color: var(--text);
+    }
+
+    .draft-badge,
+    .safe-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 0 9px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .draft-badge {
+      color: var(--gold);
+      background: rgba(216, 170, 85, 0.12);
+    }
+
+    .safe-badge {
+      color: var(--ok);
+      background: rgba(184, 240, 194, 0.1);
+    }
+
+    .note {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 180, 168, 0.22);
+      border-radius: 16px;
+      color: var(--danger);
+      background: rgba(255, 180, 168, 0.08);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .editor-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .section-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .admin-shell {
+        width: min(100% - 22px, 1180px);
+        padding-top: 20px;
+      }
+
+      .admin-topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>DK App Tools Admin placeholder</h1>
-  <p>Decap CMS can be wired here later for article editing.</p>
+  <main class="admin-shell">
+    <header class="admin-topbar">
+      <div class="brand">
+        <div class="brand-mark">DK</div>
+        <div>
+          <p class="brand-title">DK App Tools</p>
+          <p class="brand-subtitle">Вътрешен админ панел</p>
+        </div>
+      </div>
+      <span class="status-pill">Прототип на панела</span>
+    </header>
+
+    <section class="hero">
+      <div class="panel hero-main">
+        <span class="eyebrow">Чернова → Преглед → Публикуване</span>
+        <h1>Пишеш, преглеждаш и чак тогава публикуваш.</h1>
+        <p class="hero-copy">Бъдещият автор трябва да работи тук на български: създава статия, добавя снимки и блокове, пуска преглед и само при одобрение публикува.</p>
+        <div class="actions">
+          <span class="button button-primary">Нова статия</span>
+          <span class="button button-secondary">Преглед</span>
+          <span class="button button-disabled">Публикувай</span>
+        </div>
+      </div>
+
+      <aside class="panel hero-side" aria-label="Работен поток">
+        <article class="flow-step">
+          <div class="step-number">1</div>
+          <div>
+            <h2>Чернова</h2>
+            <p>Новата статия започва скрита от публичния сайт.</p>
+          </div>
+        </article>
+        <article class="flow-step">
+          <div class="step-number">2</div>
+          <div>
+            <h2>Преглед</h2>
+            <p>Виждаш картата, страницата и снимките преди live.</p>
+          </div>
+        </article>
+        <article class="flow-step">
+          <div class="step-number">3</div>
+          <div>
+            <h2>Публикуване</h2>
+            <p>Само бутонът Публикувай ще праща съдържанието live.</p>
+          </div>
+        </article>
+      </aside>
+    </section>
+
+    <section class="section-grid" aria-label="Основни зони">
+      <article class="mini-card">
+        <div class="mini-icon">✎</div>
+        <h3>Статии</h3>
+        <p>Нови теми, чернови и публикувани материали.</p>
+      </article>
+      <article class="mini-card">
+        <div class="mini-icon">▣</div>
+        <h3>Блокове</h3>
+        <p>Текст, снимки, заглавия, бележки и списъци.</p>
+      </article>
+      <article class="mini-card">
+        <div class="mini-icon">◉</div>
+        <h3>Медия</h3>
+        <p>Снимки за карти и снимки в самите статии.</p>
+      </article>
+      <article class="mini-card">
+        <div class="mini-icon">⛭</div>
+        <h3>Настройки</h3>
+        <p>Поддръжка, статус и бъдещи админ опции.</p>
+      </article>
+    </section>
+
+    <section class="editor-layout">
+      <article class="panel editor-card">
+        <span class="draft-badge">Чернова по подразбиране</span>
+        <h2>Бъдещ редактор на статии</h2>
+        <p>Това е първи UI shell. Реалният едитор ще пише чернови, ще вади преглед и чак при Publish ще отива live.</p>
+
+        <div class="field-list">
+          <div class="field-row"><strong>Заглавие</strong><span>Задължително</span></div>
+          <div class="field-row"><strong>Описание</strong><span>За картата и search</span></div>
+          <div class="field-row"><strong>Снимка за карта</strong><span>800x450+</span></div>
+          <div class="field-row"><strong>Текст и снимки</strong><span>Контролирани блокове</span></div>
+          <div class="field-row"><strong>Преглед</strong><span>Преди публикуване</span></div>
+        </div>
+      </article>
+
+      <aside class="panel setting-card">
+        <span class="safe-badge">Безопасен prototype</span>
+        <h2>Режим поддръжка</h2>
+        <p>Тук по-късно ще има бутон за включване и изключване на maintenance mode.</p>
+        <div class="field-list">
+          <div class="field-row"><strong>maintenanceMode</strong><span>false</span></div>
+          <div class="field-row"><strong>Съобщение</strong><span>От site.json</span></div>
+        </div>
+        <p class="note">Този UI още не прави записи. Без GitHub token в публичен JavaScript.</p>
+      </aside>
+    </section>
+  </main>
 </body>
 </html>
