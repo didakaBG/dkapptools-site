@@ -334,6 +334,37 @@ Initial foundation config:
 
 Future admin maintenance toggle can update the config through a safe GitHub-backed workflow.
 
+## Admin Access Protection
+
+The final admin/editor must not be just a public `/admin/` page.
+
+Required direction:
+
+- admin access must require authentication or access protection
+- public visitors must not be able to create, edit, save, or publish content
+- write credentials must never be exposed in public JavaScript
+- GitHub tokens or deploy/write secrets must stay server-side only
+- publish actions must go through a protected backend/server-side function or equivalent secure workflow
+- the Bulgarian admin UI remains the writer-facing interface after login
+- the content writer should only see actions such as draft, preview, edit, and publish
+- under-the-hood Git/deploy work must stay hidden from the writer
+
+Safe temporary rule:
+
+- a static `/admin/` placeholder may exist only if it has no write ability
+- do not publish a real editor UI until access protection and safe write handling are designed
+
+Preferred future protection options:
+
+- protected admin route
+- protected admin subdomain
+- Cloudflare Access / Zero Trust style protection
+- server-side function or backend that performs write operations securely
+
+Important:
+
+The admin panel can be visually designed before the backend exists, but real write/publish behavior must not be enabled without authentication and server-side credential protection.
+
 ## Security Notes
 
 The public static website should not expose private write tokens.
