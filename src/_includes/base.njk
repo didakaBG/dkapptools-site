@@ -28,11 +28,17 @@ supportEmail: dkapps.support@proton.me
 
       <div class="collapse navbar-collapse nav-collapse" id="mainNav">
         <ul class="nav-list">
+          <li><a class="{% if activeNav == 'home' %}is-active{% endif %}" href="/"{% if activeNav == 'home' %} aria-current="page"{% endif %}>Home</a></li>
           <li><a class="{% if activeNav == 'apps' %}is-active{% endif %}" href="/apps/"{% if activeNav == 'apps' %} aria-current="page"{% endif %}>Apps</a></li>
           <li><a class="{% if activeNav == 'articles' %}is-active{% endif %}" href="/articles/"{% if activeNav == 'articles' %} aria-current="page"{% endif %}>Articles</a></li>
           <li><a class="{% if activeNav == 'support' %}is-active{% endif %}" href="/support/"{% if activeNav == 'support' %} aria-current="page"{% endif %}>Support</a></li>
           <li><a class="{% if activeNav == 'privacy' %}is-active{% endif %}" href="/privacy/"{% if activeNav == 'privacy' %} aria-current="page"{% endif %}>Privacy</a></li>
         </ul>
+        <form class="header-search" action="/search/" role="search">
+          <label for="header-search-input">Search</label>
+          <input id="header-search-input" name="q" type="search" placeholder="Search site..." autocomplete="off" spellcheck="false" aria-controls="header-search-results" aria-expanded="false">
+          <div class="header-search-results" id="header-search-results"></div>
+        </form>
       </div>
     </nav>
   </header>
@@ -47,6 +53,160 @@ supportEmail: dkapps.support@proton.me
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  (() => {
+    const pages = [
+      {
+        title: "Home",
+        description: "DK App Tools builds practical, privacy-conscious software and useful app guides.",
+        url: "/",
+        keywords: "home dk app tools practical software privacy conscious tools guides"
+      },
+      {
+        title: "Apps",
+        description: "Explore DK App Tools apps and product information.",
+        url: "/apps/",
+        keywords: "apps catalog products android tools"
+      },
+      {
+        title: "Offline FileSecure",
+        description: "A local, offline Android file vault for protected copies of selected files.",
+        url: "/apps/offline-filesecure/",
+        keywords: "offline filesecure android file vault encryption local privacy"
+      },
+      {
+        title: "Articles",
+        description: "Guides and practical notes about privacy, local-first workflows, Android habits, and useful tools.",
+        url: "/articles/",
+        keywords: "articles guides privacy local first android tools"
+      },
+      {
+        title: "Why offline-first matters",
+        description: "Why offline-first tools can reduce exposure and keep sensitive work closer to the device.",
+        url: "/articles/why-offline-first-matters/",
+        keywords: "offline first privacy local device article"
+      },
+      {
+        title: "Support",
+        description: "Support information for DK App Tools products.",
+        url: "/support/",
+        keywords: "support help email questions"
+      },
+      {
+        title: "Privacy policies",
+        description: "DK App Tools privacy policies for the website and individual apps.",
+        url: "/privacy/",
+        keywords: "privacy policies website app data"
+      },
+      {
+        title: "Website privacy and cookies",
+        description: "How dkapptools.com handles website visits, cookies, search, admin access, analytics, and email contact.",
+        url: "/privacy/website/",
+        keywords: "website privacy cookies cloudflare search admin analytics email"
+      },
+      {
+        title: "Offline FileSecure privacy policy",
+        description: "Privacy policy for the Offline FileSecure Android app.",
+        url: "/privacy/offline-filesecure/",
+        keywords: "offline filesecure privacy policy android vault encryption"
+      }
+    ];
+
+    const form = document.querySelector(".header-search");
+    const input = document.getElementById("header-search-input");
+    const results = document.getElementById("header-search-results");
+
+    if (!form || !input || !results) {
+      return;
+    }
+
+    function normalize(value) {
+      return value.trim().toLowerCase();
+    }
+
+    function pageMatches(page, terms) {
+      const haystack = `${page.title} ${page.description} ${page.keywords} ${page.url}`.toLowerCase();
+      return terms.every((term) => haystack.includes(term));
+    }
+
+    function hideResults() {
+      results.hidden = true;
+      results.innerHTML = "";
+      input.setAttribute("aria-expanded", "false");
+    }
+
+    function resetSearch() {
+      input.value = "";
+      hideResults();
+    }
+
+    function render() {
+      const query = normalize(input.value);
+      const terms = query.split(/\s+/).filter(Boolean);
+      results.innerHTML = "";
+
+      if (!terms.length) {
+        hideResults();
+        return;
+      }
+
+      const matches = pages.filter((page) => pageMatches(page, terms)).slice(0, 5);
+      input.setAttribute("aria-expanded", "true");
+      results.hidden = false;
+
+      if (!matches.length) {
+        const empty = document.createElement("p");
+        empty.textContent = "No matching pages found.";
+        results.appendChild(empty);
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+      matches.forEach((page) => {
+        const link = document.createElement("a");
+        link.href = page.url;
+
+        const title = document.createElement("strong");
+        title.textContent = page.title;
+
+        const description = document.createElement("span");
+        description.textContent = page.description;
+
+        link.append(title, description);
+        fragment.appendChild(link);
+      });
+
+      results.appendChild(fragment);
+    }
+
+    input.addEventListener("input", render);
+    input.addEventListener("focus", render);
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        resetSearch();
+        input.blur();
+      }
+    });
+    document.addEventListener("click", (event) => {
+      if (!form.contains(event.target)) {
+        hideResults();
+      }
+    });
+    form.addEventListener("submit", (event) => {
+      const query = input.value.trim();
+      if (!query) {
+        event.preventDefault();
+        hideResults();
+      }
+    });
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", resetSearch, { once: true });
+    } else {
+      resetSearch();
+    }
+  })();
+  </script>
 </body>
 </html>
 

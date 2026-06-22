@@ -1,0 +1,147 @@
+---
+layout: base.njk
+title: Search | DK App Tools
+description: Search public DK App Tools pages, app information, articles, support, and privacy pages.
+permalink: /search/index.html
+activeNav: search
+---
+<section class="page-shell search-page">
+  <header class="page-hero surface-panel">
+    <p class="kicker">Search</p>
+    <h1>Search DK App Tools</h1>
+    <p>Search public DK App Tools pages, app information, articles, support, and privacy pages.</p>
+  </header>
+
+  <section class="compact-panel search-panel" aria-labelledby="site-search-heading">
+    <h2 id="site-search-heading">Site search</h2>
+    <label class="search-field" for="site-search-input">
+      <span>Search public pages</span>
+      <input id="site-search-input" type="search" placeholder="Search apps, articles, support, privacy..." autocomplete="off">
+    </label>
+    <div class="search-results-meta" id="search-results-meta" aria-live="polite"></div>
+    <div class="search-results" id="search-results"></div>
+  </section>
+</section>
+
+<script>
+(() => {
+  const pages = [
+    {
+      title: "Home",
+      description: "DK App Tools builds practical, privacy-conscious software and useful app guides.",
+      url: "/",
+      keywords: "home dk app tools practical software privacy conscious tools guides"
+    },
+    {
+      title: "Apps",
+      description: "Explore DK App Tools apps and product information.",
+      url: "/apps/",
+      keywords: "apps catalog products android tools"
+    },
+    {
+      title: "Offline FileSecure",
+      description: "A local, offline Android file vault for protected copies of selected files.",
+      url: "/apps/offline-filesecure/",
+      keywords: "offline filesecure android file vault encryption local privacy"
+    },
+    {
+      title: "Articles",
+      description: "Guides and practical notes about privacy, local-first workflows, Android habits, and useful tools.",
+      url: "/articles/",
+      keywords: "articles guides privacy local first android tools"
+    },
+    {
+      title: "Why offline-first matters",
+      description: "Why offline-first tools can reduce exposure and keep sensitive work closer to the device.",
+      url: "/articles/why-offline-first-matters/",
+      keywords: "offline first privacy local device article"
+    },
+    {
+      title: "Support",
+      description: "Support information for DK App Tools products.",
+      url: "/support/",
+      keywords: "support help email questions"
+    },
+    {
+      title: "Privacy policies",
+      description: "DK App Tools privacy policies for the website and individual apps.",
+      url: "/privacy/",
+      keywords: "privacy policies website app data"
+    },
+    {
+      title: "Website privacy and cookies",
+      description: "How dkapptools.com handles website visits, cookies, search, admin access, analytics, and email contact.",
+      url: "/privacy/website/",
+      keywords: "website privacy cookies cloudflare search admin analytics email"
+    },
+    {
+      title: "Offline FileSecure privacy policy",
+      description: "Privacy policy for the Offline FileSecure Android app.",
+      url: "/privacy/offline-filesecure/",
+      keywords: "offline filesecure privacy policy android vault encryption"
+    }
+  ];
+
+  const input = document.getElementById("site-search-input");
+  const results = document.getElementById("search-results");
+  const meta = document.getElementById("search-results-meta");
+
+  function normalize(value) {
+    return value.trim().toLowerCase();
+  }
+
+  function pageMatches(page, terms) {
+    const haystack = `${page.title} ${page.description} ${page.keywords} ${page.url}`.toLowerCase();
+    return terms.every((term) => haystack.includes(term));
+  }
+
+  function render(matches, hasQuery) {
+    results.innerHTML = "";
+
+    if (!matches.length) {
+      meta.textContent = hasQuery ? "No matching pages found." : "Start typing to search public pages.";
+      return;
+    }
+
+    meta.textContent = `${matches.length} matching ${matches.length === 1 ? "page" : "pages"}`;
+
+    const fragment = document.createDocumentFragment();
+    matches.forEach((page) => {
+      const link = document.createElement("a");
+      link.className = "search-result-card";
+      link.href = page.url;
+
+      const title = document.createElement("strong");
+      title.textContent = page.title;
+
+      const description = document.createElement("span");
+      description.textContent = page.description;
+
+      const url = document.createElement("em");
+      url.textContent = page.url;
+
+      link.append(title, description, url);
+      fragment.appendChild(link);
+    });
+
+    results.appendChild(fragment);
+  }
+
+  function runSearch() {
+    const query = normalize(input.value);
+    const terms = query.split(/\s+/).filter(Boolean);
+    const matches = terms.length ? pages.filter((page) => pageMatches(page, terms)) : pages;
+    render(matches, terms.length > 0);
+  }
+
+  input.addEventListener("input", runSearch);
+
+  const initialQuery = new URLSearchParams(window.location.search).get("q");
+  if (initialQuery) {
+    input.value = initialQuery;
+    runSearch();
+  } else {
+    render(pages, false);
+  }
+})();
+</script>
