@@ -160,6 +160,22 @@ Avoid:
 
 If there is no good image, the article should work without one.
 
+## Future Admin Panel Language
+
+The future browser-based admin panel should be in Bulgarian by default.
+
+The content writer should see Bulgarian labels and actions such as:
+
+- Нова статия
+- Запази чернова
+- Преглед
+- Публикувай
+- Качи снимка
+- Добави блок
+- Върни за редакция
+
+The writer should not need to understand Git, commits, terminal commands, builds, or deployment steps.
+
 ## Future Admin/Editor Workflow
 
 The future editor should follow this model:

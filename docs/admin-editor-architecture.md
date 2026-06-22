@@ -226,6 +226,34 @@ Preferred long-term direction:
 - custom admin panel
 - but only after article schema, image rules, draft rules, and maintenance rules are stable
 
+## Admin Panel Language
+
+The future admin panel/editor should use Bulgarian as the default interface language.
+
+Reason:
+
+- the admin panel is an internal working tool
+- the primary owner/editor workflow should be comfortable
+- content writers should not need to work in English if Bulgarian is easier
+- public website language and admin interface language are separate decisions
+
+Expected Bulgarian admin labels include:
+
+- Нова статия
+- Заглавие
+- Описание
+- Категория
+- Етикети
+- Снимка за карта
+- Добави текст
+- Добави снимка
+- Преглед
+- Запази чернова
+- Публикувай
+- Върни за редакция
+
+The public website can remain English while the admin/editor interface is Bulgarian.
+
 ## Planned Article Editor Fields
 
 The future article editor should support:
