@@ -644,32 +644,114 @@ eleventyExcludeFromCollections: true
       </aside>
 
       <div class="content-stack">
+        <div class="admin-tab-panel is-active" data-admin-panel="articles">
+          <section class="split">
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Статии</h2>
+                </div>
+              </div>
 
-                        <div class="admin-tab-panel is-active" data-admin-panel="articles">
-          <section class="card section">
-            <div class="section-head">
-              <div>
-                <h2>Статии</h2>
+              <div class="row-list">
+                {% for article in collections.publishedArticles %}
+                  {% set adminArticle = adminArticles[article.fileSlug] %}
+                  <div class="row">
+                    <div>
+                      <div class="row-title">{{ article.data.title }}</div>
+                      <div class="row-meta">
+                        {{ article.url }}
+                        {% if adminArticle %}
+                          · Последна редакция: {{ adminArticle.lastEditedLabel }}
+                          · Публикувана: {{ adminArticle.lastPublishedLabel }}
+                        {% endif %}
+                      </div>
+                    </div>
+                    <div class="row-actions">
+                      <button
+                        class="button secondary"
+                        type="button"
+                        data-article-select
+                        data-article-title="{{ article.data.title | escape }}"
+                        data-article-url="{{ article.url | escape }}"
+                        data-article-category="{{ article.data.category | escape }}"
+                        data-article-description="{{ article.data.description | escape }}"
+                        data-article-card-image="{{ (article.data.cardImage or article.data.image or '') | escape }}"
+                        data-article-card-alt="{{ (article.data.cardImageAlt or '') | escape }}"
+                        data-article-edited="{% if adminArticle %}{{ adminArticle.lastEditedLabel | escape }}{% endif %}"
+                        data-article-published="{% if adminArticle %}{{ adminArticle.lastPublishedLabel | escape }}{% endif %}"
+                      >Детайли</button>
+                      <a class="button secondary" href="https://dkapptools.com{{ article.url }}" target="_blank" rel="noopener">Отвори</a>
+                    </div>
+                  </div>
+                {% endfor %}
               </div>
             </div>
 
-            <div class="row-list">
-              {% for article in collections.publishedArticles %}
-                {% set adminArticle = adminArticles[article.fileSlug] %}
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Данни за статия</h2>
+                </div>
+              </div>
+
+              <div class="row-list">
                 <div class="row">
                   <div>
-                    <div class="row-title">{{ article.data.title }}</div>
-                    <div class="row-meta">
-                      {{ article.url }}
-                      {% if adminArticle %}
-                        · Последна редакция: {{ adminArticle.lastEditedLabel }}
-                        · Публикувана: {{ adminArticle.lastPublishedLabel }}
-                      {% endif %}
-                    </div>
+                    <div class="row-title">Заглавие</div>
+                    <div class="row-meta" data-article-detail-title>Избери статия от списъка.</div>
                   </div>
-                  <a class="button secondary" href="https://dkapptools.com{{ article.url }}" target="_blank" rel="noopener">Отвори</a>
                 </div>
-              {% endfor %}
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Линк на статията</div>
+                    <div class="row-meta" data-article-detail-url>—</div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Категория</div>
+                    <div class="row-meta" data-article-detail-category>—</div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Кратко описание</div>
+                    <div class="row-meta" data-article-detail-description>—</div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Снимка за карта</div>
+                    <div class="row-meta" data-article-detail-image>—</div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Описание на снимката</div>
+                    <div class="row-meta" data-article-detail-alt>—</div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Последна редакция</div>
+                    <div class="row-meta" data-article-detail-edited>—</div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Публикувана</div>
+                    <div class="row-meta" data-article-detail-published>—</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </div>
@@ -1236,6 +1318,44 @@ eleventyExcludeFromCollections: true
         });
       });
     });
+
+    const articleDetailFields = {
+      title: document.querySelector("[data-article-detail-title]"),
+      url: document.querySelector("[data-article-detail-url]"),
+      category: document.querySelector("[data-article-detail-category]"),
+      description: document.querySelector("[data-article-detail-description]"),
+      image: document.querySelector("[data-article-detail-image]"),
+      alt: document.querySelector("[data-article-detail-alt]"),
+      edited: document.querySelector("[data-article-detail-edited]"),
+      published: document.querySelector("[data-article-detail-published]")
+    };
+
+    function setArticleDetail(field, value) {
+      if (!field) return;
+      field.textContent = value && value.trim() ? value : "—";
+    }
+
+    document.querySelectorAll("[data-article-select]").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll("[data-article-select]").forEach((item) => {
+          item.setAttribute("aria-pressed", item === button ? "true" : "false");
+        });
+
+        setArticleDetail(articleDetailFields.title, button.dataset.articleTitle);
+        setArticleDetail(articleDetailFields.url, button.dataset.articleUrl);
+        setArticleDetail(articleDetailFields.category, button.dataset.articleCategory);
+        setArticleDetail(articleDetailFields.description, button.dataset.articleDescription);
+        setArticleDetail(articleDetailFields.image, button.dataset.articleCardImage);
+        setArticleDetail(articleDetailFields.alt, button.dataset.articleCardAlt);
+        setArticleDetail(articleDetailFields.edited, button.dataset.articleEdited);
+        setArticleDetail(articleDetailFields.published, button.dataset.articlePublished);
+      });
+    });
+
+    const firstArticleButton = document.querySelector("[data-article-select]");
+    if (firstArticleButton) {
+      firstArticleButton.click();
+    }
   </script>
 </body>
 </html>
