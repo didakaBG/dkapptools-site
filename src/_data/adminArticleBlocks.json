@@ -1,0 +1,173 @@
+{
+    "offline-filesecure-local-vault-explained":  [
+                                                     {
+                                                         "kind":  "paragraph",
+                                                         "title":  "",
+                                                         "text":  "Offline FileSecure is built around a simple idea: private files should not need to be uploaded to a server just to be organized and protected on your phone."
+                                                     },
+                                                     {
+                                                         "kind":  "note",
+                                                         "title":  "Key idea",
+                                                         "text":  "A local vault is an intentional space on the device. You choose files through Android\u0027s file picker, the app creates protected copies in app-controlled storage, and the vault stays local by design."
+                                                     },
+                                                     {
+                                                         "kind":  "card",
+                                                         "title":  "What this means",
+                                                         "text":  "The vault is not a cloud account. It does not sync files between devices or send documents to DK App Tools. The protected copies live on your Android device."
+                                                     },
+                                                     {
+                                                         "kind":  "card",
+                                                         "title":  "What encryption does",
+                                                         "text":  "Vault files are stored as encrypted protected copies. Export is the point where you choose to create a usable copy outside the vault."
+                                                     },
+                                                     {
+                                                         "kind":  "heading",
+                                                         "title":  "What it does not promise",
+                                                         "text":  ""
+                                                     },
+                                                     {
+                                                         "kind":  "paragraph",
+                                                         "title":  "",
+                                                         "text":  "A local vault cannot make a compromised device safe. It cannot control an exported copy after you move that copy into downloads, messages, email, or cloud backup. It also does not replace basic device security."
+                                                     },
+                                                     {
+                                                         "kind":  "paragraph",
+                                                         "title":  "",
+                                                         "text":  "Offline FileSecure is local and offline by design, but the phone still matters. Use a strong screen lock, keep Android updated, and be careful about apps with broad file access."
+                                                     },
+                                                     {
+                                                         "kind":  "heading",
+                                                         "title":  "Good habits around vault files",
+                                                         "text":  ""
+                                                     },
+                                                     {
+                                                         "kind":  "paragraph",
+                                                         "title":  "",
+                                                         "text":  "Use the vault for files you intentionally want to separate from normal storage. Review exported copies when you are done with them. Avoid sending passwords, recovery information, or private documents through casual channels unless you have a specific reason."
+                                                     },
+                                                     {
+                                                         "kind":  "paragraph",
+                                                         "title":  "",
+                                                         "text":  "The main benefit is clarity: you can see what is in the vault, decide when to export, and keep the workflow local unless you choose otherwise."
+                                                     }
+                                                 ],
+    "private-files-safer-on-android":  [
+                                           {
+                                               "kind":  "paragraph",
+                                               "title":  "",
+                                               "text":  "Android can handle private files well when the workflow is deliberate. The important part is knowing which apps create copies and which ones sync by default."
+                                           },
+                                           {
+                                               "kind":  "note",
+                                               "title":  "Key idea",
+                                               "text":  "Cloud storage is useful, but it should not be the automatic path for every private file. Some documents, IDs, notes, and images are easier to manage with a local-first habit."
+                                           },
+                                           {
+                                               "kind":  "heading",
+                                               "title":  "Check the upload default",
+                                               "text":  ""
+                                           },
+                                           {
+                                               "kind":  "paragraph",
+                                               "title":  "",
+                                               "text":  "Before adding a private file to an app or folder, ask whether it really needs to sync. If the file only needs to live on one phone, upload may create more copies than you intended."
+                                           },
+                                           {
+                                               "kind":  "paragraph",
+                                               "title":  "",
+                                               "text":  "Review gallery, file manager, scanner, and note app backup settings. Many privacy surprises start with a helpful default that becomes too broad."
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "title":  "Device basics",
+                                               "text":  "Use a strong screen lock, keep Android and important apps updated, and avoid installing apps from sources you do not trust."
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "title":  "Permissions",
+                                               "text":  "Review app permissions occasionally. A private-file workflow is weaker if unrelated apps keep broad access they no longer need."
+                                           },
+                                           {
+                                               "kind":  "heading",
+                                               "title":  "Be careful with exported and shared copies",
+                                               "text":  ""
+                                           },
+                                           {
+                                               "kind":  "paragraph",
+                                               "title":  "",
+                                               "text":  "When you export a private file from a protected place, the exported copy follows the rules of wherever you put it next. It may be visible in downloads, recent files, thumbnails, messaging apps, or cloud backup tools."
+                                           },
+                                           {
+                                               "kind":  "paragraph",
+                                               "title":  "",
+                                               "text":  "After using an exported copy, delete it if you no longer need it. Also check the receiving app if it stores attachments or cached previews."
+                                           },
+                                           {
+                                               "kind":  "heading",
+                                               "title":  "Use a local vault for intentional separation",
+                                               "text":  ""
+                                           },
+                                           {
+                                               "kind":  "paragraph",
+                                               "title":  "",
+                                               "text":  "A local vault such as Offline FileSecure can help separate selected private files from everyday storage. The point is not to claim perfect protection. The point is to make the workflow more deliberate."
+                                           },
+                                           {
+                                               "kind":  "paragraph",
+                                               "title":  "",
+                                               "text":  "Choose what goes into the vault, keep the device itself protected, and export files only when needed. That combination is easier to understand than a workflow where everything syncs everywhere by default."
+                                           }
+                                       ],
+    "why-offline-first-matters":  [
+                                      {
+                                          "kind":  "paragraph",
+                                          "title":  "",
+                                          "text":  "Useful privacy tools often start by asking a plain question: does this file need to leave the device at all?"
+                                      },
+                                      {
+                                          "kind":  "note",
+                                          "title":  "Key idea",
+                                          "text":  "Offline-first software starts with a narrower default: sensitive work stays on the device unless the user deliberately sends it somewhere else."
+                                      },
+                                      {
+                                          "kind":  "heading",
+                                          "title":  "Why the default matters",
+                                          "text":  ""
+                                      },
+                                      {
+                                          "kind":  "paragraph",
+                                          "title":  "",
+                                          "text":  "Many modern tools sync files, settings, and activity because that makes cross-device use convenient. Convenience is useful, but it can also create extra copies, account dependencies, server exposure, and recovery paths the user did not actively choose."
+                                      },
+                                      {
+                                          "kind":  "paragraph",
+                                          "title":  "",
+                                          "text":  "A local-first workflow is easier to reason about. The file begins on the device. Sharing, exporting, or uploading becomes a visible action instead of a quiet background assumption."
+                                      },
+                                      {
+                                          "kind":  "card",
+                                          "title":  "What this means",
+                                          "text":  "Fewer services need access to the work by default, and the user has a clearer moment to decide when a file should leave the device."
+                                      },
+                                      {
+                                          "kind":  "card",
+                                          "title":  "What it does not mean",
+                                          "text":  "Offline-first is not a guarantee of safety. A compromised phone, weak screen lock, or careless export can still expose private files."
+                                      },
+                                      {
+                                          "kind":  "heading",
+                                          "title":  "Good habits",
+                                          "text":  ""
+                                      },
+                                      {
+                                          "kind":  "paragraph",
+                                          "title":  "",
+                                          "text":  "Use local tools when a file does not need collaboration or backup through a cloud account. Keep the phone updated, use a strong device lock, and treat every export as a new copy that needs its own care."
+                                      },
+                                      {
+                                          "kind":  "paragraph",
+                                          "title":  "",
+                                          "text":  "For private workflows, the benefit is clarity: fewer automatic paths, fewer surprises, and more deliberate decisions."
+                                      }
+                                  ]
+}
