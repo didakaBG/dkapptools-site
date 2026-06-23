@@ -991,21 +991,142 @@ eleventyExcludeFromCollections: true
         </div>
 
 
-        <div class="admin-tab-panel" data-admin-panel="apps">
+                <div class="admin-tab-panel" data-admin-panel="apps">
+          <section class="split">
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Приложения</h2>
+                  <p>Управление на продуктови страници, статуси, линкове, функции и промени по версии.</p>
+                </div>
+                <span class="badge">Само визуален изглед</span>
+              </div>
+
+              <div class="row-list">
+                <div class="row">
+                  <div>
+                    <div class="row-title">Offline FileSecure</div>
+                    <div class="row-meta">Първото приложение в DK App Tools. Локален vault, privacy-first позициониране.</div>
+                  </div>
+                  <span class="badge green">Основно</span>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Бъдещо приложение</div>
+                    <div class="row-meta">Място за следващ продукт, когато решим нишата, името и страницата.</div>
+                  </div>
+                  <span class="badge">По-късно</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Статус на продукт</h2>
+                  <p>Всяко приложение трябва да има ясен публичен статус, преди да се показва навсякъде в сайта.</p>
+                </div>
+                <span class="badge blue">Планирано</span>
+              </div>
+
+              <div class="health-grid">
+                <div class="health"><span>Има продуктова страница</span><span class="dot green"></span></div>
+                <div class="health"><span>Има privacy страница</span><span class="dot green"></span></div>
+                <div class="health"><span>Google Play линк е готов</span><span class="dot warn"></span></div>
+                <div class="health"><span>Има екранни снимки</span><span class="dot warn"></span></div>
+                <div class="health"><span>Има кратко описание</span><span class="dot green"></span></div>
+                <div class="health"><span>Има списък с функции</span><span class="dot green"></span></div>
+              </div>
+            </div>
+          </section>
+
           <section class="card section">
             <div class="section-head">
               <div>
-                <h2>Приложения</h2>
-                <p>Продуктови страници, Google Play линкове, функции, снимки и промени по версии.</p>
+                <h2>Offline FileSecure</h2>
+                <p>Контролна карта за първото приложение. Тук по-късно ще се редактира публичната продуктова страница.</p>
               </div>
-              <span class="badge">Планирано</span>
+              <div class="button-row">
+                <button class="button secondary" disabled>Прегледай страница</button>
+                <button class="button" disabled>Редактирай</button>
+              </div>
             </div>
+
             <div class="row-list">
-              <div class="row"><div><div class="row-title">Offline FileSecure</div><div class="row-meta">Първата продуктова страница в DK App Tools.</div></div><span class="badge green">Активна</span></div>
-              <div class="row"><div><div class="row-title">Бъдещи приложения</div><div class="row-meta">Страници за следващи приложения, снимки и промени по версии.</div></div><span class="badge">По-късно</span></div>
+              <div class="row">
+                <div>
+                  <div class="row-title">Публична страница</div>
+                  <div class="row-meta">/apps/offline-filesecure/</div>
+                </div>
+                <span class="badge green">Активна</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Страница за поверителност</div>
+                  <div class="row-meta">/privacy/offline-filesecure/</div>
+                </div>
+                <span class="badge green">Активна</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Google Play линк</div>
+                  <div class="row-meta">Ще се добави, когато приложението е готово за публична страница в магазина.</div>
+                </div>
+                <span class="badge">Очаква</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Кратко store описание</div>
+                  <div class="row-meta">Private files. Stored locally. Protected clearly.</div>
+                </div>
+                <span class="badge blue">Текст</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="split">
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Съдържание на продуктова страница</h2>
+                  <p>Тези блокове ще оформят публичната страница на всяко приложение.</p>
+                </div>
+                <span class="badge blue">Структура</span>
+              </div>
+
+              <div class="row-list">
+                <div class="row"><div><div class="row-title">Hero секция</div><div class="row-meta">Име, кратко обещание, статус и основен CTA.</div></div><span class="badge blue">Видимо</span></div>
+                <div class="row"><div><div class="row-title">Функции</div><div class="row-meta">Кратки карти с най-важните ползи и ограничения.</div></div><span class="badge blue">Видимо</span></div>
+                <div class="row"><div><div class="row-title">Екранни снимки</div><div class="row-meta">Подготвени изображения с правилен размер и описание.</div></div><span class="badge blue">Медия</span></div>
+                <div class="row"><div><div class="row-title">Промени по версии</div><div class="row-meta">Кратък списък с важни update бележки за потребителите.</div></div><span class="badge blue">История</span></div>
+              </div>
+            </div>
+
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Проверка преди публикуване</h2>
+                  <p>Преди продуктова страница да стане публична, трябва да мине през базови проверки.</p>
+                </div>
+                <span class="badge">Само визуален изглед</span>
+              </div>
+
+              <div class="health-grid">
+                <div class="health"><span>Има ясно име</span><span class="dot green"></span></div>
+                <div class="health"><span>Има privacy линк</span><span class="dot green"></span></div>
+                <div class="health"><span>Има честно описание</span><span class="dot green"></span></div>
+                <div class="health"><span>Няма преувеличени security обещания</span><span class="dot green"></span></div>
+                <div class="health"><span>Има подходящи изображения</span><span class="dot warn"></span></div>
+                <div class="health"><span>Store линкът е проверен</span><span class="dot warn"></span></div>
+              </div>
             </div>
           </section>
         </div>
+
 
         <div class="admin-tab-panel" data-admin-panel="support">
           <section class="card section">
