@@ -696,7 +696,7 @@ eleventyExcludeFromCollections: true
 
           <div class="priority-grid">
             <div class="priority">
-              <strong>1. Статии editor</strong>
+              <strong>1. Редактор за статии</strong>
               <span>Структуриран редактор със заглавие, адрес, описание, снимка за карта и блокове съдържание.</span>
             </div>
             <div class="priority">
@@ -710,12 +710,12 @@ eleventyExcludeFromCollections: true
           </div>
         </section>
 
-        <section class="split">
+                <section class="split">
           <div class="card section">
             <div class="section-head">
               <div>
-                <h2>Съдържание</h2>
-                <p>Демо преглед на статии и бъдещ статус за чернови/публикуване.</p>
+                <h2>Статии</h2>
+                <p>Преглед на текущите статии и бъдещ статус за чернови и публикуване.</p>
               </div>
               <button class="button" disabled>Нова статия</button>
             </div>
@@ -724,7 +724,7 @@ eleventyExcludeFromCollections: true
               <div class="row">
                 <div>
                   <div class="row-title">Why offline-first security still matters</div>
-                  <div class="row-meta">Публикувана статия - данните са OK</div>
+                  <div class="row-meta">Публикувана статия - данните са попълнени</div>
                 </div>
                 <span class="badge green">Публикувана</span>
               </div>
@@ -732,7 +732,7 @@ eleventyExcludeFromCollections: true
               <div class="row">
                 <div>
                   <div class="row-title">How local file vaults protect privacy</div>
-                  <div class="row-meta">Публикувана статия - снимката е OK</div>
+                  <div class="row-meta">Публикувана статия - снимката за карта е налична</div>
                 </div>
                 <span class="badge green">Публикувана</span>
               </div>
@@ -740,7 +740,7 @@ eleventyExcludeFromCollections: true
               <div class="row">
                 <div>
                   <div class="row-title">Нова статия за бъдещ редактор</div>
-                  <div class="row-meta">Демо чернова - нужен е преглед - системата за записване липсва</div>
+                  <div class="row-meta">Демо чернова - нужен е преглед - системата за записване още липсва</div>
                 </div>
                 <span class="badge">Демо чернова</span>
               </div>
@@ -750,41 +750,78 @@ eleventyExcludeFromCollections: true
           <div class="card section">
             <div class="section-head">
               <div>
-                <h2>Процес на публикуване</h2>
-                <p>Реалният publish процес ще мине през тези защитени стъпки.</p>
+                <h2>Редактор за статия</h2>
+                <p>Бъдещата форма за писане ще води съдържанието през ясни полета, вместо да пипаш файлове на ръка.</p>
               </div>
-              <span class="badge">Само преглед</span>
+              <div class="button-row">
+                <button class="button secondary" disabled>Запази чернова</button>
+                <button class="button" disabled>Публикувай</button>
+              </div>
             </div>
 
             <div class="row-list">
               <div class="row">
                 <div>
-                  <div class="row-title">Запази чернова</div>
-                  <div class="row-meta">Writes `published: false` after backend is ready</div>
+                  <div class="row-title">Заглавие</div>
+                  <div class="row-meta">Например: Как Offline FileSecure пази файловете локално</div>
                 </div>
-                <span class="badge">Изключено</span>
+                <span class="badge blue">Поле</span>
               </div>
 
               <div class="row">
                 <div>
-                  <div class="row-title">Преглед</div>
-                  <div class="row-meta">Показва как ще изглежда статията, картата и резултатът в търсенето</div>
+                  <div class="row-title">Адрес на статията</div>
+                  <div class="row-meta">Пример: offline-filesecure-local-vault-explained</div>
                 </div>
-                <span class="badge blue">Планирано</span>
+                <span class="badge blue">Поле</span>
               </div>
 
               <div class="row">
                 <div>
-                  <div class="row-title">Публикувай</div>
-                  <div class="row-meta">Създава GitHub commit и изчаква Cloudflare качването</div>
+                  <div class="row-title">Кратко описание</div>
+                  <div class="row-meta">Използва се в картата, търсенето и публичната страница.</div>
                 </div>
-                <span class="badge">Изключено</span>
+                <span class="badge blue">Поле</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Снимка за карта + alt текст</div>
+                  <div class="row-meta">CMS-ът ще предупреждава, ако снимката е малка или липсва описание.</div>
+                </div>
+                <span class="badge blue">Медия</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Блокове съдържание</div>
+                  <div class="row-meta">Заглавие, параграф, снимка с описание, бележка, списък с отметки.</div>
+                </div>
+                <span class="badge blue">Структура</span>
               </div>
             </div>
           </div>
         </section>
 
         <section class="card section">
+          <div class="section-head">
+            <div>
+              <h2>Проверка преди публикуване</h2>
+              <p>Преди статията да стане публична, системата трябва да провери най-важните неща.</p>
+            </div>
+            <span class="badge">Само визуален изглед</span>
+          </div>
+
+          <div class="health-grid">
+            <div class="health"><span>Има заглавие</span><span class="dot green"></span></div>
+            <div class="health"><span>Има кратко описание</span><span class="dot green"></span></div>
+            <div class="health"><span>Има снимка за карта</span><span class="dot warn"></span></div>
+            <div class="health"><span>Има alt текст</span><span class="dot green"></span></div>
+            <div class="health"><span>Адресът не се повтаря</span><span class="dot green"></span></div>
+            <div class="health"><span>Публикуването е изключено до backend фаза</span><span class="dot warn"></span></div>
+          </div>
+        </section>
+<section class="card section">
           <div class="section-head">
             <div>
               <h2>CMS модули</h2>
@@ -798,7 +835,7 @@ eleventyExcludeFromCollections: true
                 <div class="module-icon">A</div>
                 <span class="badge">Демо</span>
               </div>
-              <h3>Статии Studio</h3>
+              <h3>Статии</h3>
               <p>Статии, чернови, преглед, снимка за карта, тагове и процес на публикуване.</p>
             </article>
 
@@ -853,7 +890,7 @@ eleventyExcludeFromCollections: true
           <div class="card section">
             <div class="section-head">
               <div>
-                <h2>Site health</h2>
+                <h2>Проверки на сайта</h2>
                 <p>Демо проверки, които по-късно ще пазят сайта от счупено съдържание.</p>
               </div>
               <span class="badge blue">Демо статус</span>
@@ -889,14 +926,14 @@ eleventyExcludeFromCollections: true
               <div class="row">
                 <div>
                   <div class="row-title">Записването е изключено</div>
-                  <div class="row-meta">Save Draft, Публикувай, Upload и Maintenance writes са изключени.</div>
+                  <div class="row-meta">Запис на чернова, публикуване, качване и промяна на режим поддръжка са изключени.</div>
                 </div>
                 <span class="badge green">Required</span>
               </div>
 
               <div class="row">
                 <div>
-                  <div class="row-title">Преглед before publish</div>
+                  <div class="row-title">Преглед преди публикуване</div>
                   <div class="row-meta">Публичното съдържание се пуска само след преглед и успешно качване.</div>
                 </div>
                 <span class="badge blue">Планирано</span>
