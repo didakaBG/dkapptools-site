@@ -645,7 +645,7 @@ eleventyExcludeFromCollections: true
 
       <div class="content-stack">
 
-                <div class="admin-tab-panel is-active" data-admin-panel="articles">
+                        <div class="admin-tab-panel is-active" data-admin-panel="articles">
           <section class="card section">
             <div class="section-head">
               <div>
@@ -654,29 +654,22 @@ eleventyExcludeFromCollections: true
             </div>
 
             <div class="row-list">
-              <div class="row">
-                <div>
-                  <div class="row-title">Как локалният файлов сейф пази поверителността</div>
-                  <div class="row-meta">/articles/offline-filesecure-local-vault-explained/</div>
+              {% for article in collections.publishedArticles %}
+                {% set adminArticle = adminArticles[article.fileSlug] %}
+                <div class="row">
+                  <div>
+                    <div class="row-title">{{ article.data.title }}</div>
+                    <div class="row-meta">
+                      {{ article.url }}
+                      {% if adminArticle %}
+                        · Последна редакция: {{ adminArticle.lastEditedLabel }}
+                        · Публикувана: {{ adminArticle.lastPublishedLabel }}
+                      {% endif %}
+                    </div>
+                  </div>
+                  <a class="button secondary" href="https://dkapptools.com{{ article.url }}" target="_blank" rel="noopener">Отвори</a>
                 </div>
-                <a class="button secondary" href="https://dkapptools.com/articles/offline-filesecure-local-vault-explained/" target="_blank" rel="noopener">Отвори</a>
-              </div>
-
-              <div class="row">
-                <div>
-                  <div class="row-title">Защо личните файлове са по-безопасни на Android</div>
-                  <div class="row-meta">/articles/private-files-safer-on-android/</div>
-                </div>
-                <a class="button secondary" href="https://dkapptools.com/articles/private-files-safer-on-android/" target="_blank" rel="noopener">Отвори</a>
-              </div>
-
-              <div class="row">
-                <div>
-                  <div class="row-title">Защо локалният подход е важен</div>
-                  <div class="row-meta">/articles/why-offline-first-matters/</div>
-                </div>
-                <a class="button secondary" href="https://dkapptools.com/articles/why-offline-first-matters/" target="_blank" rel="noopener">Отвори</a>
-              </div>
+              {% endfor %}
             </div>
           </section>
         </div>
