@@ -1300,19 +1300,153 @@ eleventyExcludeFromCollections: true
         </div>
 
 
-        <div class="admin-tab-panel" data-admin-panel="system">
+                <div class="admin-tab-panel" data-admin-panel="system">
+          <section class="split">
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Системен статус</h2>
+                  <p>Тук се вижда кое е активно, кое е изключено и кое чака сървърната фаза.</p>
+                </div>
+                <span class="badge">Записването е изключено</span>
+              </div>
+
+              <div class="health-grid">
+                <div class="health"><span>Cloudflare Access защита</span><span class="dot green"></span></div>
+                <div class="health"><span>Админ страницата е защитена</span><span class="dot green"></span></div>
+                <div class="health"><span>Записване на съдържание</span><span class="dot warn"></span></div>
+                <div class="health"><span>Публикуване от панела</span><span class="dot warn"></span></div>
+                <div class="health"><span>Качване на снимки</span><span class="dot warn"></span></div>
+                <div class="health"><span>Режим поддръжка</span><span class="dot warn"></span></div>
+              </div>
+            </div>
+
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Правила за безопасност</h2>
+                  <p>Докато няма сървърна част, панелът не трябва да прави реални промени по сайта.</p>
+                </div>
+                <span class="badge green">Задължително</span>
+              </div>
+
+              <div class="row-list">
+                <div class="row">
+                  <div>
+                    <div class="row-title">Без данни за достъп в браузъра</div>
+                    <div class="row-meta">Частни ключове и права за запис не се изпращат към браузъра.</div>
+                  </div>
+                  <span class="badge green">OK</span>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Без директно публикуване</div>
+                    <div class="row-meta">Бутоните за запазване, качване и публикуване остават изключени.</div>
+                  </div>
+                  <span class="badge green">OK</span>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Преглед преди публична промяна</div>
+                    <div class="row-meta">Всяка бъдеща промяна трябва да има преглед преди да стигне до публичния сайт.</div>
+                  </div>
+                  <span class="badge blue">Планирано</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section class="card section">
             <div class="section-head">
               <div>
-                <h2>Система</h2>
-                <p>Безопасност, записване, режим поддръжка и бъдещ статус на публикуване и качване.</p>
+                <h2>Бъдеща сървърна фаза</h2>
+                <p>Реалното записване трябва да мине през защитена сървърна логика, а не през видим код в браузъра.</p>
               </div>
-              <span class="badge">Записването е изключено</span>
+              <span class="badge blue">По-късно</span>
             </div>
+
             <div class="row-list">
-              <div class="row"><div><div class="row-title">Без данни за достъп в браузъра</div><div class="row-meta">GitHub токен и частни ключове за запис не се изпращат към браузъра.</div></div><span class="badge green">Задължително</span></div>
-              <div class="row"><div><div class="row-title">Записването е изключено</div><div class="row-meta">Запис на чернова, публикуване, качване и промяна на режим поддръжка са изключени.</div></div><span class="badge green">Задължително</span></div>
-              <div class="row"><div><div class="row-title">Преглед преди публикуване</div><div class="row-meta">Публичното съдържание се пуска само след преглед и успешно качване.</div></div><span class="badge blue">Планирано</span></div>
+              <div class="row">
+                <div>
+                  <div class="row-title">Запази чернова</div>
+                  <div class="row-meta">Ще записва съдържание като чернова след добавяне на защитена сървърна част.</div>
+                </div>
+                <span class="badge">Не е активно</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Публикувай</div>
+                  <div class="row-meta">Ще създава безопасна промяна в GitHub и ще изчаква Cloudflare Pages качване.</div>
+                </div>
+                <span class="badge">Не е активно</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Качи снимка</div>
+                  <div class="row-meta">Ще проверява размер, съотношение, тежест и описание преди файлът да стане част от сайта.</div>
+                </div>
+                <span class="badge">Не е активно</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="split">
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Режим поддръжка</h2>
+                  <p>По-късно тук ще се управлява дали сайтът временно показва съобщение за поддръжка.</p>
+                </div>
+                <span class="badge">Изключен</span>
+              </div>
+
+              <div class="row-list">
+                <div class="row">
+                  <div>
+                    <div class="row-title">Публичен сайт</div>
+                    <div class="row-meta">В момента сайтът трябва да остане нормално достъпен.</div>
+                  </div>
+                  <span class="badge green">Нормален режим</span>
+                </div>
+                <div class="row">
+                  <div>
+                    <div class="row-title">Съобщение за поддръжка</div>
+                    <div class="row-meta">Ще се редактира само след сървърна защита и преглед.</div>
+                  </div>
+                  <span class="badge blue">Планирано</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Качване и статус</h2>
+                  <p>Тук по-късно ще се вижда дали последната промяна е качена успешно.</p>
+                </div>
+                <span class="badge blue">Планирано</span>
+              </div>
+
+              <div class="row-list">
+                <div class="row">
+                  <div>
+                    <div class="row-title">Последна промяна</div>
+                    <div class="row-meta">Ще показва последния записан commit и времето на промяната.</div>
+                  </div>
+                  <span class="badge">По-късно</span>
+                </div>
+                <div class="row">
+                  <div>
+                    <div class="row-title">Cloudflare Pages</div>
+                    <div class="row-meta">Ще показва дали качването е успешно, чакащо или неуспешно.</div>
+                  </div>
+                  <span class="badge">По-късно</span>
+                </div>
+              </div>
             </div>
           </section>
         </div>
