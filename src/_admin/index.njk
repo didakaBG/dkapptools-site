@@ -851,22 +851,145 @@ eleventyExcludeFromCollections: true
           </section>
         </div>
 
-        <div class="admin-tab-panel" data-admin-panel="media">
+                <div class="admin-tab-panel" data-admin-panel="media">
+          <section class="split">
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Правила за снимки</h2>
+                  <p>Снимката трябва да е ясна, с правилно съотношение и разумна тежест, а не просто голяма като пиксели.</p>
+                </div>
+                <span class="badge">Само визуален изглед</span>
+              </div>
+
+              <div class="row-list">
+                <div class="row">
+                  <div>
+                    <div class="row-title">Снимка за карта на статия</div>
+                    <div class="row-meta">Препоръчително: 1600 x 900. Минимум: 1200 x 675. Съотношение: 16:9.</div>
+                  </div>
+                  <span class="badge blue">Карта</span>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Снимка вътре в статия</div>
+                    <div class="row-meta">Може да е с по-свободно съотношение, но трябва да е ясна и да има описание.</div>
+                  </div>
+                  <span class="badge blue">Статия</span>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Снимки за страница на приложение</div>
+                    <div class="row-meta">Използват се за функции, екранни снимки и продуктови секции.</div>
+                  </div>
+                  <span class="badge blue">Приложение</span>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Тежест на файла</div>
+                    <div class="row-meta">Голяма снимка може да се свие визуално, но тежкият файл пак забавя сайта.</div>
+                  </div>
+                  <span class="badge">Важно</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Предупреждения</h2>
+                  <p>Бъдещият редактор трябва да предупреждава преди неподходяща снимка да стигне до публичния сайт.</p>
+                </div>
+                <span class="badge blue">Планирано</span>
+              </div>
+
+              <div class="health-grid">
+                <div class="health"><span>Снимката е достатъчно голяма</span><span class="dot green"></span></div>
+                <div class="health"><span>Съотношението е подходящо</span><span class="dot green"></span></div>
+                <div class="health"><span>Файлът не е прекалено тежък</span><span class="dot warn"></span></div>
+                <div class="health"><span>Има описание на снимката</span><span class="dot green"></span></div>
+                <div class="health"><span>Не се разтяга грозно</span><span class="dot green"></span></div>
+                <div class="health"><span>Ясно е къде се използва</span><span class="dot green"></span></div>
+              </div>
+            </div>
+          </section>
+
           <section class="card section">
             <div class="section-head">
               <div>
-                <h2>Визия и медия</h2>
-                <p>Снимки за карти, снимки вътре в статии, описание на снимки и предупреждения за ниско качество.</p>
+                <h2>Как се показва</h2>
+                <p>Голямата снимка може да се свие до размера на картата, но пропорциите трябва да се пазят.</p>
+              </div>
+              <span class="badge">Правило за визия</span>
+            </div>
+
+            <div class="row-list">
+              <div class="row">
+                <div>
+                  <div class="row-title">Свиване без разтягане</div>
+                  <div class="row-meta">Картата трябва да пази пропорциите. Ако трябва, снимката се изрязва красиво, а не се разтяга.</div>
+                </div>
+                <span class="badge green">Правилно</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Грешно съотношение</div>
+                  <div class="row-meta">Вертикална или твърде широка снимка може да изглежда зле в 16:9 карта.</div>
+                </div>
+                <span class="badge">Внимание</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Прекалено тежък файл</div>
+                  <div class="row-meta">Сайтът може да я покаже малка, но потребителят пак може да зарежда голям файл.</div>
+                </div>
+                <span class="badge">Внимание</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="card section">
+            <div class="section-head">
+              <div>
+                <h2>Къде се използва</h2>
+                <p>Една снимка трябва да има ясно предназначение, за да не се появява грешно в различни части на сайта.</p>
               </div>
               <span class="badge">Планирано</span>
             </div>
+
             <div class="row-list">
-              <div class="row"><div><div class="row-title">Снимки за карти на статии</div><div class="row-meta">Тук ще се следи дали картите не разтягат малки изображения.</div></div><span class="badge blue">Медия</span></div>
-              <div class="row"><div><div class="row-title">Снимки вътре в статия</div><div class="row-meta">Всяка снимка трябва да има описание и подходящ размер.</div></div><span class="badge blue">Медия</span></div>
-              <div class="row"><div><div class="row-title">Alt текст</div><div class="row-meta">Описание за достъпност, търсене и по-добро съдържание.</div></div><span class="badge blue">Проверка</span></div>
+              <div class="row">
+                <div>
+                  <div class="row-title">Карта в списъка със статии</div>
+                  <div class="row-meta">Малка публична карта. Тук лошото качество и грешното изрязване личат веднага.</div>
+                </div>
+                <span class="badge blue">Публично</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Вътре в статия</div>
+                  <div class="row-meta">Изображение с описание, което подкрепя текста, без да доминира страницата.</div>
+                </div>
+                <span class="badge blue">Публично</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Страница на приложение</div>
+                  <div class="row-meta">Изображения за функции, екранни снимки и бъдещи продуктови секции.</div>
+                </div>
+                <span class="badge blue">Продукт</span>
+              </div>
             </div>
           </section>
         </div>
+
 
         <div class="admin-tab-panel" data-admin-panel="apps">
           <section class="card section">
