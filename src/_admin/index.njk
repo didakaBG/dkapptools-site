@@ -8,20 +8,27 @@ eleventyExcludeFromCollections: true
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>DK App Tools Admin</title>
+  <title>DK App Tools Admin CMS</title>
   <style>
     :root {
-      --bg: #090a0b;
+      --bg: #08090a;
+      --bg-2: #101216;
       --panel: rgba(24, 26, 30, 0.94);
-      --panel-soft: rgba(31, 34, 39, 0.82);
-      --border: rgba(220, 174, 75, 0.22);
-      --border-soft: rgba(255, 255, 255, 0.08);
+      --panel-2: rgba(31, 34, 39, 0.86);
+      --panel-3: rgba(255, 255, 255, 0.035);
+      --border: rgba(220, 174, 75, 0.24);
+      --border-soft: rgba(255, 255, 255, 0.09);
       --gold: #d6a83d;
-      --gold-soft: rgba(214, 168, 61, 0.16);
-      --text: #f2eee5;
+      --gold-2: #f0cf77;
+      --gold-soft: rgba(214, 168, 61, 0.14);
+      --text: #f4efe6;
       --muted: #aaa59a;
-      --danger: #ff6b6b;
+      --muted-2: #7f7a70;
       --safe: #7bd88f;
+      --warn: #f0cf77;
+      --danger: #ff7a7a;
+      --info: #8bb9ff;
+      --shadow: rgba(0, 0, 0, 0.42);
     }
 
     * {
@@ -34,9 +41,10 @@ eleventyExcludeFromCollections: true
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(214, 168, 61, 0.14), transparent 34rem),
+        radial-gradient(circle at top left, rgba(214, 168, 61, 0.16), transparent 34rem),
+        radial-gradient(circle at top right, rgba(139, 185, 255, 0.08), transparent 28rem),
         radial-gradient(circle at bottom right, rgba(214, 168, 61, 0.08), transparent 30rem),
-        linear-gradient(135deg, #070809, #101216 55%, #08090a);
+        linear-gradient(135deg, var(--bg), var(--bg-2) 55%, #070809);
     }
 
     body::before {
@@ -44,16 +52,22 @@ eleventyExcludeFromCollections: true
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.28;
-      background-image: radial-gradient(rgba(214, 168, 61, 0.4) 1px, transparent 1px);
-      background-size: 22px 22px;
-      mask-image: linear-gradient(to bottom, black, transparent 85%);
+      opacity: 0.24;
+      background-image: radial-gradient(rgba(214, 168, 61, 0.42) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(to bottom, black, transparent 86%);
+    }
+
+    button {
+      font: inherit;
     }
 
     .shell {
-      width: min(1180px, calc(100% - 32px));
+      position: relative;
+      width: min(1280px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 28px 0 44px;
+      padding: 26px 0 46px;
+      z-index: 1;
     }
 
     .topbar {
@@ -61,107 +75,159 @@ eleventyExcludeFromCollections: true
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      min-width: 0;
     }
 
     .mark {
       display: grid;
+      flex: 0 0 auto;
       place-items: center;
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border: 1px solid var(--border);
-      border-radius: 14px;
-      color: var(--gold);
-      background: linear-gradient(145deg, rgba(214, 168, 61, 0.18), rgba(255, 255, 255, 0.03));
-      box-shadow: 0 18px 70px rgba(214, 168, 61, 0.14);
+      border-radius: 15px;
+      color: var(--gold-2);
+      background: linear-gradient(145deg, rgba(214, 168, 61, 0.2), rgba(255, 255, 255, 0.035));
+      box-shadow: 0 18px 70px rgba(214, 168, 61, 0.13);
+      font-weight: 900;
+      letter-spacing: -0.04em;
     }
 
-    .access-pill {
+    .brand-title {
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-subtitle {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 14px;
-      border: 1px solid rgba(123, 216, 143, 0.28);
+      padding: 10px 13px;
+      border: 1px solid var(--border-soft);
       border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.035);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .pill.safe {
+      border-color: rgba(123, 216, 143, 0.28);
       color: var(--safe);
       background: rgba(123, 216, 143, 0.08);
-      font-size: 13px;
-      font-weight: 700;
+    }
+
+    .pill.warn {
+      border-color: rgba(214, 168, 61, 0.26);
+      color: var(--gold-2);
+      background: rgba(214, 168, 61, 0.09);
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.12fr 0.88fr;
       gap: 18px;
-      align-items: stretch;
       margin-bottom: 18px;
     }
 
     .card {
       border: 1px solid var(--border-soft);
       border-radius: 26px;
-      background: linear-gradient(180deg, rgba(30, 33, 38, 0.92), rgba(18, 20, 23, 0.92));
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+      background: linear-gradient(180deg, rgba(30, 33, 38, 0.94), rgba(18, 20, 23, 0.94));
+      box-shadow: 0 24px 80px var(--shadow);
       overflow: hidden;
     }
 
     .hero-main {
       padding: 30px;
       border-color: var(--border);
+      min-height: 310px;
     }
 
     .kicker {
+      margin-bottom: 12px;
       color: var(--gold);
       font-size: 12px;
-      text-transform: uppercase;
+      font-weight: 950;
       letter-spacing: 0.16em;
-      font-weight: 900;
-      margin-bottom: 12px;
+      text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
-      max-width: 760px;
-      font-size: clamp(40px, 7vw, 76px);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
+      max-width: 780px;
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
     }
 
     .lead {
-      max-width: 720px;
+      max-width: 760px;
       margin: 18px 0 0;
       color: var(--muted);
       font-size: 17px;
       line-height: 1.65;
     }
 
-    .warning {
-      padding: 18px 20px;
-      border: 1px solid rgba(214, 168, 61, 0.24);
-      border-radius: 20px;
-      background: var(--gold-soft);
-      color: #f6e4b2;
-      line-height: 1.55;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 26px;
     }
 
-    .side-card {
-      padding: 24px;
+    .metric {
+      padding: 15px;
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.032);
+    }
+
+    .metric-number {
+      color: var(--gold-2);
+      font-size: 28px;
+      font-weight: 950;
+      letter-spacing: -0.05em;
+    }
+
+    .metric-label {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .side-panel {
       display: grid;
-      align-content: space-between;
-      gap: 20px;
+      gap: 14px;
+      padding: 22px;
     }
 
     .status-list {
       display: grid;
-      gap: 12px;
+      gap: 10px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -169,57 +235,217 @@ eleventyExcludeFromCollections: true
 
     .status-list li {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       gap: 14px;
-      padding: 12px 0;
+      padding: 13px 0;
       border-bottom: 1px solid var(--border-soft);
       color: var(--muted);
+      font-size: 14px;
     }
 
     .status-list strong {
       color: var(--text);
+      text-align: right;
     }
 
-    .grid {
+    .notice {
+      padding: 16px 17px;
+      border: 1px solid rgba(214, 168, 61, 0.24);
+      border-radius: 19px;
+      background: var(--gold-soft);
+      color: #f6e4b2;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 240px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .rail {
+      position: sticky;
+      top: 18px;
+      padding: 18px;
+    }
+
+    .rail-title {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .nav-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid transparent;
+      border-radius: 15px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.018);
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .nav-item.active {
+      border-color: var(--border);
+      color: var(--gold-2);
+      background: rgba(214, 168, 61, 0.1);
+    }
+
+    .nav-icon {
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 13px;
+    }
+
+    .main-grid {
+      display: grid;
       gap: 18px;
     }
 
     .section {
-      padding: 24px;
+      padding: 22px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
     }
 
     .section h2 {
-      margin: 0 0 16px;
-      font-size: 18px;
-      letter-spacing: -0.02em;
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: -0.035em;
     }
 
-    .toolbar {
+    .section p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .button-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
+      gap: 9px;
     }
 
     .button {
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 12px 14px;
-      color: var(--gold);
+      padding: 11px 13px;
+      color: var(--gold-2);
       background: rgba(214, 168, 61, 0.08);
-      font-weight: 800;
       font-size: 13px;
+      font-weight: 900;
+    }
+
+    .button.secondary {
+      border-color: var(--border-soft);
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.035);
     }
 
     .button[disabled] {
       cursor: not-allowed;
-      opacity: 0.54;
-      filter: grayscale(0.2);
+      opacity: 0.5;
+      filter: grayscale(0.25);
     }
 
-    .mock-table {
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .module {
+      min-height: 160px;
+      padding: 18px;
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.027);
+    }
+
+    .module-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .module-icon {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .module-state {
+      padding: 6px 9px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .module-state.ready {
+      color: var(--safe);
+      background: rgba(123, 216, 143, 0.08);
+    }
+
+    .module-state.mock {
+      color: var(--gold-2);
+      background: rgba(214, 168, 61, 0.1);
+    }
+
+    .module-title {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 950;
+      letter-spacing: -0.03em;
+    }
+
+    .module-text {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .table {
       display: grid;
       gap: 10px;
     }
@@ -231,18 +457,20 @@ eleventyExcludeFromCollections: true
       align-items: center;
       padding: 14px;
       border: 1px solid var(--border-soft);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.025);
+      border-radius: 17px;
+      background: rgba(255, 255, 255, 0.026);
     }
 
     .row-title {
-      font-weight: 800;
+      font-weight: 950;
+      letter-spacing: -0.02em;
     }
 
     .row-meta {
+      margin-top: 4px;
       color: var(--muted);
       font-size: 13px;
-      margin-top: 4px;
+      line-height: 1.4;
     }
 
     .badge {
@@ -250,49 +478,147 @@ eleventyExcludeFromCollections: true
       align-items: center;
       padding: 7px 10px;
       border-radius: 999px;
-      color: var(--gold);
+      color: var(--gold-2);
       background: rgba(214, 168, 61, 0.12);
       font-size: 12px;
-      font-weight: 900;
+      font-weight: 950;
       white-space: nowrap;
     }
 
-    .disabled-note {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
+    .badge.safe {
+      color: var(--safe);
+      background: rgba(123, 216, 143, 0.08);
     }
 
-    .form-mock {
+    .badge.info {
+      color: var(--info);
+      background: rgba(139, 185, 255, 0.08);
+    }
+
+    .editor-mock {
       display: grid;
       gap: 12px;
     }
 
-    .input-mock {
+    .field {
       padding: 13px 14px;
       border: 1px solid var(--border-soft);
-      border-radius: 14px;
+      border-radius: 15px;
       color: var(--muted);
       background: rgba(0, 0, 0, 0.18);
+      font-size: 14px;
     }
 
-    footer {
+    .preview-card {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background:
+        linear-gradient(145deg, rgba(214, 168, 61, 0.1), rgba(255, 255, 255, 0.025)),
+        rgba(0, 0, 0, 0.1);
+    }
+
+    .preview-image {
+      height: 140px;
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 25% 20%, rgba(214, 168, 61, 0.24), transparent 30%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.15));
+      margin-bottom: 14px;
+    }
+
+    .health-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .health-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 13px;
+      border: 1px solid var(--border-soft);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.024);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--muted-2);
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.03);
+    }
+
+    .dot.safe {
+      background: var(--safe);
+      box-shadow: 0 0 0 4px rgba(123, 216, 143, 0.09);
+    }
+
+    .dot.warn {
+      background: var(--warn);
+      box-shadow: 0 0 0 4px rgba(214, 168, 61, 0.09);
+    }
+
+    .footer {
       margin-top: 22px;
       color: var(--muted);
       font-size: 13px;
       text-align: center;
+      line-height: 1.5;
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 1040px) {
       .hero,
-      .grid {
+      .layout,
+      .split {
         grid-template-columns: 1fr;
       }
 
-      .topbar {
+      .rail {
+        position: static;
+      }
+
+      .module-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .shell {
+        width: min(100% - 22px, 1280px);
+        padding-top: 16px;
+      }
+
+      .topbar,
+      .section-header {
         align-items: flex-start;
         flex-direction: column;
+      }
+
+      .top-actions {
+        justify-content: flex-start;
+      }
+
+      .hero-main,
+      .section,
+      .side-panel,
+      .rail {
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .hero-grid,
+      .module-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -303,98 +629,310 @@ eleventyExcludeFromCollections: true
       <div class="brand">
         <div class="mark">DK</div>
         <div>
-          <div>DK App Tools Admin</div>
-          <small style="color: var(--muted);">Вътрешен панел</small>
+          <div class="brand-title">DK App Tools CMS</div>
+          <div class="brand-subtitle">Защитен контролен център за сайта</div>
         </div>
       </div>
-      <div class="access-pill">Защитено с Cloudflare Access</div>
+
+      <div class="top-actions">
+        <div class="pill safe">Cloudflare Access active</div>
+        <div class="pill warn">Mock/read-only mode</div>
+      </div>
     </header>
 
     <section class="hero">
       <div class="card hero-main">
-        <div class="kicker">Admin preview</div>
-        <h1>Панел за статии и съдържание.</h1>
+        <div class="kicker">Protected CMS dashboard</div>
+        <h1>Управление на целия DK App Tools сайт.</h1>
         <p class="lead">
-          Това е първа защитена mock версия на бъдещия български admin панел.
-          Реални write функции още няма. Save Draft и Publish са умишлено изключени,
-          докато не бъде добавен server-side backend.
+          Това е първият dashboard mock на бъдещата CMS система. Целта е съдържанието,
+          app страниците, снимките, preview-тата и publish процесът да се управляват оттук,
+          без ръчно редактиране на код за всяка малка промяна.
         </p>
+
+        <div class="hero-grid">
+          <div class="metric">
+            <div class="metric-number">3</div>
+            <div class="metric-label">published articles</div>
+          </div>
+          <div class="metric">
+            <div class="metric-number">1</div>
+            <div class="metric-label">active app page</div>
+          </div>
+          <div class="metric">
+            <div class="metric-number">0</div>
+            <div class="metric-label">write operations enabled</div>
+          </div>
+        </div>
       </div>
 
-      <aside class="card side-card">
+      <aside class="card side-panel">
         <div>
-          <div class="kicker">Security state</div>
+          <div class="kicker">System state</div>
           <ul class="status-list">
-            <li><span>Hostname</span><strong>admin.dkapptools.com</strong></li>
-            <li><span>Access</span><strong>Cloudflare</strong></li>
+            <li><span>Admin host</span><strong>admin.dkapptools.com</strong></li>
+            <li><span>Access layer</span><strong>Cloudflare Access</strong></li>
             <li><span>Write backend</span><strong>Not connected</strong></li>
-            <li><span>Publish</span><strong>Disabled</strong></li>
+            <li><span>Publish action</span><strong>Disabled</strong></li>
+            <li><span>GitHub token</span><strong>Not in browser</strong></li>
           </ul>
         </div>
-        <div class="warning">
-          Няма GitHub token в browser-а. Няма публичен Publish бутон. Няма реално записване.
+
+        <div class="notice">
+          Safe rule: CMS UI може да изглежда реално, но Save Draft, Publish, Upload и Maintenance writes
+          остават disabled, докато няма защитен server-side backend.
         </div>
       </aside>
     </section>
 
-    <section class="grid">
-      <div class="card section">
-        <h2>Статии</h2>
-        <div class="toolbar">
-          <button class="button" disabled>Нова статия</button>
-          <button class="button" disabled>Запази чернова</button>
-          <button class="button" disabled>Публикувай</button>
-        </div>
+    <section class="layout">
+      <aside class="card rail">
+        <div class="rail-title">CMS Sections</div>
+        <nav class="nav-list" aria-label="CMS sections">
+          <div class="nav-item active"><span class="nav-icon">⌂</span>Dashboard</div>
+          <div class="nav-item"><span class="nav-icon">✎</span>Articles</div>
+          <div class="nav-item"><span class="nav-icon">▣</span>Apps</div>
+          <div class="nav-item"><span class="nav-icon">◉</span>Media</div>
+          <div class="nav-item"><span class="nav-icon">?</span>Support</div>
+          <div class="nav-item"><span class="nav-icon">§</span>Privacy</div>
+          <div class="nav-item"><span class="nav-icon">✓</span>Site Health</div>
+          <div class="nav-item"><span class="nav-icon">↗</span>Deploy</div>
+        </nav>
+      </aside>
 
-        <div class="mock-table">
-          <div class="row">
+      <div class="main-grid">
+        <section class="card section">
+          <div class="section-header">
             <div>
-              <div class="row-title">Why offline-first security still matters</div>
-              <div class="row-meta">Mock preview • published article</div>
+              <h2>CMS modules</h2>
+              <p>Основните области, които admin панелът постепенно ще започне да управлява.</p>
             </div>
-            <span class="badge">Published</span>
+            <div class="button-row">
+              <button class="button secondary" disabled>Refresh checks</button>
+              <button class="button" disabled>Open live editor</button>
+            </div>
           </div>
-          <div class="row">
+
+          <div class="module-grid">
+            <article class="module">
+              <div class="module-top">
+                <div class="module-icon">✎</div>
+                <span class="module-state mock">Mock</span>
+              </div>
+              <h3 class="module-title">Articles Studio</h3>
+              <p class="module-text">Чернови, structured blocks, card image, preview и publish workflow.</p>
+            </article>
+
+            <article class="module">
+              <div class="module-top">
+                <div class="module-icon">▣</div>
+                <span class="module-state mock">Mock</span>
+              </div>
+              <h3 class="module-title">App Pages</h3>
+              <p class="module-text">Product pages, Google Play links, feature cards, changelog и screenshots.</p>
+            </article>
+
+            <article class="module">
+              <div class="module-top">
+                <div class="module-icon">◉</div>
+                <span class="module-state mock">Mock</span>
+              </div>
+              <h3 class="module-title">Media Library</h3>
+              <p class="module-text">Image dimensions, alt text, usage tracking и low-resolution warnings.</p>
+            </article>
+
+            <article class="module">
+              <div class="module-top">
+                <div class="module-icon">?</div>
+                <span class="module-state mock">Mock</span>
+              </div>
+              <h3 class="module-title">Support / FAQ</h3>
+              <p class="module-text">Поддръжка, често задавани въпроси и app-specific help content.</p>
+            </article>
+
+            <article class="module">
+              <div class="module-top">
+                <div class="module-icon">§</div>
+                <span class="module-state mock">Mock</span>
+              </div>
+              <h3 class="module-title">Privacy / Legal</h3>
+              <p class="module-text">Privacy pages, last updated dates, policy checks и data safety notes.</p>
+            </article>
+
+            <article class="module">
+              <div class="module-top">
+                <div class="module-icon">✓</div>
+                <span class="module-state ready">Ready idea</span>
+              </div>
+              <h3 class="module-title">Site Health</h3>
+              <p class="module-text">Missing metadata, broken links, image quality и build-risk checks.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="split">
+          <div class="card section">
+            <div class="section-header">
+              <div>
+                <h2>Articles queue</h2>
+                <p>Примерен списък със статии и бъдещ draft/publish статус.</p>
+              </div>
+              <button class="button" disabled>New article</button>
+            </div>
+
+            <div class="table">
+              <div class="row">
+                <div>
+                  <div class="row-title">Why offline-first security still matters</div>
+                  <div class="row-meta">Article • Published • Card image OK</div>
+                </div>
+                <span class="badge safe">Published</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">How local file vaults protect privacy</div>
+                  <div class="row-meta">Article • Published • Metadata OK</div>
+                </div>
+                <span class="badge safe">Published</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Нова статия за бъдещия редактор</div>
+                  <div class="row-meta">Draft mock • Needs preview • Backend not connected</div>
+                </div>
+                <span class="badge">Draft mock</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card section">
+            <div class="section-header">
+              <div>
+                <h2>Editor preview</h2>
+                <p>Бъдещ structured editor вместо ръчно пипане на markdown/code.</p>
+              </div>
+              <div class="button-row">
+                <button class="button secondary" disabled>Save draft</button>
+                <button class="button" disabled>Publish</button>
+              </div>
+            </div>
+
+            <div class="editor-mock">
+              <div class="field">Title: Нова статия за Offline FileSecure</div>
+              <div class="field">Slug: offline-filesecure-secure-local-vault</div>
+              <div class="field">Card image: required • alt text required</div>
+              <div class="field">Blocks: heading, paragraph, image figure, callout</div>
+              <div class="preview-card">
+                <div class="preview-image"></div>
+                <div class="row-title">Article card preview</div>
+                <div class="row-meta">
+                  Тук CMS-ът ще показва как статията ще изглежда в Articles, Search и public article page.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="split">
+          <div class="card section">
+            <div class="section-header">
+              <div>
+                <h2>Site health checks</h2>
+                <p>Mock проверки, които по-късно ще пазят сайта от счупено съдържание.</p>
+              </div>
+              <span class="badge info">Mock status</span>
+            </div>
+
+            <div class="health-list">
+              <div class="health-item"><span>Missing article descriptions</span><span class="dot safe"></span></div>
+              <div class="health-item"><span>Missing image alt text</span><span class="dot safe"></span></div>
+              <div class="health-item"><span>Low-resolution card images</span><span class="dot warn"></span></div>
+              <div class="health-item"><span>Broken internal links</span><span class="dot safe"></span></div>
+              <div class="health-item"><span>Maintenance mode accidentally on</span><span class="dot safe"></span></div>
+            </div>
+          </div>
+
+          <div class="card section">
+            <div class="section-header">
+              <div>
+                <h2>Deploy pipeline</h2>
+                <p>Бъдещият publish flow ще показва commit/deploy/live статус.</p>
+              </div>
+              <span class="badge">Read-only</span>
+            </div>
+
+            <div class="table">
+              <div class="row">
+                <div>
+                  <div class="row-title">GitHub commit</div>
+                  <div class="row-meta">Disabled until protected backend exists</div>
+                </div>
+                <span class="badge">Blocked</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Cloudflare Pages deploy</div>
+                  <div class="row-meta">Will run after safe backend commit</div>
+                </div>
+                <span class="badge info">Planned</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Public content live</div>
+                  <div class="row-meta">Only after successful deploy confirmation</div>
+                </div>
+                <span class="badge info">Planned</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card section">
+          <div class="section-header">
             <div>
-              <div class="row-title">How local file vaults protect privacy</div>
-              <div class="row-meta">Mock preview • published article</div>
+              <h2>Safety guardrails</h2>
+              <p>Тези правила остават активни, докато CMS-ът няма реален protected write backend.</p>
             </div>
-            <span class="badge">Published</span>
           </div>
-          <div class="row">
-            <div>
-              <div class="row-title">Нова статия за бъдещ редактор</div>
-              <div class="row-meta">Mock draft • backend not connected</div>
-            </div>
-            <span class="badge">Draft mock</span>
+
+          <div class="module-grid">
+            <article class="module">
+              <div class="module-top">
+                <div class="module-icon">🔒</div>
+                <span class="module-state ready">Required</span>
+              </div>
+              <h3 class="module-title">No browser secrets</h3>
+              <p class="module-text">GitHub token, deploy token и private API secrets никога не се изпращат към browser-а.</p>
+            </article>
+
+            <article class="module">
+              <div class="module-top">
+                <div class="module-icon">⛔</div>
+                <span class="module-state ready">Required</span>
+              </div>
+              <h3 class="module-title">Writes disabled</h3>
+              <p class="module-text">Save Draft, Publish, Upload и Maintenance writes остават disabled в mock режима.</p>
+            </article>
+
+            <article class="module">
+              <div class="module-top">
+                <div class="module-icon">✓</div>
+                <span class="module-state ready">Required</span>
+              </div>
+              <h3 class="module-title">Preview before publish</h3>
+              <p class="module-text">Публично съдържание се пуска само след preview, validation, backend commit и успешен deploy.</p>
+            </article>
           </div>
-        </div>
-
-        <p class="disabled-note">
-          Тази секция е само визуален прототип. Реалното създаване, редактиране и публикуване
-          ще се включи чак след protected server-side write endpoint.
-        </p>
-      </div>
-
-      <div class="card section">
-        <h2>Редактор</h2>
-        <div class="form-mock">
-          <div class="input-mock">Заглавие на статията</div>
-          <div class="input-mock">Slug / URL</div>
-          <div class="input-mock">Card image + alt text</div>
-          <div class="input-mock">Structured blocks: paragraph, heading, image, callout</div>
-          <div class="input-mock">Preview panel</div>
-        </div>
-
-        <p class="disabled-note">
-          Следващата реална backend фаза ще валидира полетата server-side и ще записва
-          markdown/image файлове без да излага credentials в public JavaScript.
-        </p>
+        </section>
       </div>
     </section>
 
-    <footer>
-      DK App Tools Admin • Protected mock UI • No write operations enabled
+    <footer class="footer">
+      DK App Tools CMS • Protected mock UI • Cloudflare Access protected • No write operations enabled
     </footer>
   </main>
 </body>
