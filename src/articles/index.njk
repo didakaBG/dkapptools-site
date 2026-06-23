@@ -43,36 +43,71 @@ activeNav: articles
       </a>
     </section>
   {% endif %}
+  {% if collections.publishedArticles.length > 1 %}
+    <section class="compact-panel articles-list-panel" aria-labelledby="article-list-heading">
+      <div class="articles-section-head">
+        <p class="kicker">Recent</p>
+        <h2 id="article-list-heading">More recent articles</h2>
+      </div>
 
-  <section class="compact-panel articles-list-panel" aria-labelledby="article-list-heading">
-    <div class="articles-section-head">
-      <p class="kicker">Library</p>
-      <h2 id="article-list-heading">Published articles</h2>
-    </div>
-
-    <div class="article-list-grid">
-      {% for post in collections.publishedArticles %}
-        <a class="article-card article-list-card" href="{{ post.url }}">
-          <img src="{{ post.data.cardImage or post.data.image or '/assets/img/article-offline-first.webp' }}" alt="{{ post.data.cardImageAlt or '' }}" loading="lazy">
-          <span class="article-card-meta">
-            <span class="chip">{{ post.data.category or "Article" }}</span>
-            <span>{{ post.data.dateLabel }}</span>
-          </span>
-          <strong>{{ post.data.title }}</strong>
-          <p>{{ post.data.description }}</p>
-          {% if post.data.tags %}
-            <span class="article-topic-row" aria-label="Topics">
-              {% for tag in post.data.tags %}
-                <small>{{ tag }}</small>
-              {% endfor %}
-            </span>
+      <div class="article-list-grid">
+        {% for post in collections.publishedArticles %}
+          {% if loop.index > 1 and loop.index <= 6 %}
+            <a class="article-card article-list-card" href="{{ post.url }}">
+              <img src="{{ post.data.cardImage or post.data.image or '/assets/img/article-offline-first.webp' }}" alt="{{ post.data.cardImageAlt or '' }}" loading="lazy">
+              <span class="article-card-meta">
+                <span class="chip">{{ post.data.category or "Article" }}</span>
+                <span>{{ post.data.dateLabel }}</span>
+              </span>
+              <strong>{{ post.data.title }}</strong>
+              <p>{{ post.data.description }}</p>
+              {% if post.data.tags %}
+                <span class="article-topic-row" aria-label="Topics">
+                  {% for tag in post.data.tags %}
+                    <small>{{ tag }}</small>
+                  {% endfor %}
+                </span>
+              {% endif %}
+              <em>Read article</em>
+            </a>
           {% endif %}
-          <em>Read article</em>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
 
+  {% if collections.publishedArticles.length > 6 %}
+    <section class="compact-panel articles-list-panel" aria-labelledby="older-article-list-heading">
+      <div class="articles-section-head">
+        <p class="kicker">Archive</p>
+        <h2 id="older-article-list-heading">Older articles</h2>
+      </div>
+
+      <div class="article-list-grid">
+        {% for post in collections.publishedArticles %}
+          {% if loop.index > 6 %}
+            <a class="article-card article-list-card" href="{{ post.url }}">
+              <img src="{{ post.data.cardImage or post.data.image or '/assets/img/article-offline-first.webp' }}" alt="{{ post.data.cardImageAlt or '' }}" loading="lazy">
+              <span class="article-card-meta">
+                <span class="chip">{{ post.data.category or "Article" }}</span>
+                <span>{{ post.data.dateLabel }}</span>
+              </span>
+              <strong>{{ post.data.title }}</strong>
+              <p>{{ post.data.description }}</p>
+              {% if post.data.tags %}
+                <span class="article-topic-row" aria-label="Topics">
+                  {% for tag in post.data.tags %}
+                    <small>{{ tag }}</small>
+                  {% endfor %}
+                </span>
+              {% endif %}
+              <em>Read article</em>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
   <section class="compact-panel articles-topics-panel" aria-labelledby="article-topics-heading">
     <div class="articles-section-head">
       <p class="kicker">Topics</p>
