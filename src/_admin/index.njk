@@ -606,30 +606,30 @@ eleventyExcludeFromCollections: true
       </div>
 
       <div class="status-pills">
-        <div class="pill green">Cloudflare Access active</div>
-        <div class="pill gold">Mock mode</div>
-        <div class="pill">No writes enabled</div>
+        <div class="pill green">Достъпът е защитен</div>
+        <div class="pill gold">Демо режим</div>
+        <div class="pill">Записването е изключено</div>
       </div>
     </header>
 
     <section class="intro">
       <div class="card intro-main">
-        <div class="kicker">Admin overview</div>
+        <div class="kicker">Общ преглед</div>
         <h1>Контролен център за DK App Tools.</h1>
         <p class="lead">
           Тази защитена CMS зона ще управлява статии, app страници, снимки, проверки и publish процес.
-          В момента е mock/read-only версия: дизайнът е реалистичен, но записването и публикуването са изключени.
+          В момента е демо версия: дизайнът е реалистичен, но още не записва и не публикува.
         </p>
       </div>
 
       <aside class="card intro-side">
         <div class="kicker">Системен статус</div>
         <ul class="state-list">
-          <li><span>Admin host</span><strong>admin.dkapptools.com</strong></li>
-          <li><span>Access layer</span><strong>Cloudflare Access</strong></li>
-          <li><span>Write backend</span><strong>Not connected</strong></li>
-          <li><span>Publish action</span><strong>Disabled</strong></li>
-          <li><span>Browser credentials</span><strong>None</strong></li>
+          <li><span>Админ адрес</span><strong>admin.dkapptools.com</strong></li>
+          <li><span>Защита на достъпа</span><strong>Cloudflare Access</strong></li>
+          <li><span>Система за записване</span><strong>Още не е свързана</strong></li>
+          <li><span>Публикуване</span><strong>Изключено</strong></li>
+          <li><span>Данни за достъп в браузъра</span><strong>Няма</strong></li>
         </ul>
       </aside>
     </section>
@@ -638,31 +638,31 @@ eleventyExcludeFromCollections: true
       <article class="summary">
         <div class="summary-label">Статии</div>
         <div class="summary-value">3</div>
-        <div class="summary-note">published  draft flow planned</div>
+        <div class="summary-note">публикувани - чернови по-късно</div>
       </article>
 
       <article class="summary">
         <div class="summary-label">Приложения</div>
         <div class="summary-value">1</div>
-        <div class="summary-note">active page  store link later</div>
+        <div class="summary-note">активна страница - линк към магазина по-късно</div>
       </article>
 
       <article class="summary">
         <div class="summary-label">Медия</div>
         <div class="summary-value">1</div>
-        <div class="summary-note">low-res warning mock</div>
+        <div class="summary-note">демо предупреждение за малка снимка</div>
       </article>
 
       <article class="summary">
         <div class="summary-label">Проверки</div>
         <div class="summary-value">4/5</div>
-        <div class="summary-note">site health mock status</div>
+        <div class="summary-note">демо статус на проверките</div>
       </article>
 
       <article class="summary">
-        <div class="summary-label">Deploy</div>
+        <div class="summary-label">Качване</div>
         <div class="summary-value">Off</div>
-        <div class="summary-note">publish disabled until backend</div>
+        <div class="summary-note">публикуването чака системата за записване</div>
       </article>
     </section>
 
@@ -670,14 +670,14 @@ eleventyExcludeFromCollections: true
       <aside class="card rail">
         <div class="rail-title">Раздели</div>
         <nav class="nav" aria-label="CMS sections">
-          <div class="nav-item active"><span class="nav-icon">1</span>Dashboard</div>
-          <div class="nav-item"><span class="nav-icon">2</span>Articles</div>
-          <div class="nav-item"><span class="nav-icon">3</span>Apps</div>
-          <div class="nav-item"><span class="nav-icon">4</span>Media</div>
-          <div class="nav-item"><span class="nav-icon">5</span>Support</div>
-          <div class="nav-item"><span class="nav-icon">6</span>Privacy</div>
-          <div class="nav-item"><span class="nav-icon">7</span>Health</div>
-          <div class="nav-item"><span class="nav-icon">8</span>Deploy</div>
+          <div class="nav-item active"><span class="nav-icon">1</span>Табло</div>
+          <div class="nav-item"><span class="nav-icon">2</span>Статии</div>
+          <div class="nav-item"><span class="nav-icon">3</span>Приложения</div>
+          <div class="nav-item"><span class="nav-icon">4</span>Медия</div>
+          <div class="nav-item"><span class="nav-icon">5</span>Поддръжка</div>
+          <div class="nav-item"><span class="nav-icon">6</span>Поверителност</div>
+          <div class="nav-item"><span class="nav-icon">7</span>Проверки</div>
+          <div class="nav-item"><span class="nav-icon">8</span>Качване</div>
         </nav>
       </aside>
 
@@ -689,23 +689,23 @@ eleventyExcludeFromCollections: true
               <p>Кратък списък с най-важните стъпки преди CMS-ът да започне да записва реално.</p>
             </div>
             <div class="button-row">
-              <button class="button secondary" disabled>Refresh checks</button>
-              <button class="button" disabled>Open editor</button>
+              <button class="button secondary" disabled>Обнови проверките</button>
+              <button class="button" disabled>Отвори редактор</button>
             </div>
           </div>
 
           <div class="priority-grid">
             <div class="priority">
-              <strong>1. Articles editor</strong>
-              <span>Structured editor с title, slug, description, card image и content blocks.</span>
+              <strong>1. Статии editor</strong>
+              <span>Структуриран редактор със заглавие, адрес, описание, снимка за карта и блокове съдържание.</span>
             </div>
             <div class="priority">
-              <strong>2. Protected preview</strong>
-              <span>Preview преди publish, без статията да става публична.</span>
+              <strong>2. Защитен преглед</strong>
+              <span>Преглед преди публикуване, без статията да става публична.</span>
             </div>
             <div class="priority">
-              <strong>3. Server-side publish</strong>
-              <span>Backend commit към GitHub без credentials в browser-а.</span>
+              <strong>3. Публикуване през сървъра</strong>
+              <span>Сървърът прави commit към GitHub без данни за достъп в браузъра.</span>
             </div>
           </div>
         </section>
@@ -715,7 +715,7 @@ eleventyExcludeFromCollections: true
             <div class="section-head">
               <div>
                 <h2>Съдържание</h2>
-                <p>Mock overview на статии и бъдещ draft/publish статус.</p>
+                <p>Демо преглед на статии и бъдещ статус за чернови/публикуване.</p>
               </div>
               <button class="button" disabled>Нова статия</button>
             </div>
@@ -724,25 +724,25 @@ eleventyExcludeFromCollections: true
               <div class="row">
                 <div>
                   <div class="row-title">Why offline-first security still matters</div>
-                  <div class="row-meta">Published article  metadata OK</div>
+                  <div class="row-meta">Публикувана статия - данните са OK</div>
                 </div>
-                <span class="badge green">Published</span>
+                <span class="badge green">Публикувана</span>
               </div>
 
               <div class="row">
                 <div>
                   <div class="row-title">How local file vaults protect privacy</div>
-                  <div class="row-meta">Published article  card image OK</div>
+                  <div class="row-meta">Публикувана статия - снимката е OK</div>
                 </div>
-                <span class="badge green">Published</span>
+                <span class="badge green">Публикувана</span>
               </div>
 
               <div class="row">
                 <div>
                   <div class="row-title">Нова статия за бъдещ редактор</div>
-                  <div class="row-meta">Draft mock  preview required  backend missing</div>
+                  <div class="row-meta">Демо чернова - нужен е преглед - системата за записване липсва</div>
                 </div>
-                <span class="badge">Draft mock</span>
+                <span class="badge">Демо чернова</span>
               </div>
             </div>
           </div>
@@ -750,35 +750,35 @@ eleventyExcludeFromCollections: true
           <div class="card section">
             <div class="section-head">
               <div>
-                <h2>Publish workflow</h2>
+                <h2>Процес на публикуване</h2>
                 <p>Реалният publish процес ще мине през тези защитени стъпки.</p>
               </div>
-              <span class="badge">Read-only</span>
+              <span class="badge">Само преглед</span>
             </div>
 
             <div class="row-list">
               <div class="row">
                 <div>
-                  <div class="row-title">Save draft</div>
+                  <div class="row-title">Запази чернова</div>
                   <div class="row-meta">Writes `published: false` after backend is ready</div>
                 </div>
-                <span class="badge">Disabled</span>
+                <span class="badge">Изключено</span>
               </div>
 
               <div class="row">
                 <div>
-                  <div class="row-title">Preview</div>
-                  <div class="row-meta">Shows article/card/search preview before public release</div>
+                  <div class="row-title">Преглед</div>
+                  <div class="row-meta">Показва как ще изглежда статията, картата и резултатът в търсенето</div>
                 </div>
-                <span class="badge blue">Planned</span>
+                <span class="badge blue">Планирано</span>
               </div>
 
               <div class="row">
                 <div>
-                  <div class="row-title">Publish</div>
-                  <div class="row-meta">Creates GitHub commit and waits for Cloudflare deploy</div>
+                  <div class="row-title">Публикувай</div>
+                  <div class="row-meta">Създава GitHub commit и изчаква Cloudflare качването</div>
                 </div>
-                <span class="badge">Disabled</span>
+                <span class="badge">Изключено</span>
               </div>
             </div>
           </div>
@@ -796,55 +796,55 @@ eleventyExcludeFromCollections: true
             <article class="module">
               <div class="module-top">
                 <div class="module-icon">A</div>
-                <span class="badge">Mock</span>
+                <span class="badge">Демо</span>
               </div>
-              <h3>Articles Studio</h3>
-              <p>Статии, чернови, preview, card image, tags и publish workflow.</p>
+              <h3>Статии Studio</h3>
+              <p>Статии, чернови, преглед, снимка за карта, тагове и процес на публикуване.</p>
             </article>
 
             <article class="module">
               <div class="module-top">
                 <div class="module-icon">P</div>
-                <span class="badge">Mock</span>
+                <span class="badge">Демо</span>
               </div>
-              <h3>App Pages</h3>
-              <p>Product страници, Google Play линкове, features, screenshots и changelog.</p>
+              <h3>Страници на приложения</h3>
+              <p>Продуктови страници, Google Play линкове, функции, снимки и промени по версии.</p>
             </article>
 
             <article class="module">
               <div class="module-top">
                 <div class="module-icon">M</div>
-                <span class="badge">Mock</span>
+                <span class="badge">Демо</span>
               </div>
-              <h3>Media Library</h3>
-              <p>Размери на снимки, alt text, usage tracking и low-res предупреждения.</p>
+              <h3>Медия Library</h3>
+              <p>Размери на снимки, alt текст, къде се използват и предупреждения за ниско качество.</p>
             </article>
 
             <article class="module">
               <div class="module-top">
                 <div class="module-icon">S</div>
-                <span class="badge">Mock</span>
+                <span class="badge">Демо</span>
               </div>
-              <h3>Support / FAQ</h3>
-              <p>Въпроси и отговори за приложения, privacy, recovery и troubleshooting.</p>
+              <h3>Поддръжка / FAQ</h3>
+              <p>Въпроси и отговори за приложения, поверителност, възстановяване и проблеми.</p>
             </article>
 
             <article class="module">
               <div class="module-top">
                 <div class="module-icon">L</div>
-                <span class="badge">Mock</span>
+                <span class="badge">Демо</span>
               </div>
-              <h3>Privacy / Legal</h3>
-              <p>Privacy pages, last updated dates, data safety notes и policy reminders.</p>
+              <h3>Поверителност / Legal</h3>
+              <p>Поверителност pages, last updated dates, data safety notes и policy reminders.</p>
             </article>
 
             <article class="module">
               <div class="module-top">
                 <div class="module-icon">H</div>
-                <span class="badge blue">Planned</span>
+                <span class="badge blue">Планирано</span>
               </div>
-              <h3>Site Health</h3>
-              <p>Broken links, missing metadata, image quality и build-risk checks.</p>
+              <h3>Site Проверки</h3>
+              <p>Счупени линкове, липсващи данни, качество на снимките и build рискове.</p>
             </article>
           </div>
         </section>
@@ -854,18 +854,18 @@ eleventyExcludeFromCollections: true
             <div class="section-head">
               <div>
                 <h2>Site health</h2>
-                <p>Mock проверки, които по-късно ще пазят сайта от счупено съдържание.</p>
+                <p>Демо проверки, които по-късно ще пазят сайта от счупено съдържание.</p>
               </div>
-              <span class="badge blue">Mock status</span>
+              <span class="badge blue">Демо статус</span>
             </div>
 
             <div class="health-grid">
-              <div class="health"><span>Article descriptions</span><span class="dot green"></span></div>
-              <div class="health"><span>Image alt text</span><span class="dot green"></span></div>
-              <div class="health"><span>Low-res images</span><span class="dot warn"></span></div>
-              <div class="health"><span>Internal links</span><span class="dot green"></span></div>
-              <div class="health"><span>Maintenance mode</span><span class="dot green"></span></div>
-              <div class="health"><span>Public admin path</span><span class="dot green"></span></div>
+              <div class="health"><span>Описания на статии</span><span class="dot green"></span></div>
+              <div class="health"><span>Alt текст на снимки</span><span class="dot green"></span></div>
+              <div class="health"><span>Снимки с ниска резолюция</span><span class="dot warn"></span></div>
+              <div class="health"><span>Вътрешни линкове</span><span class="dot green"></span></div>
+              <div class="health"><span>Режим поддръжка</span><span class="dot green"></span></div>
+              <div class="health"><span>Публичен admin адрес</span><span class="dot green"></span></div>
             </div>
           </div>
 
@@ -880,26 +880,26 @@ eleventyExcludeFromCollections: true
             <div class="row-list">
               <div class="row">
                 <div>
-                  <div class="row-title">No browser credentials</div>
-                  <div class="row-meta">GitHub token и private write keys не се изпращат към browser-а.</div>
+                  <div class="row-title">Без данни за достъп в браузъра</div>
+                  <div class="row-meta">GitHub токен и частни ключове за запис не се изпращат към браузъра.</div>
                 </div>
                 <span class="badge green">Required</span>
               </div>
 
               <div class="row">
                 <div>
-                  <div class="row-title">Writes disabled</div>
-                  <div class="row-meta">Save Draft, Publish, Upload и Maintenance writes са изключени.</div>
+                  <div class="row-title">Записването е изключено</div>
+                  <div class="row-meta">Save Draft, Публикувай, Upload и Maintenance writes са изключени.</div>
                 </div>
                 <span class="badge green">Required</span>
               </div>
 
               <div class="row">
                 <div>
-                  <div class="row-title">Preview before publish</div>
-                  <div class="row-meta">Публичното съдържание се пуска само след preview и успешен deploy.</div>
+                  <div class="row-title">Преглед before publish</div>
+                  <div class="row-meta">Публичното съдържание се пуска само след преглед и успешно качване.</div>
                 </div>
-                <span class="badge blue">Planned</span>
+                <span class="badge blue">Планирано</span>
               </div>
             </div>
           </div>
@@ -908,7 +908,7 @@ eleventyExcludeFromCollections: true
     </section>
 
     <footer class="footer">
-      DK App Tools CMS  Protected mock UI  Cloudflare Access protected  No write operations enabled
+      DK App Tools CMS  Защитен демо изглед  Cloudflare Access protected  Записването е изключено
     </footer>
   </main>
 </body>
