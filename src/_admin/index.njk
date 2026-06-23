@@ -658,6 +658,39 @@ eleventyExcludeFromCollections: true
     .article-admin-meta {
       margin-top: 4px;
     }
+    .article-block-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .article-block-item {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+      padding: 12px;
+    }
+
+    .article-block-kind {
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .article-block-title {
+      margin-top: 6px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .article-block-text {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
@@ -717,6 +750,7 @@ eleventyExcludeFromCollections: true
                         class="button secondary"
                         type="button"
                         data-article-select
+                        data-article-key="{{ article.fileSlug | escape }}"
                         data-article-title="{{ article.data.title | escape }}"
                         data-article-url="{{ article.url | escape }}"
                         data-article-category="{{ article.data.category | escape }}"
@@ -733,6 +767,23 @@ eleventyExcludeFromCollections: true
               </div>
             </div>
 
+              <div hidden>
+                {% for article in collections.publishedArticles %}
+                  {% set articleBlocks = adminArticleBlocks[article.fileSlug] %}
+                  <div data-article-blocks="{{ article.fileSlug | escape }}">
+                    {% if articleBlocks %}
+                      {% for block in articleBlocks %}
+                        <div
+                          data-article-block
+                          data-block-kind="{{ block.kind | escape }}"
+                          data-block-title="{{ (block.title or '') | escape }}"
+                          data-block-text="{{ (block.text or '') | escape }}"
+                        ></div>
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
             <div class="card section">
               <div class="section-head">
                 <div>
@@ -788,6 +839,15 @@ eleventyExcludeFromCollections: true
                 </div>
               </div>
             </div>
+          </section>
+          <section class="card section">
+            <div class="section-head">
+              <div>
+                <h2>Съдържание на статията</h2>
+              </div>
+            </div>
+
+            <div class="article-block-list" data-article-block-list></div>
           </section>
         </div>
 
@@ -1378,6 +1438,65 @@ eleventyExcludeFromCollections: true
       field.textContent = nextValue || "—";
     }
 
+    const articleBlockList = document.querySelector("[data-article-block-list]");
+    const articleBlockLabels = {
+      paragraph: "Параграф",
+      heading: "Подзаглавие",
+      note: "Бележка",
+      card: "Карта"
+    };
+
+    function addArticleBlock(kind, title, text) {
+      if (!articleBlockList) return;
+
+      const item = document.createElement("div");
+      item.className = "article-block-item";
+
+      const kindEl = document.createElement("div");
+      kindEl.className = "article-block-kind";
+      kindEl.textContent = articleBlockLabels[kind] || kind || "Блок";
+
+      const titleEl = document.createElement("div");
+      titleEl.className = "article-block-title";
+      titleEl.textContent = title && title.trim() ? title : "—";
+
+      const textEl = document.createElement("div");
+      textEl.className = "article-block-text";
+      textEl.textContent = text && text.trim() ? text : "—";
+
+      item.append(kindEl, titleEl, textEl);
+      articleBlockList.appendChild(item);
+    }
+
+    function renderArticleBlocks(articleKey) {
+      if (!articleBlockList) return;
+
+      articleBlockList.replaceChildren();
+
+      const source = Array.from(document.querySelectorAll("[data-article-blocks]")).find((item) => {
+        return item.getAttribute("data-article-blocks") === articleKey;
+      });
+
+      if (!source) {
+        addArticleBlock("note", "Няма данни", "Избери друга статия.");
+        return;
+      }
+
+      const blocks = Array.from(source.querySelectorAll("[data-article-block]"));
+
+      if (blocks.length === 0) {
+        addArticleBlock("note", "Няма блокове", "За тази статия още няма подготвени блокове.");
+        return;
+      }
+
+      blocks.forEach((block) => {
+        addArticleBlock(
+          block.dataset.blockKind,
+          block.dataset.blockTitle,
+          block.dataset.blockText
+        );
+      });
+    }
     document.querySelectorAll("[data-article-select]").forEach((button) => {
       button.addEventListener("click", () => {
         document.querySelectorAll("[data-article-select]").forEach((item) => {
@@ -1392,6 +1511,7 @@ eleventyExcludeFromCollections: true
         setArticleDetail(articleDetailFields.alt, button.dataset.articleCardAlt);
         setArticleDetail(articleDetailFields.edited, button.dataset.articleEdited);
         setArticleDetail(articleDetailFields.published, button.dataset.articlePublished);
+        renderArticleBlocks(button.dataset.articleKey);
       });
     });
 
