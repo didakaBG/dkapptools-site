@@ -27,7 +27,6 @@ activeNav: articles
         <span class="featured-article-copy">
           <span class="article-card-meta">
             <span class="chip">{{ latest.data.category or "Article" }}</span>
-            <span>{{ latest.data.dateLabel }}</span>
           </span>
           <strong>{{ latest.data.title }}</strong>
           <span>{{ latest.data.description }}</span>
@@ -57,7 +56,6 @@ activeNav: articles
               <img src="{{ post.data.cardImage or post.data.image or '/assets/img/article-offline-first.webp' }}" alt="{{ post.data.cardImageAlt or '' }}" loading="lazy">
               <span class="article-card-meta">
                 <span class="chip">{{ post.data.category or "Article" }}</span>
-                <span>{{ post.data.dateLabel }}</span>
               </span>
               <strong>{{ post.data.title }}</strong>
               <p>{{ post.data.description }}</p>
@@ -90,7 +88,6 @@ activeNav: articles
               <img src="{{ post.data.cardImage or post.data.image or '/assets/img/article-offline-first.webp' }}" alt="{{ post.data.cardImageAlt or '' }}" loading="lazy">
               <span class="article-card-meta">
                 <span class="chip">{{ post.data.category or "Article" }}</span>
-                <span>{{ post.data.dateLabel }}</span>
               </span>
               <strong>{{ post.data.title }}</strong>
               <p>{{ post.data.description }}</p>

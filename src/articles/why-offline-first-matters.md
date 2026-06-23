@@ -23,7 +23,7 @@ activeNav: articles
       <span class="chip">{{ category }}</span>
       <h1 id="intro">Why offline-first security still matters</h1>
       <p class="article-summary">{{ description }}</p>
-      <p class="article-meta">{{ dateLabel }} &middot; 3 min read &middot; {{ relatedApp }}</p>
+      <p class="article-meta">3 min read &middot; {{ relatedApp }}</p>
     </header>
 
     <p>Useful privacy tools often start by asking a plain question: does this file need to leave the device at all?</p>

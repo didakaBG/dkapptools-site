@@ -23,7 +23,7 @@ activeNav: articles
       <span class="chip">{{ category }}</span>
       <h1 id="intro">Keeping private files safer on Android without cloud upload</h1>
       <p class="article-summary">{{ description }}</p>
-      <p class="article-meta">{{ dateLabel }} &middot; 4 min read &middot; {{ relatedApp }}</p>
+      <p class="article-meta">4 min read &middot; {{ relatedApp }}</p>
     </header>
 
     <p>Android can handle private files well when the workflow is deliberate. The important part is knowing which apps create copies and which ones sync by default.</p>

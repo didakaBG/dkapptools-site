@@ -23,7 +23,7 @@ activeNav: articles
       <span class="chip">{{ category }}</span>
       <h1 id="intro">Offline FileSecure: what a local encrypted vault means</h1>
       <p class="article-summary">{{ description }}</p>
-      <p class="article-meta">{{ dateLabel }} &middot; 4 min read &middot; {{ relatedApp }}</p>
+      <p class="article-meta">4 min read &middot; {{ relatedApp }}</p>
     </header>
 
     <p>Offline FileSecure is built around a simple idea: private files should not need to be uploaded to a server just to be organized and protected on your phone.</p>
