@@ -210,44 +210,14 @@ eleventyExcludeFromCollections: true
       color: var(--text);
       text-align: right;
     }
-
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .summary {
+.summary {
       padding: 16px;
       border: 1px solid var(--border);
       border-radius: 20px;
       background: rgba(255, 255, 255, 0.032);
       min-height: 116px;
     }
-
-    .summary-label {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 850;
-    }
-
-    .summary-value {
-      margin-top: 10px;
-      color: var(--gold-light);
-      font-size: 28px;
-      font-weight: 950;
-      letter-spacing: -0.05em;
-    }
-
-    .summary-note {
-      margin-top: 5px;
-      color: var(--muted-2);
-      font-size: 12px;
-      line-height: 1.35;
-    }
-
-    .layout {
+.layout {
       display: grid;
       grid-template-columns: 220px 1fr;
       gap: 14px;
@@ -541,12 +511,7 @@ eleventyExcludeFromCollections: true
       .split {
         grid-template-columns: 1fr;
       }
-
-      .summary-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .rail {
+.rail {
         position: static;
       }
 
@@ -581,7 +546,6 @@ eleventyExcludeFromCollections: true
         border-radius: 21px;
       }
 
-      .summary-grid,
       .module-grid,
       .priority-grid,
       .health-grid {
@@ -658,8 +622,7 @@ eleventyExcludeFromCollections: true
         <div class="mark">DK</div>
         <div>
           <div class="brand-title">DK App Tools Админ панел</div>
-          <div class="brand-subtitle">Защитен панел за управление на сайта</div>
-        </div>
+</div>
       </div>
 
       <div class="status-pills">
@@ -669,8 +632,7 @@ eleventyExcludeFromCollections: true
 
 <section class="layout admin-tabs-shell">
       <aside class="sidebar">
-        <div class="side-label">Раздели</div>
-        <nav aria-label="Админ раздели">
+<nav aria-label="Админ раздели">
           <button class="nav-item admin-tab-button is-active" type="button" data-admin-tab="dashboard" aria-selected="true"><span class="nav-icon">1</span>Табло</button>
           <button class="nav-item admin-tab-button" type="button" data-admin-tab="articles" aria-selected="false"><span class="nav-icon">2</span>Статии</button>
           <button class="nav-item admin-tab-button" type="button" data-admin-tab="media" aria-selected="false"><span class="nav-icon">3</span>Визия и медия</button>
