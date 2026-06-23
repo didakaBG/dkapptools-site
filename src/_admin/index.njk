@@ -613,51 +613,6 @@ eleventyExcludeFromCollections: true
         gap: 10px;
       }
     }
-
-    .article-editor-grid {
-      display: grid;
-      gap: 14px;
-    }
-
-    .article-editor-field {
-      display: grid;
-      gap: 7px;
-    }
-
-    .article-editor-field label {
-      color: var(--text);
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: -0.01em;
-    }
-
-    .article-editor-input,
-    .article-editor-textarea {
-      width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.045);
-      color: var(--text);
-      padding: 11px 12px;
-      font: inherit;
-      line-height: 1.45;
-      outline: none;
-    }
-
-    .article-editor-textarea {
-      min-height: 96px;
-      resize: vertical;
-    }
-
-    .article-editor-input[readonly],
-    .article-editor-textarea[readonly] {
-      color: var(--muted);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .article-admin-meta {
-      margin-top: 4px;
-    }
   </style>
 </head>
 <body>
@@ -690,108 +645,36 @@ eleventyExcludeFromCollections: true
 
       <div class="content-stack">
         <div class="admin-tab-panel is-active" data-admin-panel="articles">
-          <section class="split">
-            <div class="card section">
-              <div class="section-head">
-                <div>
-                  <h2>Статии</h2>
-                </div>
-              </div>
-
-              <div class="row-list">
-                {% for article in collections.publishedArticles %}
-                  {% set adminArticle = adminArticles[article.fileSlug] %}
-                  <div class="row">
-                    <div>
-                      <div class="row-title">{{ article.data.title }}</div>
-                      <div class="row-meta">
-                        {{ article.url }}
-                        {% if adminArticle %}
-                          · Последна редакция: {{ adminArticle.lastEditedLabel }}
-                          · Публикувана: {{ adminArticle.lastPublishedLabel }}
-                        {% endif %}
-                      </div>
-                    </div>
-                    <div class="row-actions">
-                      <button
-                        class="button secondary"
-                        type="button"
-                        data-article-select
-                        data-article-title="{{ article.data.title | escape }}"
-                        data-article-url="{{ article.url | escape }}"
-                        data-article-category="{{ article.data.category | escape }}"
-                        data-article-description="{{ article.data.description | escape }}"
-                        data-article-card-image="{{ (article.data.cardImage or article.data.image or '') | escape }}"
-                        data-article-card-alt="{{ (article.data.cardImageAlt or '') | escape }}"
-                        data-article-edited="{% if adminArticle %}{{ adminArticle.lastEditedLabel | escape }}{% endif %}"
-                        data-article-published="{% if adminArticle %}{{ adminArticle.lastPublishedLabel | escape }}{% endif %}"
-                      >Детайли</button>
-                      <a class="button secondary" href="https://dkapptools.com{{ article.url }}" target="_blank" rel="noopener">Отвори</a>
-                    </div>
-                  </div>
-                {% endfor %}
+          <section class="card section">
+            <div class="section-head">
+              <div>
+                <h2>Статии</h2>
               </div>
             </div>
 
-            <div class="card section">
-              <div class="section-head">
-                <div>
-                  <h2>Данни за статия</h2>
-                </div>
-              </div>
-
-              <div class="article-editor-grid" aria-label="Данни за статия">
-                <div class="article-editor-field">
-                  <label for="article-editor-title">Заглавие</label>
-                  <input id="article-editor-title" class="article-editor-input" type="text" data-article-detail-title readonly>
-                </div>
-
-                <div class="article-editor-field">
-                  <label for="article-editor-url">Линк на статията</label>
-                  <input id="article-editor-url" class="article-editor-input" type="text" data-article-detail-url readonly>
-                </div>
-
-                <div class="article-editor-field">
-                  <label for="article-editor-category">Категория</label>
-                  <input id="article-editor-category" class="article-editor-input" type="text" data-article-detail-category readonly>
-                </div>
-
-                <div class="article-editor-field">
-                  <label for="article-editor-description">Кратко описание</label>
-                  <textarea id="article-editor-description" class="article-editor-textarea" data-article-detail-description readonly></textarea>
-                </div>
-
-                <div class="article-editor-field">
-                  <label for="article-editor-image">Снимка за карта</label>
-                  <input id="article-editor-image" class="article-editor-input" type="text" data-article-detail-image readonly>
-                </div>
-
-                <div class="article-editor-field">
-                  <label for="article-editor-alt">Описание на снимката</label>
-                  <textarea id="article-editor-alt" class="article-editor-textarea" data-article-detail-alt readonly></textarea>
-                </div>
-
-                <div class="row-list article-admin-meta">
-                  <div class="row">
-                    <div>
-                      <div class="row-title">Последна редакция</div>
-                      <div class="row-meta" data-article-detail-edited>—</div>
+            <div class="row-list">
+              {% for article in collections.publishedArticles %}
+                {% set adminArticle = adminArticles[article.fileSlug] %}
+                <div class="row">
+                  <div>
+                    <div class="row-title">{{ article.data.title }}</div>
+                    <div class="row-meta">
+                      {{ article.url }}
+                      {% if adminArticle %}
+                        · Последна редакция: {{ adminArticle.lastEditedLabel }}
+                        · Публикувана: {{ adminArticle.lastPublishedLabel }}
+                      {% endif %}
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div>
-                      <div class="row-title">Публикувана</div>
-                      <div class="row-meta" data-article-detail-published>—</div>
-                    </div>
+                  <div class="row-actions">
+                    <a class="button secondary" href="https://dkapptools.com{{ article.url }}" target="_blank" rel="noopener">Отвори</a>
                   </div>
                 </div>
-              </div>
+              {% endfor %}
             </div>
           </section>
         </div>
-
-                <div class="admin-tab-panel" data-admin-panel="media">
+        <div class="admin-tab-panel" data-admin-panel="media">
           <section class="split">
             <div class="card section">
               <div class="section-head">
@@ -1168,7 +1051,7 @@ eleventyExcludeFromCollections: true
               <div class="row">
                 <div>
                   <div class="row-title">Статии</div>
-                  <div class="row-meta">Заглавие, адрес, кратко описание, снимка за карта и блокове съдържание.</div>
+                  <div class="row-meta">Заглавие, адрес, кратко описание и снимка за карта.</div>
                 </div>
                 <span class="badge blue">Съдържание</span>
               </div>
@@ -1353,52 +1236,6 @@ eleventyExcludeFromCollections: true
         });
       });
     });
-
-    const articleDetailFields = {
-      title: document.querySelector("[data-article-detail-title]"),
-      url: document.querySelector("[data-article-detail-url]"),
-      category: document.querySelector("[data-article-detail-category]"),
-      description: document.querySelector("[data-article-detail-description]"),
-      image: document.querySelector("[data-article-detail-image]"),
-      alt: document.querySelector("[data-article-detail-alt]"),
-      edited: document.querySelector("[data-article-detail-edited]"),
-      published: document.querySelector("[data-article-detail-published]")
-    };
-
-    function setArticleDetail(field, value) {
-      if (!field) return;
-
-      const nextValue = value && value.trim() ? value : "";
-
-      if ("value" in field) {
-        field.value = nextValue;
-        return;
-      }
-
-      field.textContent = nextValue || "—";
-    }
-
-    document.querySelectorAll("[data-article-select]").forEach((button) => {
-      button.addEventListener("click", () => {
-        document.querySelectorAll("[data-article-select]").forEach((item) => {
-          item.setAttribute("aria-pressed", item === button ? "true" : "false");
-        });
-
-        setArticleDetail(articleDetailFields.title, button.dataset.articleTitle);
-        setArticleDetail(articleDetailFields.url, button.dataset.articleUrl);
-        setArticleDetail(articleDetailFields.category, button.dataset.articleCategory);
-        setArticleDetail(articleDetailFields.description, button.dataset.articleDescription);
-        setArticleDetail(articleDetailFields.image, button.dataset.articleCardImage);
-        setArticleDetail(articleDetailFields.alt, button.dataset.articleCardAlt);
-        setArticleDetail(articleDetailFields.edited, button.dataset.articleEdited);
-        setArticleDetail(articleDetailFields.published, button.dataset.articlePublished);
-      });
-    });
-
-    const firstArticleButton = document.querySelector("[data-article-select]");
-    if (firstArticleButton) {
-      firstArticleButton.click();
-    }
   </script>
 </body>
 </html>
