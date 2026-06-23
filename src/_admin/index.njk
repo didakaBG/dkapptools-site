@@ -592,6 +592,63 @@ eleventyExcludeFromCollections: true
         grid-template-columns: 1fr;
       }
     }
+
+    .admin-tabs-shell {
+      align-items: start;
+    }
+
+    .admin-tab-button {
+      width: 100%;
+      border: 0;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .admin-tab-button:focus-visible {
+      outline: 2px solid rgba(232, 195, 120, 0.9);
+      outline-offset: 2px;
+    }
+
+    .admin-tab-button.is-active {
+      border-color: rgba(232, 195, 120, 0.6);
+      background: rgba(232, 195, 120, 0.12);
+      color: #f8e5b7;
+    }
+
+    .admin-tab-panel {
+      display: none;
+    }
+
+    .admin-tab-panel.is-active {
+      display: grid;
+      gap: 18px;
+    }
+
+    .admin-panel-title {
+      margin-bottom: 14px;
+    }
+
+    .admin-panel-title h2 {
+      margin: 0 0 6px;
+    }
+
+    .admin-panel-title p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .admin-tabs-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -617,7 +674,7 @@ eleventyExcludeFromCollections: true
         <div class="kicker">Общ преглед</div>
         <h1>Контролен център за DK App Tools.</h1>
         <p class="lead">
-          Тази защитена CMS зона ще управлява статии, app страници, снимки, проверки и publish процес.
+          Тази защитена CMS зона ще управлява статии, страници на приложения, снимки, проверки и процес на публикуване.
           В момента е демо версия: дизайнът е реалистичен, но още не записва и не публикува.
         </p>
       </div>
@@ -666,287 +723,259 @@ eleventyExcludeFromCollections: true
       </article>
     </section>
 
-    <section class="layout">
-      <aside class="card rail">
-        <div class="rail-title">Раздели</div>
-        <nav class="nav" aria-label="CMS sections">
-          <div class="nav-item active"><span class="nav-icon">1</span>Табло</div>
-          <div class="nav-item"><span class="nav-icon">2</span>Статии</div>
-          <div class="nav-item"><span class="nav-icon">3</span>Приложения</div>
-          <div class="nav-item"><span class="nav-icon">4</span>Медия</div>
-          <div class="nav-item"><span class="nav-icon">5</span>Поддръжка</div>
-          <div class="nav-item"><span class="nav-icon">6</span>Поверителност</div>
-          <div class="nav-item"><span class="nav-icon">7</span>Проверки</div>
-          <div class="nav-item"><span class="nav-icon">8</span>Качване</div>
+        <section class="layout admin-tabs-shell">
+      <aside class="sidebar">
+        <div class="side-label">Раздели</div>
+        <nav aria-label="Админ раздели">
+          <button class="nav-item admin-tab-button is-active" type="button" data-admin-tab="dashboard" aria-selected="true"><span class="nav-icon">1</span>Табло</button>
+          <button class="nav-item admin-tab-button" type="button" data-admin-tab="articles" aria-selected="false"><span class="nav-icon">2</span>Статии</button>
+          <button class="nav-item admin-tab-button" type="button" data-admin-tab="media" aria-selected="false"><span class="nav-icon">3</span>Визия и медия</button>
+          <button class="nav-item admin-tab-button" type="button" data-admin-tab="apps" aria-selected="false"><span class="nav-icon">4</span>Приложения</button>
+          <button class="nav-item admin-tab-button" type="button" data-admin-tab="support" aria-selected="false"><span class="nav-icon">5</span>Поддръжка</button>
+          <button class="nav-item admin-tab-button" type="button" data-admin-tab="privacy" aria-selected="false"><span class="nav-icon">6</span>Поверителност</button>
+          <button class="nav-item admin-tab-button" type="button" data-admin-tab="checks" aria-selected="false"><span class="nav-icon">7</span>Проверки</button>
+          <button class="nav-item admin-tab-button" type="button" data-admin-tab="system" aria-selected="false"><span class="nav-icon">8</span>Система</button>
         </nav>
       </aside>
 
-      <div class="main">
-        <section class="card section">
-          <div class="section-head">
-            <div>
-              <h2>Следващи действия</h2>
-              <p>Кратък списък с най-важните стъпки преди CMS-ът да започне да записва реално.</p>
-            </div>
-            <div class="button-row">
-              <button class="button secondary" disabled>Обнови проверките</button>
-              <button class="button" disabled>Отвори редактор</button>
-            </div>
-          </div>
-
-          <div class="priority-grid">
-            <div class="priority">
-              <strong>1. Редактор за статии</strong>
-              <span>Структуриран редактор със заглавие, адрес, описание, снимка за карта и блокове съдържание.</span>
-            </div>
-            <div class="priority">
-              <strong>2. Защитен преглед</strong>
-              <span>Преглед преди публикуване, без статията да става публична.</span>
-            </div>
-            <div class="priority">
-              <strong>3. Публикуване през сървъра</strong>
-              <span>Сървърът прави commit към GitHub без данни за достъп в браузъра.</span>
-            </div>
-          </div>
-        </section>
-
-                <section class="split">
-          <div class="card section">
+      <div class="content-stack">
+        <div class="admin-tab-panel is-active" data-admin-panel="dashboard">
+          <section class="card section">
             <div class="section-head">
               <div>
-                <h2>Статии</h2>
-                <p>Преглед на текущите статии и бъдещ статус за чернови и публикуване.</p>
+                <h2>Табло</h2>
+                <p>Кратък преглед на защитената CMS зона и най-важните следващи стъпки.</p>
               </div>
-              <button class="button" disabled>Нова статия</button>
+              <span class="badge">Демо режим</span>
             </div>
 
             <div class="row-list">
               <div class="row">
                 <div>
-                  <div class="row-title">Why offline-first security still matters</div>
-                  <div class="row-meta">Публикувана статия - данните са попълнени</div>
+                  <div class="row-title">Редактор за статии</div>
+                  <div class="row-meta">Структуриран редактор със заглавие, адрес, описание, снимка за карта и блокове съдържание.</div>
                 </div>
-                <span class="badge green">Публикувана</span>
+                <span class="badge blue">Следващо</span>
               </div>
-
               <div class="row">
                 <div>
-                  <div class="row-title">How local file vaults protect privacy</div>
-                  <div class="row-meta">Публикувана статия - снимката за карта е налична</div>
+                  <div class="row-title">Защитен преглед</div>
+                  <div class="row-meta">Статията трябва да се види и провери преди да стане публична.</div>
                 </div>
-                <span class="badge green">Публикувана</span>
-              </div>
-
-              <div class="row">
-                <div>
-                  <div class="row-title">Нова статия за бъдещ редактор</div>
-                  <div class="row-meta">Демо чернова - нужен е преглед - системата за записване още липсва</div>
-                </div>
-                <span class="badge">Демо чернова</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="card section">
-            <div class="section-head">
-              <div>
-                <h2>Редактор за статия</h2>
-                <p>Бъдещата форма за писане ще води съдържанието през ясни полета, вместо да пипаш файлове на ръка.</p>
-              </div>
-              <div class="button-row">
-                <button class="button secondary" disabled>Запази чернова</button>
-                <button class="button" disabled>Публикувай</button>
-              </div>
-            </div>
-
-            <div class="row-list">
-              <div class="row">
-                <div>
-                  <div class="row-title">Заглавие</div>
-                  <div class="row-meta">Например: Как Offline FileSecure пази файловете локално</div>
-                </div>
-                <span class="badge blue">Поле</span>
-              </div>
-
-              <div class="row">
-                <div>
-                  <div class="row-title">Адрес на статията</div>
-                  <div class="row-meta">Пример: offline-filesecure-local-vault-explained</div>
-                </div>
-                <span class="badge blue">Поле</span>
-              </div>
-
-              <div class="row">
-                <div>
-                  <div class="row-title">Кратко описание</div>
-                  <div class="row-meta">Използва се в картата, търсенето и публичната страница.</div>
-                </div>
-                <span class="badge blue">Поле</span>
-              </div>
-
-              <div class="row">
-                <div>
-                  <div class="row-title">Снимка за карта + alt текст</div>
-                  <div class="row-meta">CMS-ът ще предупреждава, ако снимката е малка или липсва описание.</div>
-                </div>
-                <span class="badge blue">Медия</span>
-              </div>
-
-              <div class="row">
-                <div>
-                  <div class="row-title">Блокове съдържание</div>
-                  <div class="row-meta">Заглавие, параграф, снимка с описание, бележка, списък с отметки.</div>
-                </div>
-                <span class="badge blue">Структура</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="card section">
-          <div class="section-head">
-            <div>
-              <h2>Проверка преди публикуване</h2>
-              <p>Преди статията да стане публична, системата трябва да провери най-важните неща.</p>
-            </div>
-            <span class="badge">Само визуален изглед</span>
-          </div>
-
-          <div class="health-grid">
-            <div class="health"><span>Има заглавие</span><span class="dot green"></span></div>
-            <div class="health"><span>Има кратко описание</span><span class="dot green"></span></div>
-            <div class="health"><span>Има снимка за карта</span><span class="dot warn"></span></div>
-            <div class="health"><span>Има alt текст</span><span class="dot green"></span></div>
-            <div class="health"><span>Адресът не се повтаря</span><span class="dot green"></span></div>
-            <div class="health"><span>Публикуването е изключено до backend фаза</span><span class="dot warn"></span></div>
-          </div>
-        </section>
-<section class="card section">
-          <div class="section-head">
-            <div>
-              <h2>CMS модули</h2>
-              <p>По-спокойна структура на основните секции, без всички детайли да се показват наведнъж.</p>
-            </div>
-          </div>
-
-          <div class="module-grid">
-            <article class="module">
-              <div class="module-top">
-                <div class="module-icon">A</div>
-                <span class="badge">Демо</span>
-              </div>
-              <h3>Статии</h3>
-              <p>Статии, чернови, преглед, снимка за карта, тагове и процес на публикуване.</p>
-            </article>
-
-            <article class="module">
-              <div class="module-top">
-                <div class="module-icon">P</div>
-                <span class="badge">Демо</span>
-              </div>
-              <h3>Страници на приложения</h3>
-              <p>Продуктови страници, Google Play линкове, функции, снимки и промени по версии.</p>
-            </article>
-
-            <article class="module">
-              <div class="module-top">
-                <div class="module-icon">M</div>
-                <span class="badge">Демо</span>
-              </div>
-              <h3>Медия Library</h3>
-              <p>Размери на снимки, alt текст, къде се използват и предупреждения за ниско качество.</p>
-            </article>
-
-            <article class="module">
-              <div class="module-top">
-                <div class="module-icon">S</div>
-                <span class="badge">Демо</span>
-              </div>
-              <h3>Поддръжка / FAQ</h3>
-              <p>Въпроси и отговори за приложения, поверителност, възстановяване и проблеми.</p>
-            </article>
-
-            <article class="module">
-              <div class="module-top">
-                <div class="module-icon">L</div>
-                <span class="badge">Демо</span>
-              </div>
-              <h3>Поверителност / Legal</h3>
-              <p>Поверителност pages, last updated dates, data safety notes и policy reminders.</p>
-            </article>
-
-            <article class="module">
-              <div class="module-top">
-                <div class="module-icon">H</div>
                 <span class="badge blue">Планирано</span>
               </div>
-              <h3>Site Проверки</h3>
-              <p>Счупени линкове, липсващи данни, качество на снимките и build рискове.</p>
-            </article>
-          </div>
-        </section>
+              <div class="row">
+                <div>
+                  <div class="row-title">Публикуване през сървъра</div>
+                  <div class="row-meta">По-късно сървърът ще прави запис в GitHub без данни за достъп в браузъра.</div>
+                </div>
+                <span class="badge">Не е активно</span>
+              </div>
+            </div>
+          </section>
+        </div>
 
-        <section class="split">
-          <div class="card section">
+        <div class="admin-tab-panel" data-admin-panel="articles">
+          <section class="split">
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Статии</h2>
+                  <p>Преглед на текущите статии и бъдещ статус за чернови и публикуване.</p>
+                </div>
+                <button class="button" disabled>Нова статия</button>
+              </div>
+
+              <div class="row-list">
+                <div class="row">
+                  <div>
+                    <div class="row-title">Why offline-first security still matters</div>
+                    <div class="row-meta">Публикувана статия - данните са попълнени</div>
+                  </div>
+                  <span class="badge green">Публикувана</span>
+                </div>
+                <div class="row">
+                  <div>
+                    <div class="row-title">How local file vaults protect privacy</div>
+                    <div class="row-meta">Публикувана статия - снимката за карта е налична</div>
+                  </div>
+                  <span class="badge green">Публикувана</span>
+                </div>
+                <div class="row">
+                  <div>
+                    <div class="row-title">Нова статия за бъдещ редактор</div>
+                    <div class="row-meta">Демо чернова - нужен е преглед - системата за записване още липсва</div>
+                  </div>
+                  <span class="badge">Демо чернова</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Редактор за статия</h2>
+                  <p>Бъдещата форма за писане ще води съдържанието през ясни полета.</p>
+                </div>
+                <div class="button-row">
+                  <button class="button secondary" disabled>Запази чернова</button>
+                  <button class="button" disabled>Публикувай</button>
+                </div>
+              </div>
+
+              <div class="row-list">
+                <div class="row"><div><div class="row-title">Заглавие</div><div class="row-meta">Основното заглавие на статията.</div></div><span class="badge blue">Поле</span></div>
+                <div class="row"><div><div class="row-title">Адрес на статията</div><div class="row-meta">Пример: offline-filesecure-local-vault-explained</div></div><span class="badge blue">Поле</span></div>
+                <div class="row"><div><div class="row-title">Кратко описание</div><div class="row-meta">Използва се в картата, търсенето и публичната страница.</div></div><span class="badge blue">Поле</span></div>
+                <div class="row"><div><div class="row-title">Блокове съдържание</div><div class="row-meta">Заглавие, параграф, снимка с описание, бележка или списък.</div></div><span class="badge blue">Структура</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card section">
             <div class="section-head">
               <div>
-                <h2>Проверки на сайта</h2>
-                <p>Демо проверки, които по-късно ще пазят сайта от счупено съдържание.</p>
+                <h2>Проверка преди публикуване</h2>
+                <p>Преди статията да стане публична, системата трябва да провери най-важните неща.</p>
+              </div>
+              <span class="badge">Само визуален изглед</span>
+            </div>
+            <div class="health-grid">
+              <div class="health"><span>Има заглавие</span><span class="dot green"></span></div>
+              <div class="health"><span>Има кратко описание</span><span class="dot green"></span></div>
+              <div class="health"><span>Има снимка за карта</span><span class="dot warn"></span></div>
+              <div class="health"><span>Има описание на снимки</span><span class="dot green"></span></div>
+              <div class="health"><span>Адресът не се повтаря</span><span class="dot green"></span></div>
+              <div class="health"><span>Публикуването е изключено до сървърната фаза</span><span class="dot warn"></span></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="admin-tab-panel" data-admin-panel="media">
+          <section class="card section">
+            <div class="section-head">
+              <div>
+                <h2>Визия и медия</h2>
+                <p>Снимки за карти, снимки вътре в статии, описание на снимки и предупреждения за ниско качество.</p>
+              </div>
+              <span class="badge">Планирано</span>
+            </div>
+            <div class="row-list">
+              <div class="row"><div><div class="row-title">Снимки за карти на статии</div><div class="row-meta">Тук ще се следи дали картите не разтягат малки изображения.</div></div><span class="badge blue">Медия</span></div>
+              <div class="row"><div><div class="row-title">Снимки вътре в статия</div><div class="row-meta">Всяка снимка трябва да има описание и подходящ размер.</div></div><span class="badge blue">Медия</span></div>
+              <div class="row"><div><div class="row-title">Alt текст</div><div class="row-meta">Описание за достъпност, търсене и по-добро съдържание.</div></div><span class="badge blue">Проверка</span></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="admin-tab-panel" data-admin-panel="apps">
+          <section class="card section">
+            <div class="section-head">
+              <div>
+                <h2>Приложения</h2>
+                <p>Продуктови страници, Google Play линкове, функции, снимки и промени по версии.</p>
+              </div>
+              <span class="badge">Планирано</span>
+            </div>
+            <div class="row-list">
+              <div class="row"><div><div class="row-title">Offline FileSecure</div><div class="row-meta">Първата продуктова страница в DK App Tools.</div></div><span class="badge green">Активна</span></div>
+              <div class="row"><div><div class="row-title">Бъдещи приложения</div><div class="row-meta">Страници за следващи приложения, снимки и промени по версии.</div></div><span class="badge">По-късно</span></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="admin-tab-panel" data-admin-panel="support">
+          <section class="card section">
+            <div class="section-head">
+              <div>
+                <h2>Поддръжка</h2>
+                <p>Чести въпроси, текстове за поддръжка, обяснения за възстановяване и помощни страници.</p>
+              </div>
+              <span class="badge">Планирано</span>
+            </div>
+            <div class="row-list">
+              <div class="row"><div><div class="row-title">Чести въпроси</div><div class="row-meta">Кратки отговори за потребителите преди да пишат до support.</div></div><span class="badge blue">FAQ</span></div>
+              <div class="row"><div><div class="row-title">Помощ за възстановяване</div><div class="row-meta">Ясни текстове за PIN, recovery key и локална защита.</div></div><span class="badge blue">Help</span></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="admin-tab-panel" data-admin-panel="privacy">
+          <section class="card section">
+            <div class="section-head">
+              <div>
+                <h2>Поверителност</h2>
+                <p>Страници за поверителност, последна редакция, бележки за данните и напомняния.</p>
+              </div>
+              <span class="badge">Планирано</span>
+            </div>
+            <div class="row-list">
+              <div class="row"><div><div class="row-title">Поверителност за Offline FileSecure</div><div class="row-meta">Политика за локалното vault приложение.</div></div><span class="badge green">Активна</span></div>
+              <div class="row"><div><div class="row-title">Поверителност за сайта</div><div class="row-meta">Поверителност за сайта DK App Tools.</div></div><span class="badge green">Активна</span></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="admin-tab-panel" data-admin-panel="checks">
+          <section class="card section">
+            <div class="section-head">
+              <div>
+                <h2>Проверки</h2>
+                <p>Мониторинг за счупени линкове, липсващи описания, описание на снимки и ниско качество на снимки.</p>
               </div>
               <span class="badge blue">Демо статус</span>
             </div>
-
             <div class="health-grid">
               <div class="health"><span>Описания на статии</span><span class="dot green"></span></div>
-              <div class="health"><span>Alt текст на снимки</span><span class="dot green"></span></div>
+              <div class="health"><span>Описание на снимки</span><span class="dot green"></span></div>
               <div class="health"><span>Снимки с ниска резолюция</span><span class="dot warn"></span></div>
               <div class="health"><span>Вътрешни линкове</span><span class="dot green"></span></div>
               <div class="health"><span>Режим поддръжка</span><span class="dot green"></span></div>
-              <div class="health"><span>Публичен admin адрес</span><span class="dot green"></span></div>
             </div>
-          </div>
+          </section>
+        </div>
 
-          <div class="card section">
+        <div class="admin-tab-panel" data-admin-panel="system">
+          <section class="card section">
             <div class="section-head">
               <div>
-                <h2>Правила за безопасност</h2>
-                <p>Докато няма backend, CMS-ът остава визуален и не записва нищо.</p>
+                <h2>Система</h2>
+                <p>Безопасност, записване, режим поддръжка и бъдещ статус на публикуване и качване.</p>
               </div>
+              <span class="badge">Записването е изключено</span>
             </div>
-
             <div class="row-list">
-              <div class="row">
-                <div>
-                  <div class="row-title">Без данни за достъп в браузъра</div>
-                  <div class="row-meta">GitHub токен и частни ключове за запис не се изпращат към браузъра.</div>
-                </div>
-                <span class="badge green">Required</span>
-              </div>
-
-              <div class="row">
-                <div>
-                  <div class="row-title">Записването е изключено</div>
-                  <div class="row-meta">Запис на чернова, публикуване, качване и промяна на режим поддръжка са изключени.</div>
-                </div>
-                <span class="badge green">Required</span>
-              </div>
-
-              <div class="row">
-                <div>
-                  <div class="row-title">Преглед преди публикуване</div>
-                  <div class="row-meta">Публичното съдържание се пуска само след преглед и успешно качване.</div>
-                </div>
-                <span class="badge blue">Планирано</span>
-              </div>
+              <div class="row"><div><div class="row-title">Без данни за достъп в браузъра</div><div class="row-meta">GitHub токен и частни ключове за запис не се изпращат към браузъра.</div></div><span class="badge green">Задължително</span></div>
+              <div class="row"><div><div class="row-title">Записването е изключено</div><div class="row-meta">Запис на чернова, публикуване, качване и промяна на режим поддръжка са изключени.</div></div><span class="badge green">Задължително</span></div>
+              <div class="row"><div><div class="row-title">Преглед преди публикуване</div><div class="row-meta">Публичното съдържание се пуска само след преглед и успешно качване.</div></div><span class="badge blue">Планирано</span></div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </section>
+
 
     <footer class="footer">
       DK App Tools CMS  Защитен демо изглед  Cloudflare Access protected  Записването е изключено
     </footer>
   </main>
+
+  <script>
+    document.querySelectorAll("[data-admin-tab]").forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.getAttribute("data-admin-tab");
+
+        document.querySelectorAll("[data-admin-tab]").forEach((item) => {
+          const isActive = item === tab;
+          item.classList.toggle("is-active", isActive);
+          item.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+
+        document.querySelectorAll("[data-admin-panel]").forEach((panel) => {
+          panel.classList.toggle("is-active", panel.getAttribute("data-admin-panel") === target);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
