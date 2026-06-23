@@ -1,0 +1,35 @@
+---
+layout: base.njk
+---
+<section class="article-page">
+  <article class="article-reader surface-panel">
+    <header class="article-note-header">
+      <span class="chip">{{ category }}</span>
+      <h1 id="intro">{{ title }}</h1>
+      <p class="article-summary">{{ description }}</p>
+      <p class="article-meta">{{ readTime or "4 min read" }} &middot; {{ relatedApp }}</p>
+    </header>
+
+    {% for block in blocks %}
+      {% if block.type == "paragraph" %}
+        <p>{{ block.text | escape }}</p>
+      {% elif block.type == "heading" %}
+        <h2{% if block.id %} id="{{ block.id | escape }}"{% endif %}>{{ block.text | escape }}</h2>
+      {% elif block.type == "note" %}
+        <section class="article-note-card">
+          <h2>{{ block.title | escape }}</h2>
+          <p>{{ block.text | escape }}</p>
+        </section>
+      {% elif block.type == "cardGrid" %}
+        <section class="article-card-grid">
+          {% for card in block.cards %}
+            <div class="article-note-card">
+              <h2>{{ card.title | escape }}</h2>
+              <p>{{ card.text | escape }}</p>
+            </div>
+          {% endfor %}
+        </section>
+      {% endif %}
+    {% endfor %}
+  </article>
+</section>
