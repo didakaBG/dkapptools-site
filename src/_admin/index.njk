@@ -1160,24 +1160,145 @@ eleventyExcludeFromCollections: true
           </section>
         </div>
 
-        <div class="admin-tab-panel" data-admin-panel="checks">
+                <div class="admin-tab-panel" data-admin-panel="checks">
+          <section class="split">
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Проверки</h2>
+                  <p>Този раздел събира бъдещите проверки за съдържание, снимки, линкове и готовност за публикуване.</p>
+                </div>
+                <span class="badge">Само визуален изглед</span>
+              </div>
+
+              <div class="health-grid">
+                <div class="health"><span>Описания на статии</span><span class="dot green"></span></div>
+                <div class="health"><span>Снимки за карти</span><span class="dot warn"></span></div>
+                <div class="health"><span>Описание на снимки</span><span class="dot green"></span></div>
+                <div class="health"><span>Вътрешни линкове</span><span class="dot green"></span></div>
+                <div class="health"><span>Страници за поверителност</span><span class="dot green"></span></div>
+                <div class="health"><span>Готовност за публикуване</span><span class="dot warn"></span></div>
+              </div>
+            </div>
+
+            <div class="card section">
+              <div class="section-head">
+                <div>
+                  <h2>Нива на внимание</h2>
+                  <p>Не всяка проверка трябва да блокира публикуване. Някои само предупреждават.</p>
+                </div>
+                <span class="badge blue">Планирано</span>
+              </div>
+
+              <div class="row-list">
+                <div class="row">
+                  <div>
+                    <div class="row-title">Блокиращо</div>
+                    <div class="row-meta">Липсва задължителна страница, счупен основен линк или празно публично съдържание.</div>
+                  </div>
+                  <span class="badge">Спира</span>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Предупреждение</div>
+                    <div class="row-meta">Снимка с грешно съотношение, тежък файл или липсващо описание.</div>
+                  </div>
+                  <span class="badge">Внимание</span>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="row-title">Информация</div>
+                    <div class="row-meta">Бележки за подобрение, които не спират работа по сайта.</div>
+                  </div>
+                  <span class="badge green">OK</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section class="card section">
             <div class="section-head">
               <div>
-                <h2>Проверки</h2>
-                <p>Мониторинг за счупени линкове, липсващи описания, описание на снимки и ниско качество на снимки.</p>
+                <h2>Какво ще се проверява</h2>
+                <p>Тези групи ще пазят сайта от счупено, непълно или грозно публикувано съдържание.</p>
               </div>
-              <span class="badge blue">Демо статус</span>
+              <span class="badge blue">Планирано</span>
             </div>
-            <div class="health-grid">
-              <div class="health"><span>Описания на статии</span><span class="dot green"></span></div>
-              <div class="health"><span>Описание на снимки</span><span class="dot green"></span></div>
-              <div class="health"><span>Снимки с ниска резолюция</span><span class="dot warn"></span></div>
-              <div class="health"><span>Вътрешни линкове</span><span class="dot green"></span></div>
-              <div class="health"><span>Режим поддръжка</span><span class="dot green"></span></div>
+
+            <div class="row-list">
+              <div class="row">
+                <div>
+                  <div class="row-title">Статии</div>
+                  <div class="row-meta">Заглавие, адрес, кратко описание, снимка за карта и блокове съдържание.</div>
+                </div>
+                <span class="badge blue">Съдържание</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Визия и снимки</div>
+                  <div class="row-meta">Размер, съотношение, тежест на файла, описание и риск от грозно изрязване.</div>
+                </div>
+                <span class="badge blue">Медия</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Приложения</div>
+                  <div class="row-meta">Продуктова страница, страница за поверителност, Google Play статус и изображения.</div>
+                </div>
+                <span class="badge blue">Продукт</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Линкове и навигация</div>
+                  <div class="row-meta">Вътрешни страници, публични бутони, privacy линкове и бъдещи store линкове.</div>
+                </div>
+                <span class="badge blue">Връзки</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="card section">
+            <div class="section-head">
+              <div>
+                <h2>Последен примерен резултат</h2>
+                <p>Демо изглед как по-късно ще изглежда обобщението след проверка.</p>
+              </div>
+              <span class="badge">Демо статус</span>
+            </div>
+
+            <div class="row-list">
+              <div class="row">
+                <div>
+                  <div class="row-title">Снимки за статии</div>
+                  <div class="row-meta">Има поне една снимка, която трябва да се прегледа за размер и тежест.</div>
+                </div>
+                <span class="badge">Внимание</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Страници за поверителност</div>
+                  <div class="row-meta">Публичните privacy страници са налични.</div>
+                </div>
+                <span class="badge green">OK</span>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="row-title">Публикуване</div>
+                  <div class="row-meta">Записването и публикуването остават изключени до сървърната фаза.</div>
+                </div>
+                <span class="badge">Не е активно</span>
+              </div>
             </div>
           </section>
         </div>
+
 
         <div class="admin-tab-panel" data-admin-panel="system">
           <section class="card section">
