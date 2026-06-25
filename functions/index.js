@@ -1,12 +1,12 @@
 const ADMIN_HOST = "admin.dkapptools.com";
 
 function pausedAdminResponse() {
-  return new Response(\`<!doctype html>
-<html lang="bg">
+  return new Response(`<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DK App Tools \u0410\u0434\u043c\u0438\u043d \u043f\u0430\u043d\u0435\u043b</title>
+  <title>DK App Tools Admin</title>
   <style>
     :root {
       color-scheme: dark;
@@ -47,8 +47,6 @@ function pausedAdminResponse() {
 
     .badge {
       display: inline-flex;
-      align-items: center;
-      gap: 8px;
       margin-bottom: 18px;
       color: var(--gold);
       font-weight: 800;
@@ -83,13 +81,13 @@ function pausedAdminResponse() {
 </head>
 <body>
   <main>
-    <div class="badge">DK App Tools \u00b7 \u0410\u0434\u043c\u0438\u043d</div>
-    <h1>\u0410\u0434\u043c\u0438\u043d \u043f\u0430\u043d\u0435\u043b\u044a\u0442 \u0435 \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u0441\u043f\u0440\u044f\u043d</h1>
-    <p>\u0421\u0442\u0430\u0442\u0438\u0438\u0442\u0435 \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u0441\u0435 \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u0432\u0430\u0442 \u0440\u044a\u0447\u043d\u043e \u043f\u0440\u0435\u0437 \u043f\u0440\u043e\u0435\u043a\u0442\u0430. \u041f\u0443\u0431\u043b\u0438\u0447\u043d\u0438\u044f\u0442 \u0441\u0430\u0439\u0442 \u043e\u0441\u0442\u0430\u0432\u0430 \u0430\u043a\u0442\u0438\u0432\u0435\u043d, \u0430 \u043d\u043e\u0432\u0438 \u0442\u0435\u043c\u0438 \u0449\u0435 \u0441\u0435 \u0434\u043e\u0431\u0430\u0432\u044f\u0442 \u043f\u0440\u0435\u0437 repo-\u0442\u043e, build, commit \u0438 deploy.</p>
-    <a href="https://dkapptools.com/">\u041a\u044a\u043c \u043f\u0443\u0431\u043b\u0438\u0447\u043d\u0438\u044f \u0441\u0430\u0439\u0442</a>
+    <div class="badge">DK App Tools Admin</div>
+    <h1>Admin panel is paused</h1>
+    <p>Articles are managed manually through the project repository for now. The public website remains active.</p>
+    <a href="https://dkapptools.com/">Open public website</a>
   </main>
 </body>
-</html>\`, {
+</html>`, {
     status: 200,
     headers: {
       "Content-Type": "text/html; charset=utf-8",
