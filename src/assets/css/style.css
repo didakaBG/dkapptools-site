@@ -1282,6 +1282,17 @@ a:hover { color: var(--gold-2); }
   font-size: 0.79rem;
   line-height: 1.45;
 }
+.article-preview-missing-image {
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  padding: 1rem;
+  border: 1px dashed rgba(214,168,61,0.45);
+  border-radius: 14px;
+  color: rgba(245,241,232,0.68);
+  background: rgba(255,255,255,0.04);
+  text-align: center;
+}
 .article-media-note {
   max-width: none;
 }

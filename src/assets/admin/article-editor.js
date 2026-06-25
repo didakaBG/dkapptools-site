@@ -351,6 +351,41 @@
     return (blocks || []).map((block) => cleanBlock(block, options)).filter(Boolean);
   }
 
+  function cleanPreviewBlock(block) {
+    const normalized = normalizeBlock(block);
+
+    if (!normalized) {
+      return null;
+    }
+
+    if (normalized.type !== "image") {
+      return cleanBlock(normalized, { includeLocalPreview: false });
+    }
+
+    const previewImage = cleanBlock(normalized, { includeLocalPreview: false });
+
+    if (previewImage) {
+      return previewImage;
+    }
+
+    if (!isMeaningfulText(normalized.localPreviewSrc)) {
+      return null;
+    }
+
+    return {
+      type: "image",
+      src: "",
+      alt: normalized.alt,
+      caption: normalized.caption,
+      size: normalized.size === "small" || normalized.size === "wide" ? normalized.size : "standard",
+      previewUnavailable: true
+    };
+  }
+
+  function cleanPreviewBlocks(blocks) {
+    return (blocks || []).map(cleanPreviewBlock).filter(Boolean);
+  }
+
   function cleanFrontMatter(frontMatter) {
     const raw = text(frontMatter).trim();
     const withoutBlocks = raw.includes("\nblocks:")
@@ -509,7 +544,7 @@
       cardImage: fieldValue("cardImage", state.current.cardImage),
       cardImageAlt: fieldValue("cardImageAlt", state.current.cardImageAlt),
       published: fieldValue("published", "true") === "true",
-      blocks: cleanBlocks(state.current.blocks, { includeLocalPreview: true })
+      blocks: cleanPreviewBlocks(state.current.blocks)
     };
   }
 
@@ -520,8 +555,13 @@
       return null;
     }
 
-    localStorage.setItem(PREVIEW_STORAGE_KEY, JSON.stringify(draft));
-    return draft;
+    try {
+      localStorage.setItem(PREVIEW_STORAGE_KEY, JSON.stringify(draft));
+      return draft;
+    } catch {
+      setStatus("Прегледът не може да бъде подготвен. Снимката още не е качена или черновата е твърде голяма. Използвай качен публичен път и опитай отново.", "error");
+      return null;
+    }
   }
 
   function openPreview() {
@@ -530,7 +570,10 @@
       return;
     }
 
-    writePreviewDraft();
+    if (!writePreviewDraft()) {
+      return;
+    }
+
     window.open("/_admin/article-preview/", "_blank", "noopener");
   }
 

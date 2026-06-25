@@ -91,10 +91,15 @@
   }
 
   function renderImage(block) {
-    const imageSrc = block.localPreviewSrc || block.src;
+    const imageSrc = block.src;
 
     if (!imageSrc) {
-      return "";
+      return `
+        <figure class="article-figure article-figure--standard article-figure--align-center">
+          <div class="article-preview-missing-image">Снимката още няма публичен път за преглед. Качи я през admin домейна или избери вече качена снимка.</div>
+          ${block.caption ? `<figcaption>${escapeHtml(block.caption)}</figcaption>` : ""}
+        </figure>
+      `;
     }
 
     const size = block.size === "small" || block.size === "wide" ? block.size : "standard";
@@ -158,7 +163,8 @@
         <article class="article-reader surface-panel">
           <header class="article-note-header">
             <h1 id="intro">Няма данни за преглед</h1>
-            <p class="article-summary">Върни се към редактора и натисни „Преглед“ отново.</p>
+            <p class="article-summary">Върни се към редактора и натисни „Преглед“ отново. Ако има нова снимка, увери се, че е качена или избрана от наличните файлове.</p>
+            <p><a class="button secondary" href="/_admin/">Обратно към админ панела</a></p>
           </header>
         </article>
       </section>
