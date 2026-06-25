@@ -1,0 +1,58 @@
+---
+layout: base.njk
+title: Преглед на статия
+description: Преглед на статия преди публикуване
+permalink: /_admin/article-preview/
+---
+
+<section class="article-preview-shell">
+  <div class="article-preview-mode-banner" role="status" aria-label="Режим преглед">
+    <div>
+      <span class="article-preview-mode-pill">Режим преглед</span>
+      <strong>Чернова от редактора</strong>
+    </div>
+    <p>Това е преглед на статията преди публикуване. Затвори този tab, за да се върнеш към отворения editor без да губиш промените.</p>
+    <button class="button secondary" type="button" data-article-preview-return>Затвори прегледа</button>
+  </div>
+
+  <div data-article-preview-root></div>
+</section>
+
+<script src="/assets/admin/article-preview.js" defer></script>
+<script>
+  (function() {
+    function showManualCloseNotice(button) {
+      var banner = button ? button.closest(".article-preview-mode-banner") : null;
+      if (!banner || banner.querySelector("[data-preview-manual-close-note]")) {
+        return;
+      }
+
+      var note = document.createElement("p");
+      note.setAttribute("data-preview-manual-close-note", "true");
+      note.textContent = "Браузърът не позволи автоматично затваряне. Затвори този tab ръчно и се върни към вече отворения editor tab.";
+      banner.appendChild(note);
+    }
+
+    document.addEventListener("click", function(event) {
+      var button = event.target.closest("[data-article-preview-return]");
+      if (!button) {
+        return;
+      }
+
+      event.preventDefault();
+
+      try {
+        window.close();
+      } catch (error) {
+        showManualCloseNotice(button);
+        return;
+      }
+
+      window.setTimeout(function() {
+        if (!window.closed) {
+          showManualCloseNotice(button);
+        }
+      }, 250);
+    });
+  })();
+</script>

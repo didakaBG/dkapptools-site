@@ -614,6 +614,7 @@ eleventyExcludeFromCollections: true
       }
     }
   </style>
+  <link rel="stylesheet" href="/assets/admin/article-editor.css">
 </head>
 <body>
   <main class="shell">
@@ -653,26 +654,245 @@ eleventyExcludeFromCollections: true
             </div>
 
             <div class="row-list">
-              {% for article in collections.publishedArticles %}
+              <script type="application/json" data-admin-media-library>
+{{ adminMediaLibrary | dump | safe }}
+          </script>
+
+          <div class="media-picker" data-media-picker hidden>
+            <div class="media-picker-backdrop" data-media-picker-close></div>
+            <section class="media-picker-panel" role="dialog" aria-modal="true" aria-labelledby="media-picker-title">
+              <div class="media-picker-head">
+                <div>
+                  <h2 id="media-picker-title">Избери снимка</h2>
+                  <p>Избери файл от наличните снимки на сайта.</p>
+                </div>
+                <button class="button secondary" type="button" data-media-picker-close>Затвори</button>
+              </div>
+
+              <div class="media-picker-grid" data-media-picker-grid></div>
+            </section>
+          </div>
+
+          {% for article in collections.all %}
                 {% set adminArticle = adminArticles[article.fileSlug] %}
-                <div class="row">
-                  <div>
-                    <div class="row-title">{{ article.data.title }}</div>
-                    <div class="row-meta">
-                      {{ article.url }}
-                      {% if adminArticle %}
-                        · Последна редакция: {{ adminArticle.lastEditedLabel }}
-                        · Публикувана: {{ adminArticle.lastPublishedLabel }}
-                      {% endif %}
+                {% set articleSource = adminArticleEditorSources[article.fileSlug] %}
+                {% if articleSource %}
+                  <div class="row" data-article-row data-article-key="{{ article.fileSlug | escape }}" data-article-path="{{ articleSource.path | escape }}">
+                    <div>
+                      <div class="row-title">{{ article.data.title }}</div>
+                      <div class="row-meta">
+                        {{ article.url }}
+                        · Статус:
+                        {% if articleSource.published %}
+                          Публикувана
+                        {% else %}
+                          Чернова / скрита от сайта
+                        {% endif %}
+                        {% if adminArticle %}
+                          · Последна редакция: {{ adminArticle.lastEditedLabel }}
+                          · Публикувана: {{ adminArticle.lastPublishedLabel }}
+                        {% endif %}
+                      </div>
+                    </div>
+                    <div class="row-actions">
+                      <button class="button secondary" type="button" data-article-edit="{{ article.fileSlug | escape }}">Редактирай</button>
+                      <a class="button secondary" href="https://dkapptools.com{{ article.url }}" target="_blank" rel="noopener">Отвори</a>
+                      <button
+                        class="button secondary danger"
+                        type="button"
+                        data-article-delete
+                        data-article-key="{{ article.fileSlug | escape }}"
+                        data-article-path="{{ articleSource.path | escape }}"
+                        data-article-title="{{ article.data.title | escape }}"
+                      >Изтрий</button>
                     </div>
                   </div>
-                  <div class="row-actions">
-                    <a class="button secondary" href="https://dkapptools.com{{ article.url }}" target="_blank" rel="noopener">Отвори</a>
-                  </div>
-                </div>
+                {% endif %}
               {% endfor %}
             </div>
           </section>
+
+          <div class="article-delete-notice" data-article-delete-notice hidden></div>
+
+          <div class="article-modal" data-article-delete-modal hidden>
+            <div class="article-modal-card article-delete-modal-card" role="dialog" aria-modal="true" aria-labelledby="article-delete-title">
+              <div class="article-modal-head">
+                <div>
+                  <h3 id="article-delete-title">Изтриване на статия</h3>
+                  <p>Това действие премахва статията от списъка веднага. На защитения admin домейн файлът се изтрива от GitHub.</p>
+                </div>
+                <button class="button secondary" type="button" data-article-delete-cancel>Затвори</button>
+              </div>
+
+              <div class="article-delete-details">
+                <strong data-article-delete-title></strong>
+                <code data-article-delete-path></code>
+              </div>
+
+              <div class="article-modal-actions">
+                <button class="button secondary" type="button" data-article-delete-cancel>Отказ</button>
+                <button class="button secondary danger" type="button" data-article-delete-confirm>Изтрий</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-create-row">
+            <button class="button primary" type="button" data-article-new>Нова статия</button>
+          </div>
+
+          <div class="article-modal" data-new-article-modal hidden>
+            <div class="article-modal-card">
+              <div class="article-modal-head">
+                <div>
+                  <h3>Нова статия</h3>
+                  <p>Създай празна статия, готова за визуална редакция.</p>
+                </div>
+                <button class="button secondary" type="button" data-new-article-cancel>Затвори</button>
+              </div>
+
+              <label class="article-field">
+                <span>Заглавие</span>
+                <input class="article-input" type="text" data-new-article-title placeholder="Например: How to keep private files organized">
+              </label>
+
+              <label class="article-field">
+                <span>Линк на статията</span>
+                <input class="article-input" type="text" data-new-article-alias placeholder="how-to-keep-private-files-organized">
+              </label>
+
+              <div class="article-modal-actions">
+                <button class="button primary" type="button" data-new-article-create>Създай статия</button>
+                <button class="button secondary" type="button" data-new-article-cancel>Отказ</button>
+              </div>
+            </div>
+          </div>
+          <section class="card section article-editor" data-article-editor hidden>
+            <div class="article-editor-save-notice" data-article-save-notice hidden></div>
+
+            <div class="article-editor-topbar">
+              <div>
+                <h2>Редакция на статия</h2>
+                <p>Пиши съдържанието от блокове. Сайтът пази крайния дизайн еднакъв.</p>
+              </div>
+
+              <div class="article-editor-actions">
+                <button class="button primary" type="button" data-article-save>Запази промяната</button>
+                <button class="button secondary" type="button" data-article-preview-open>Преглед</button>
+<a class="button secondary" href="#" target="_blank" rel="noopener" data-article-public-link>Отвори публично</a>
+              </div>
+            </div>
+
+            <div class="article-editor-top-status" data-article-top-status>
+              Локален режим: редактирай и преглеждай. Реално запазване работи през защитения admin домейн.
+            </div>
+
+            <div class="article-editor-title-grid">
+              <div class="article-field">
+                <label for="article-title">Заглавие</label>
+                <input id="article-title" class="article-input" type="text" data-article-field="title">
+              </div>
+
+              <div class="article-field">
+                <label for="article-alias">Адрес / alias</label>
+                <input id="article-alias" class="article-input" type="text" data-article-field="alias" readonly>
+              </div>
+            </div>
+
+            <div class="article-editor-layout">
+              <div class="article-editor-main">
+                <div class="article-editor-toolbar" aria-label="Добавяне на съдържание">
+                  <button class="button secondary" type="button" data-add-article-block="paragraph">+ Параграф</button>
+                  <button class="button secondary" type="button" data-add-article-block="heading">+ Подзаглавие</button>
+                  <button class="button secondary" type="button" data-add-article-block="note">+ Голям акцент</button>
+                  <button class="button secondary" type="button" data-add-article-block="cardGrid">+ Две карти</button>
+                  <button class="button secondary" type="button" data-add-article-block="list">+ Списък</button>
+                  <button class="button secondary" type="button" data-add-article-block="image">+ Снимка</button>
+                </div>
+
+                <div class="article-editor-canvas" data-article-block-list></div>
+              </div>
+
+              <aside class="article-editor-side">
+                <section class="card">
+                  <h3>Публикуване</h3>
+
+                  <label class="article-field">
+                    <span>Статус</span>
+                    <select class="article-select" data-article-field="published">
+                      <option value="true">Публикувана</option>
+                      <option value="false">Чернова</option>
+                    </select>
+                  </label>
+
+                  <label class="article-field">
+                    <span>Категория</span>
+                    <input class="article-input" type="text" data-article-field="category">
+                  </label>
+
+                  <label class="article-field">
+                    <span>Свързано приложение</span>
+                    <input class="article-input" type="text" data-article-field="relatedApp">
+                  </label>
+
+                  <label class="article-field">
+                    <span>Време за четене</span>
+                    <input class="article-input" type="text" data-article-field="readTime">
+                  </label>
+                </section>
+
+                <section class="card">
+                  <h3>Описание и снимки</h3>
+
+                  <label class="article-field">
+                    <span>Кратко описание</span>
+                    <textarea class="article-textarea" data-article-field="description"></textarea>
+                  </label>
+
+                  <label class="article-field">
+                    <span>Основна снимка</span>
+                    <input class="article-input" type="text" data-article-field="image">
+                  </label>
+
+                  <label class="article-field">
+                    <span>Снимка за карта</span>
+                    <input class="article-input" type="text" data-article-field="cardImage">
+                  </label>
+
+                  <label class="article-field">
+                    <span>Описание на снимката</span>
+                    <input class="article-input" type="text" data-article-field="cardImageAlt">
+                  </label>
+                </section>
+
+                <div class="article-editor-status" data-article-status>Избери статия за редакция.</div>
+              </aside>
+            </div>
+          </section>
+
+          {% for article in collections.all %}
+            {% set articleSource = adminArticleEditorSources[article.fileSlug] %}
+            {% if articleSource %}
+              <script type="application/json" data-admin-article-source>
+{
+  "key": {{ article.fileSlug | dump | safe }},
+  "path": {{ articleSource.path | dump | safe }},
+  "frontMatter": {{ articleSource.frontMatter | dump | safe }},
+  "url": {{ article.url | dump | safe }},
+  "title": {{ article.data.title | dump | safe }},
+  "alias": {{ article.fileSlug | dump | safe }},
+  "description": {{ article.data.description | dump | safe }},
+  "category": {{ article.data.category | dump | safe }},
+  "relatedApp": {{ (article.data.relatedApp or "") | dump | safe }},
+  "readTime": {{ (article.data.readTime or "4 min read") | dump | safe }},
+  "image": {{ (articleSource.image or article.data.image or "") | dump | safe }},
+  "published": {{ (articleSource.published if articleSource.published is defined else article.data.published) | dump | safe }},
+  "cardImage": {{ (articleSource.cardImage or article.data.cardImage or article.data.image or "") | dump | safe }},
+  "cardImageAlt": {{ (articleSource.cardImageAlt or article.data.cardImageAlt or "") | dump | safe }},
+  "blocks": {{ article.data.blocks | dump | safe }}
+}
+              </script>
+            {% endif %}
+          {% endfor %}
         </div>
         <div class="admin-tab-panel" data-admin-panel="media">
           <section class="split">
@@ -1237,5 +1457,7 @@ eleventyExcludeFromCollections: true
       });
     });
   </script>
+  <script src="/assets/admin/article-editor.js" defer></script>
+  <script src="/assets/admin/article-delete.js" defer></script>
 </body>
 </html>

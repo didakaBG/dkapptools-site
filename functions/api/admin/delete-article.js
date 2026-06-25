@@ -1,4 +1,4 @@
-﻿const ADMIN_HOST = "admin.dkapptools.com";
+const ADMIN_HOST = "admin.dkapptools.com";
 const GITHUB_API_VERSION = "2022-11-28";
 
 function jsonResponse(body, status = 200) {
@@ -21,19 +21,6 @@ function notFoundResponse() {
       "x-robots-tag": "noindex, nofollow"
     }
   });
-}
-
-function encodeBase64Utf8(value) {
-  const bytes = new TextEncoder().encode(value);
-  const chunkSize = 0x8000;
-  let binary = "";
-
-  for (let index = 0; index < bytes.length; index += chunkSize) {
-    const chunk = bytes.subarray(index, index + chunkSize);
-    binary += String.fromCharCode(...chunk);
-  }
-
-  return btoa(binary);
 }
 
 function getRequiredEnv(env, name) {
@@ -125,22 +112,13 @@ export async function onRequest(context) {
   }
 
   const articlePath = normalizeArticlePath(payload.articlePath);
-  const articleContent = typeof payload.content === "string" ? payload.content : "";
   const commitMessage =
     typeof payload.commitMessage === "string" && payload.commitMessage.trim()
       ? payload.commitMessage.trim()
-      : "Update article from admin";
+      : "Delete article from admin";
 
   if (!isAllowedArticlePath(articlePath)) {
     return jsonResponse({ ok: false, message: "Article path is not allowed." }, 400);
-  }
-
-  if (!articleContent.startsWith("---\n") && !articleContent.startsWith("---\r\n")) {
-    return jsonResponse({ ok: false, message: "Article content must include front matter." }, 400);
-  }
-
-  if (articleContent.length > 250000) {
-    return jsonResponse({ ok: false, message: "Article content is too large." }, 400);
   }
 
   let token;
@@ -181,31 +159,30 @@ export async function onRequest(context) {
     return jsonResponse({ ok: false, message: "Existing article SHA was not found." }, 502);
   }
 
-  const update = await githubRequest({
+  const deletion = await githubRequest({
     url: baseUrl,
-    method: "PUT",
+    method: "DELETE",
     token,
     body: {
       message: commitMessage,
-      content: encodeBase64Utf8(articleContent),
-      ...(sha ? { sha } : {}),
+      sha,
       branch
     }
   });
 
-  if (!update.response.ok) {
+  if (!deletion.response.ok) {
     return jsonResponse({
       ok: false,
-      message: "Could not save article to GitHub.",
-      status: update.response.status,
-      detail: update.data && update.data.message ? update.data.message : "Unknown GitHub error."
+      message: "Could not delete article from GitHub.",
+      status: deletion.response.status,
+      detail: deletion.data && deletion.data.message ? deletion.data.message : "Unknown GitHub error."
     }, 502);
   }
 
   return jsonResponse({
     ok: true,
-    message: "Article saved.",
+    message: "Article deleted.",
     path: articlePath,
-    commit: update.data && update.data.commit ? update.data.commit.sha : null
+    commit: deletion.data && deletion.data.commit ? deletion.data.commit.sha : null
   });
 }
