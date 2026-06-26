@@ -48,8 +48,39 @@ supportEmail: dkapps.support@proton.me
   </main>
 
   <footer class="site-footer">
-    <span>(c) 2026 DK App Tools. All rights reserved.</span>
-    <span>Practical tools. Clear support.</span>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <strong>DK App Tools</strong>
+        <p>Practical apps, clear product information, useful articles, and support pages for real products.</p>
+      </div>
+
+      <nav class="footer-group" aria-label="Apps">
+        <strong>Apps</strong>
+        <a href="/apps/">Apps</a>
+        <a href="/apps/offline-filesecure/">Offline FileSecure</a>
+      </nav>
+
+      <nav class="footer-group" aria-label="Learn">
+        <strong>Learn</strong>
+        <a href="/articles/">Articles</a>
+        {% set latestArticle = collections.publishedArticles | first %}
+        {% if latestArticle %}
+          <a href="{{ latestArticle.url }}">Latest article</a>
+        {% endif %}
+      </nav>
+
+      <nav class="footer-group" aria-label="Support">
+        <strong>Support</strong>
+        <a href="/support/">Support</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/privacy/website/">Website privacy</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DK App Tools.</span>
+      <span>Built for practical software.</span>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -93,6 +124,12 @@ supportEmail: dkapps.support@proton.me
         description: "Support information for DK App Tools products.",
         url: "/support/",
         keywords: "support help email questions"
+      },
+      {
+        title: "About DK App Tools",
+        description: "About DK App Tools, an independent app studio for practical software, clear product pages, useful articles, and real support pages.",
+        url: "/about/",
+        keywords: "about dk app tools independent app studio practical software clear product pages support"
       },
       {
         title: "Privacy policies",

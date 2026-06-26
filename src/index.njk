@@ -103,29 +103,28 @@ permalink: /index.html
   <section class="compact-panel home-resources-panel">
     <div class="section-head section-head-rich">
       <div>
-        <p class="kicker">Resources</p>
-        <h2>Everything around the apps stays easy to find.</h2>
+        <p class="kicker">Brand standard</p>
+        <h2>Built around practical software</h2>
+        <p>A place for focused apps, clear product pages, useful articles, and support that grows with real products — not empty placeholders.</p>
       </div>
     </div>
     <div class="resource-grid">
-      <a class="resource-card" href="/articles/">
-        <span class="resource-icon" aria-hidden="true"></span>
-        <strong>Articles</strong>
-        <p>Guides and practical notes.</p>
-        <em>Browse articles</em>
-      </a>
-      <a class="resource-card" href="/support/">
-        <span class="resource-icon" aria-hidden="true"></span>
-        <strong>Support</strong>
-        <p>Help, contact, and answers.</p>
-        <em>Visit support</em>
-      </a>
-      <a class="resource-card" href="/privacy/offline-filesecure/">
-        <span class="resource-icon" aria-hidden="true"></span>
-        <strong>Privacy</strong>
-        <p>Clear product policies.</p>
-        <em>Read policy</em>
-      </a>
+      <article class="resource-card">
+        <strong>One clear job</strong>
+        <p>Every app should start with a real problem and a simple reason to exist.</p>
+      </article>
+      <article class="resource-card">
+        <strong>No fake scale</strong>
+        <p>DK App Tools should grow with real apps, real articles, and real support pages — not filler cards.</p>
+      </article>
+      <article class="resource-card">
+        <strong>Readable before install</strong>
+        <p>People should be able to understand what an app does, what it does not do, and where to get help.</p>
+      </article>
+      <article class="resource-card">
+        <strong>Different tools, same standard</strong>
+        <p>Future apps can cover different needs, but the standard stays the same: clear, practical, and honest.</p>
+      </article>
     </div>
   </section>
 </section>
@@ -135,25 +134,87 @@ permalink: /index.html
   const carousel = document.querySelector("[data-article-carousel]");
   if (!carousel) return;
 
+  const track = carousel.querySelector(".article-track");
   const cards = Array.from(carousel.querySelectorAll(".article-card"));
   const prev = carousel.querySelector("[data-prev]");
   const next = carousel.querySelector("[data-next]");
+  const desktopQuery = window.matchMedia("(min-width: 768px)");
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const autoplayDelay = 5200;
   let index = 0;
+  let autoplayTimer = null;
+  let isHoverPaused = false;
+  let isFocusPaused = false;
 
   function update() {
     const card = cards[index];
-    if (!card) return;
-    card.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+    if (!card || !track) return;
+    const pageY = window.scrollY;
+    const nextLeft = card.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+    track.scrollTo({ left: nextLeft, behavior: "smooth" });
+    if (window.scrollY !== pageY) {
+      window.scrollTo({ top: pageY, left: window.scrollX, behavior: "auto" });
+    }
+  }
+
+  function canAutoplay() {
+    return cards.length > 3 && desktopQuery.matches && !reducedMotionQuery.matches;
+  }
+
+  function stopAutoplay() {
+    if (!autoplayTimer) return;
+    window.clearInterval(autoplayTimer);
+    autoplayTimer = null;
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    if (isHoverPaused || isFocusPaused || !canAutoplay()) return;
+    autoplayTimer = window.setInterval(() => {
+      index = index >= cards.length - 1 ? 0 : index + 1;
+      update();
+    }, autoplayDelay);
+  }
+
+  function restartAutoplay() {
+    if (!canAutoplay()) return;
+    startAutoplay();
   }
 
   prev.addEventListener("click", () => {
     index = index <= 0 ? cards.length - 1 : index - 1;
     update();
+    restartAutoplay();
   });
 
   next.addEventListener("click", () => {
     index = index >= cards.length - 1 ? 0 : index + 1;
     update();
+    restartAutoplay();
   });
+
+  carousel.addEventListener("mouseenter", () => {
+    isHoverPaused = true;
+    stopAutoplay();
+  });
+
+  carousel.addEventListener("mouseleave", () => {
+    isHoverPaused = false;
+    startAutoplay();
+  });
+
+  carousel.addEventListener("focusin", () => {
+    isFocusPaused = true;
+    stopAutoplay();
+  });
+
+  carousel.addEventListener("focusout", () => {
+    isFocusPaused = carousel.contains(document.activeElement);
+    if (!isFocusPaused) startAutoplay();
+  });
+
+  desktopQuery.addEventListener("change", startAutoplay);
+  reducedMotionQuery.addEventListener("change", startAutoplay);
+  startAutoplay();
 })();
 </script>
