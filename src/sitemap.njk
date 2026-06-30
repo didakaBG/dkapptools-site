@@ -1,0 +1,44 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{% set languagePairs = [
+  { "en": "/", "bg": "/bg/" },
+  { "en": "/apps/", "bg": "/bg/apps/" },
+  { "en": "/apps/offline-filesecure/", "bg": "/bg/apps/offline-filesecure/" },
+  { "en": "/articles/", "bg": "/bg/articles/" },
+  { "en": "/privacy/offline-filesecure/", "bg": "/bg/privacy/offline-filesecure/" },
+  { "en": "/support/", "bg": "/bg/support/" }
+] %}
+{% for pair in languagePairs %}
+  <url>
+    <loc>{{ pair.en | absoluteUrl }}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ pair.en | absoluteUrl }}"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="{{ pair.bg | absoluteUrl }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ pair.en | absoluteUrl }}"/>
+  </url>
+  <url>
+    <loc>{{ pair.bg | absoluteUrl }}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ pair.en | absoluteUrl }}"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="{{ pair.bg | absoluteUrl }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ pair.en | absoluteUrl }}"/>
+  </url>
+{% endfor %}
+{% set singlePages = [
+  "/about/",
+  "/privacy/",
+  "/privacy/website/"
+] %}
+{% for pageUrl in singlePages %}
+  <url>
+    <loc>{{ pageUrl | absoluteUrl }}</loc>
+  </url>
+{% endfor %}
+{% for article in collections.publishedArticles %}
+  <url>
+    <loc>{{ article.url | absoluteUrl }}</loc>
+  </url>
+{% endfor %}
+</urlset>
