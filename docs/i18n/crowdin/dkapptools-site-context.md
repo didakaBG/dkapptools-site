@@ -1,0 +1,269 @@
+# DK App Tools Crowdin Source Context
+
+This file explains where each source JSON key appears. Keys marked `SENSITIVE: yes` affect privacy, security, support boundaries, or product capability claims and should be translated conservatively.
+
+## Home
+
+- `home.meta.title` - browser/search page title. SENSITIVE: no
+- `home.meta.description` - browser/search description. SENSITIVE: no
+- `home.hero.kicker` - small label in the home hero. SENSITIVE: no
+- `home.hero.titlePartOne` - first visible part of the home hero title. SENSITIVE: no
+- `home.hero.titlePartTwo` - second visible part of the home hero title. SENSITIVE: no
+- `home.hero.subtitle` - home hero lead sentence. SENSITIVE: no
+- `home.hero.primaryCta` - primary home hero button. SENSITIVE: no
+- `home.hero.secondaryCta` - secondary home hero button. SENSITIVE: no
+- `home.featuredApp.kicker` - featured app section label. SENSITIVE: no
+- `home.featuredApp.title` - featured app section heading. SENSITIVE: no
+- `home.featuredApp.viewApps` - featured app section link. SENSITIVE: no
+- `home.featuredApp.productName` - product name shown on the featured app card. SENSITIVE: no
+- `home.featuredApp.description` - featured app card body copy. SENSITIVE: yes
+- `home.featuredApp.highlightLocalVault` - featured app highlight chip. SENSITIVE: yes
+- `home.featuredApp.highlightOfflineFirst` - featured app highlight chip. SENSITIVE: yes
+- `home.featuredApp.highlightPrivacyPolicy` - featured app highlight chip. SENSITIVE: yes
+- `home.featuredApp.productCta` - product page button. SENSITIVE: no
+- `home.featuredApp.privacyCta` - privacy policy button. SENSITIVE: no
+- `home.brand.kicker` - brand card label. SENSITIVE: no
+- `home.brand.name` - brand card title. SENSITIVE: no
+- `home.brand.description` - brand card description. SENSITIVE: no
+- `home.brand.supportLink` - brand card support link. SENSITIVE: no
+- `home.brand.privacyLink` - brand card privacy link. SENSITIVE: no
+- `home.articles.kicker` - articles section label. SENSITIVE: no
+- `home.articles.title` - articles section heading. SENSITIVE: no
+- `home.articles.description` - articles section description. SENSITIVE: no
+- `home.articles.viewAll` - articles section link. SENSITIVE: no
+- `home.articles.readArticle` - repeated article card action text. SENSITIVE: no
+- `home.resources.kicker` - brand standard section label. SENSITIVE: no
+- `home.resources.title` - brand standard section heading. SENSITIVE: no
+- `home.resources.description` - brand standard section intro. SENSITIVE: no
+- `home.resources.oneClearJobTitle` - resource card title. SENSITIVE: no
+- `home.resources.oneClearJobDescription` - resource card body. SENSITIVE: no
+- `home.resources.noFakeScaleTitle` - resource card title. SENSITIVE: no
+- `home.resources.noFakeScaleDescription` - resource card body. SENSITIVE: no
+- `home.resources.readableBeforeInstallTitle` - resource card title. SENSITIVE: no
+- `home.resources.readableBeforeInstallDescription` - resource card body. SENSITIVE: no
+- `home.resources.differentToolsTitle` - resource card title. SENSITIVE: no
+- `home.resources.differentToolsDescription` - resource card body. SENSITIVE: no
+
+## Apps
+
+- `apps.meta.title` - browser/search page title. SENSITIVE: no
+- `apps.meta.description` - browser/search description. SENSITIVE: no
+- `apps.page.title` - apps index page heading. SENSITIVE: no
+- `apps.page.subtitle` - apps index page intro. SENSITIVE: no
+- `apps.offlineFileSecureCard.title` - featured app card title. SENSITIVE: no
+- `apps.offlineFileSecureCard.description` - featured app card body. SENSITIVE: yes
+- `apps.offlineFileSecureCard.localStorageTitle` - product detail title. SENSITIVE: yes
+- `apps.offlineFileSecureCard.localStorageDescription` - product detail body. SENSITIVE: yes
+- `apps.offlineFileSecureCard.vaultAccessTitle` - product detail title. SENSITIVE: yes
+- `apps.offlineFileSecureCard.vaultAccessDescription` - product detail body. SENSITIVE: yes
+- `apps.offlineFileSecureCard.planOptionsTitle` - product detail title. SENSITIVE: no
+- `apps.offlineFileSecureCard.planOptionsDescription` - product detail body. SENSITIVE: yes
+- `apps.offlineFileSecureCard.productCta` - product page button. SENSITIVE: no
+- `apps.offlineFileSecureCard.privacyCta` - privacy link. SENSITIVE: no
+- `apps.comingSoon.secureNoteKeeperTitle` - coming-soon card title. SENSITIVE: no
+- `apps.comingSoon.secureNoteKeeperDescription` - coming-soon card body. SENSITIVE: no
+- `apps.comingSoon.mediaVaultTitle` - coming-soon card title. SENSITIVE: no
+- `apps.comingSoon.mediaVaultDescription` - coming-soon card body. SENSITIVE: no
+- `apps.comingSoon.devToolboxTitle` - coming-soon card title. SENSITIVE: no
+- `apps.comingSoon.devToolboxDescription` - coming-soon card body. SENSITIVE: no
+- `apps.comingSoon.status` - repeated coming-soon status label. SENSITIVE: no
+
+## Offline FileSecure Product Page
+
+- `offlineFileSecure.meta.title` - browser/search page title. SENSITIVE: no
+- `offlineFileSecure.meta.description` - browser/search description. SENSITIVE: yes
+- `offlineFileSecure.hero.kicker` - product hero label. SENSITIVE: no
+- `offlineFileSecure.hero.title` - product hero heading. SENSITIVE: yes
+- `offlineFileSecure.hero.description` - product hero privacy/security summary. SENSITIVE: yes
+- `offlineFileSecure.hero.privacyCta` - privacy policy button. SENSITIVE: no
+- `offlineFileSecure.hero.supportCta` - support button. SENSITIVE: no
+- `offlineFileSecure.import.kicker` - import section label. SENSITIVE: yes
+- `offlineFileSecure.import.title` - import section heading. SENSITIVE: yes
+- `offlineFileSecure.import.description` - import behavior explanation. SENSITIVE: yes
+- `offlineFileSecure.import.caption` - import screenshot caption. SENSITIVE: yes
+- `offlineFileSecure.organization.kicker` - organization section label. SENSITIVE: no
+- `offlineFileSecure.organization.title` - organization section heading. SENSITIVE: no
+- `offlineFileSecure.organization.description` - Pro feature explanation. SENSITIVE: yes
+- `offlineFileSecure.organization.proClarification` - Pro security clarification. SENSITIVE: yes
+- `offlineFileSecure.organization.filesCaption` - files screenshot caption. SENSITIVE: no
+- `offlineFileSecure.organization.dashboardCaption` - dashboard screenshot caption. SENSITIVE: yes
+- `offlineFileSecure.preview.kicker` - preview section label. SENSITIVE: no
+- `offlineFileSecure.preview.title` - preview section heading. SENSITIVE: yes
+- `offlineFileSecure.preview.description` - preview behavior limitation. SENSITIVE: yes
+- `offlineFileSecure.preview.imageCaption` - image preview screenshot caption. SENSITIVE: yes
+- `offlineFileSecure.preview.pdfCaption` - PDF preview screenshot caption. SENSITIVE: yes
+- `offlineFileSecure.encryption.kicker` - encryption section label. SENSITIVE: yes
+- `offlineFileSecure.encryption.title` - encryption section heading. SENSITIVE: yes
+- `offlineFileSecure.encryption.description` - encryption model explanation. SENSITIVE: yes
+- `offlineFileSecure.encryption.fileEncrypted` - encryption bullet. SENSITIVE: yes
+- `offlineFileSecure.encryption.pinControlsAccess` - PIN bullet. SENSITIVE: yes
+- `offlineFileSecure.encryption.keysProtected` - Android security bullet. SENSITIVE: yes
+- `offlineFileSecure.encryption.largeFiles` - large-file processing bullet. SENSITIVE: yes
+- `offlineFileSecure.encryption.exportedCopies` - export warning bullet. SENSITIVE: yes
+- `offlineFileSecure.encryption.visualTitle` - decorative encryption card title. SENSITIVE: yes
+- `offlineFileSecure.encryption.visualStored` - decorative encryption card status. SENSITIVE: yes
+- `offlineFileSecure.encryption.visualAuthenticated` - decorative encryption card status. SENSITIVE: yes
+- `offlineFileSecure.encryption.visualProtected` - decorative encryption card status. SENSITIVE: yes
+- `offlineFileSecure.encryption.visualFileHeader` - decorative encryption structure label. SENSITIVE: yes
+- `offlineFileSecure.encryption.visualMetadata` - decorative encryption structure label. SENSITIVE: yes
+- `offlineFileSecure.encryption.visualChunks` - decorative encryption structure label. SENSITIVE: yes
+- `offlineFileSecure.encryption.visualIntegrity` - decorative encryption structure label. SENSITIVE: yes
+- `offlineFileSecure.controls.kicker` - controls section label. SENSITIVE: yes
+- `offlineFileSecure.controls.title` - controls section heading. SENSITIVE: yes
+- `offlineFileSecure.controls.description` - controls behavior explanation. SENSITIVE: yes
+- `offlineFileSecure.controls.privacyModel` - no upload/no tracking statement. SENSITIVE: yes
+- `offlineFileSecure.controls.remoteRecovery` - remote recovery limitation. SENSITIVE: yes
+- `offlineFileSecure.controls.settingsCaption` - settings screenshot caption. SENSITIVE: yes
+- `offlineFileSecure.controls.detailsCaption` - encryption details screenshot caption. SENSITIVE: yes
+- `offlineFileSecure.export.kicker` - export section label. SENSITIVE: yes
+- `offlineFileSecure.export.title` - export section heading. SENSITIVE: yes
+- `offlineFileSecure.export.description` - export behavior explanation. SENSITIVE: yes
+- `offlineFileSecure.export.caption` - export screenshot caption. SENSITIVE: yes
+- `offlineFileSecure.plans.title` - Free/Pro section heading. SENSITIVE: no
+- `offlineFileSecure.plans.description` - Free/Pro summary. SENSITIVE: yes
+- `offlineFileSecure.plans.free` - plan label. SENSITIVE: no
+- `offlineFileSecure.plans.freeProtection` - Free feature. SENSITIVE: yes
+- `offlineFileSecure.plans.freeLimit` - Free feature limit. SENSITIVE: yes
+- `offlineFileSecure.plans.freeBasics` - Free feature. SENSITIVE: yes
+- `offlineFileSecure.plans.pro` - plan label. SENSITIVE: no
+- `offlineFileSecure.plans.proRemovesLimit` - Pro feature. SENSITIVE: yes
+- `offlineFileSecure.plans.proStorage` - Pro storage condition. SENSITIVE: yes
+- `offlineFileSecure.plans.proBatchImport` - Pro feature. SENSITIVE: no
+- `offlineFileSecure.plans.proCategoryDashboard` - Pro feature. SENSITIVE: no
+- `offlineFileSecure.plans.proThumbnailControls` - Pro feature. SENSITIVE: no
+- `offlineFileSecure.plans.proRecentlyAdded` - Pro feature. SENSITIVE: no
+- `offlineFileSecure.plans.note` - Pro security clarification. SENSITIVE: yes
+- `offlineFileSecure.boundaries.title` - boundaries section heading. SENSITIVE: yes
+- `offlineFileSecure.boundaries.description` - boundaries section intro. SENSITIVE: yes
+- `offlineFileSecure.boundaries.originalsTitle` - boundary card title. SENSITIVE: yes
+- `offlineFileSecure.boundaries.originalsDescription` - boundary card body. SENSITIVE: yes
+- `offlineFileSecure.boundaries.exportsTitle` - boundary card title. SENSITIVE: yes
+- `offlineFileSecure.boundaries.exportsDescription` - boundary card body. SENSITIVE: yes
+- `offlineFileSecure.boundaries.pinTitle` - boundary card title. SENSITIVE: yes
+- `offlineFileSecure.boundaries.pinDescription` - boundary card body. SENSITIVE: yes
+- `offlineFileSecure.boundaries.recoveryTitle` - boundary card title. SENSITIVE: yes
+- `offlineFileSecure.boundaries.recoveryDescription` - boundary card body. SENSITIVE: yes
+
+## Privacy Policy
+
+All keys under `privacy.*` appear on the Offline FileSecure Privacy Policy page or its page metadata. SENSITIVE: yes
+
+- `privacy.meta.title`
+- `privacy.meta.description`
+- `privacy.header.kicker`
+- `privacy.header.title`
+- `privacy.header.updated`
+- `privacy.summary.title`
+- `privacy.summary.applies`
+- `privacy.summary.description`
+- `privacy.whoWeAre.title`
+- `privacy.whoWeAre.description`
+- `privacy.whoWeAre.contactLabel`
+- `privacy.whatItDoes.title`
+- `privacy.whatItDoes.description`
+- `privacy.whatItDoes.originals`
+- `privacy.deviceAccess.title`
+- `privacy.deviceAccess.intro`
+- `privacy.deviceAccess.selectedFiles`
+- `privacy.deviceAccess.fileNames`
+- `privacy.deviceAccess.metadata`
+- `privacy.deviceAccess.settings`
+- `privacy.deviceAccess.authentication`
+- `privacy.dataCollected.title`
+- `privacy.dataCollected.noVaultFiles`
+- `privacy.dataCollected.noUpload`
+- `privacy.dataCollected.noTransmit`
+- `privacy.dataCollected.noAccount`
+- `privacy.dataCollected.noAnalytics`
+- `privacy.dataCollected.noSensitiveReceipt`
+- `privacy.dataSharing.title`
+- `privacy.dataSharing.noSale`
+- `privacy.dataSharing.noShare`
+- `privacy.dataSharing.noSdks`
+- `privacy.dataSharing.filesLeave`
+- `privacy.storageEncryption.title`
+- `privacy.storageEncryption.localStorage`
+- `privacy.storageEncryption.pinAndKeys`
+- `privacy.storageEncryption.exportWarning`
+- `privacy.temporaryFiles.title`
+- `privacy.temporaryFiles.previewData`
+- `privacy.temporaryFiles.exportedFiles`
+- `privacy.biometric.title`
+- `privacy.biometric.optional`
+- `privacy.biometric.recoveryKey`
+- `privacy.biometric.deviceVariation`
+- `privacy.permissions.title`
+- `privacy.permissions.filePicker`
+- `privacy.permissions.noScan`
+- `privacy.permissions.internetPermission`
+- `privacy.permissions.policyUpdates`
+- `privacy.accountsCloudAds.title`
+- `privacy.accountsCloudAds.noAccountRequired`
+- `privacy.accountsCloudAds.noCloudBackup`
+- `privacy.accountsCloudAds.noCloudSync`
+- `privacy.accountsCloudAds.noAds`
+- `privacy.accountsCloudAds.noAnalytics`
+- `privacy.accountsCloudAds.noTracking`
+- `privacy.accountsCloudAds.noSelling`
+- `privacy.thirdParty.title`
+- `privacy.thirdParty.description`
+- `privacy.retention.title`
+- `privacy.retention.description`
+- `privacy.retention.noRestore`
+- `privacy.deletion.title`
+- `privacy.deletion.description`
+- `privacy.deletion.deleteFiles`
+- `privacy.deletion.resetData`
+- `privacy.deletion.clearData`
+- `privacy.deletion.deleteExports`
+- `privacy.rights.title`
+- `privacy.rights.localControl`
+- `privacy.rights.supportRecords`
+- `privacy.supportEmail.title`
+- `privacy.supportEmail.description`
+- `privacy.supportEmail.retention`
+- `privacy.children.title`
+- `privacy.children.description`
+- `privacy.international.title`
+- `privacy.international.description`
+- `privacy.changes.title`
+- `privacy.changes.description`
+- `privacy.changes.materialChanges`
+- `privacy.dataSafety.title`
+- `privacy.dataSafety.dataSent`
+- `privacy.dataSafety.supportEmails`
+- `privacy.dataSafety.dataShared`
+- `privacy.dataSafety.filesAndVault`
+- `privacy.dataSafety.accountCreation`
+- `privacy.dataSafety.cloud`
+- `privacy.dataSafety.adsAnalyticsTracking`
+- `privacy.dataSafety.googlePlayUpdates`
+- `privacy.dataSafety.dataDeletion`
+- `privacy.contact.title`
+- `privacy.contact.description`
+
+## Support
+
+- `support.meta.title` - browser/search page title. SENSITIVE: no
+- `support.meta.description` - browser/search description. SENSITIVE: no
+- `support.hero.kicker` - support hero label. SENSITIVE: no
+- `support.hero.title` - support hero heading. SENSITIVE: no
+- `support.hero.description` - support hero intro. SENSITIVE: no
+- `support.contact.kicker` - contact panel label. SENSITIVE: no
+- `support.contact.title` - contact panel heading. SENSITIVE: no
+- `support.contact.description` - support email instructions. SENSITIVE: yes
+- `support.contact.emailCta` - email link label. SENSITIVE: no
+- `support.investigation.title` - investigation checklist heading. SENSITIVE: no
+- `support.investigation.appName` - checklist item. SENSITIVE: no
+- `support.investigation.device` - checklist item. SENSITIVE: no
+- `support.investigation.action` - checklist item. SENSITIVE: no
+- `support.investigation.message` - checklist item. SENSITIVE: no
+- `support.investigation.frequency` - checklist item. SENSITIVE: no
+- `support.investigation.privacyWarning` - warning about private information in screenshots. SENSITIVE: yes
+- `support.currentSupport.title` - current app support heading. SENSITIVE: no
+- `support.currentSupport.description` - current app support intro. SENSITIVE: no
+- `support.currentSupport.productName` - product name in support card. SENSITIVE: no
+- `support.currentSupport.productDescription` - support coverage for Offline FileSecure. SENSITIVE: yes
+- `support.boundaries.title` - support/privacy boundaries heading. SENSITIVE: yes
+- `support.boundaries.description` - support/privacy boundaries explanation. SENSITIVE: yes
+- `support.boundaries.warning` - warning not to email sensitive data. SENSITIVE: yes

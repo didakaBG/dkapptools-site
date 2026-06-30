@@ -1,0 +1,359 @@
+{
+  "home": {
+    "meta": {
+      "title": "DK App Tools | Practical apps and digital tools",
+      "description": "DK App Tools is a compact software hub for practical apps, product pages, support, privacy information, and useful articles."
+    },
+    "hero": {
+      "kicker": "DK App Tools",
+      "titlePartOne": "DK",
+      "titlePartTwo": "App Tools",
+      "subtitle": "Practical apps, clear product pages, useful articles, and support in one place.",
+      "primaryCta": "Explore apps",
+      "secondaryCta": "Read articles"
+    },
+    "featuredApp": {
+      "kicker": "Featured app",
+      "title": "First release: Offline FileSecure.",
+      "viewApps": "View apps",
+      "productName": "Offline FileSecure",
+      "description": "The first app from DK App Tools helps protect private files locally on Android, with clear product and privacy information alongside it.",
+      "highlightLocalVault": "Local vault",
+      "highlightOfflineFirst": "Offline-first",
+      "highlightPrivacyPolicy": "Clear privacy policy",
+      "productCta": "Open product page",
+      "privacyCta": "Privacy policy"
+    },
+    "brand": {
+      "kicker": "Brand home",
+      "name": "DK App Tools",
+      "description": "DK App Tools is the home for our apps, product pages, articles, support, and privacy information.",
+      "supportLink": "Support",
+      "privacyLink": "Privacy"
+    },
+    "articles": {
+      "kicker": "Latest articles",
+      "title": "Articles and practical guides",
+      "description": "Clear explanations, product notes, and useful ideas from DK App Tools.",
+      "viewAll": "View all articles",
+      "readArticle": "Read article"
+    },
+    "resources": {
+      "kicker": "Brand standard",
+      "title": "Built around practical software",
+      "description": "A place for focused apps, clear product pages, useful articles, and support that grows with real products - not empty placeholders.",
+      "oneClearJobTitle": "One clear job",
+      "oneClearJobDescription": "Every app should start with a real problem and a simple reason to exist.",
+      "noFakeScaleTitle": "No fake scale",
+      "noFakeScaleDescription": "DK App Tools should grow with real apps, real articles, and real support pages - not filler cards.",
+      "readableBeforeInstallTitle": "Readable before install",
+      "readableBeforeInstallDescription": "People should be able to understand what an app does, what it does not do, and where to get help.",
+      "differentToolsTitle": "Different tools, same standard",
+      "differentToolsDescription": "Future apps can cover different needs, but the standard stays the same: clear, practical, and honest."
+    }
+  },
+  "apps": {
+    "meta": {
+      "title": "Apps | DK App Tools",
+      "description": "Browse DK App Tools applications."
+    },
+    "page": {
+      "title": "Apps",
+      "subtitle": "Available DK tools and upcoming app ideas."
+    },
+    "offlineFileSecureCard": {
+      "title": "Offline FileSecure",
+      "description": "A local Android file vault for protected copies of private files - built without accounts, cloud upload, ads, or tracking.",
+      "localStorageTitle": "Local storage",
+      "localStorageDescription": "Protected copies stay on this device.",
+      "vaultAccessTitle": "Vault access",
+      "vaultAccessDescription": "Unlock with PIN. Use your recovery key only for local PIN reset.",
+      "planOptionsTitle": "Plan options",
+      "planOptionsDescription": "Free core vault. Pro adds organization features.",
+      "productCta": "Open product page",
+      "privacyCta": "Privacy details"
+    },
+    "comingSoon": {
+      "secureNoteKeeperTitle": "Secure NoteKeeper",
+      "secureNoteKeeperDescription": "Private note tools.",
+      "mediaVaultTitle": "Media Vault",
+      "mediaVaultDescription": "Private media organization.",
+      "devToolboxTitle": "Dev Toolbox",
+      "devToolboxDescription": "Focused developer utilities.",
+      "status": "Coming soon"
+    }
+  },
+  "offlineFileSecure": {
+    "meta": {
+      "title": "Offline FileSecure | DK App Tools",
+      "description": "Offline FileSecure is a local-first file vault for Android."
+    },
+    "hero": {
+      "kicker": "Offline FileSecure",
+      "title": "Private file vault for Android",
+      "description": "Store protected copies of private files locally on your device, with no account, no cloud upload, no ads, and no tracking. Google Play may be used to check for and install app updates.",
+      "privacyCta": "View privacy policy",
+      "supportCta": "Contact support"
+    },
+    "import": {
+      "kicker": "Add protected copies",
+      "title": "Add files without moving the original",
+      "description": "Adding to the vault creates a protected encrypted copy. The original file remains where it was unless you delete it yourself, and every import is started by you.",
+      "caption": "Import creates a protected encrypted copy while the original file remains under your control."
+    },
+    "organization": {
+      "kicker": "Organize private files",
+      "title": "Keep vault files understandable as they grow",
+      "description": "Files are stored inside the vault. Pro adds convenience and organization features such as a category dashboard, image thumbnail setting, recently added organization, and batch import.",
+      "proClarification": "Pro does not provide stronger encryption; it gives you more room and better ways to manage the same core local vault model.",
+      "filesCaption": "Files stay organized inside the local vault.",
+      "dashboardCaption": "Pro organization helps sort protected files without changing the core protection model."
+    },
+    "preview": {
+      "kicker": "Preview inside the vault",
+      "title": "View supported file types in-app",
+      "description": "Supported common file types can be previewed inside Offline FileSecure. The preview flow is designed to avoid making external apps the default path, without claiming every file type is supported.",
+      "imageCaption": "Supported previews open inside Offline FileSecure.",
+      "pdfCaption": "Preview support is for common supported file types, not every possible file."
+    },
+    "encryption": {
+      "kicker": "Encrypted by design",
+      "title": "Protected copies, not just hidden files",
+      "description": "Offline FileSecure does not simply hide files behind a PIN screen. When you add a file, the app creates a protected encrypted copy inside the app's private vault storage. Encryption and decryption happen on your device, and vault files are encrypted with authenticated encryption so the app can detect if protected data has been changed or corrupted.",
+      "fileEncrypted": "Files are encrypted inside the local vault.",
+      "pinControlsAccess": "The Vault PIN controls access to the app.",
+      "keysProtected": "Vault keys are protected using Android device security features where supported.",
+      "largeFiles": "Large files are processed in chunks instead of loading the whole file at once.",
+      "exportedCopies": "Exported copies are decrypted files outside the vault and should be handled carefully.",
+      "visualTitle": "Encrypted vault copy",
+      "visualStored": "Stored in local vault",
+      "visualAuthenticated": "Authenticated encryption",
+      "visualProtected": "Protected on device",
+      "visualFileHeader": "File header",
+      "visualMetadata": "Protected metadata",
+      "visualChunks": "Encrypted chunks",
+      "visualIntegrity": "Integrity check"
+    },
+    "controls": {
+      "kicker": "Security and privacy controls",
+      "title": "Local protection with clear settings",
+      "description": "Offline FileSecure uses a vault PIN, optional biometric unlock, screen protection setting, auto-lock, and visible encryption details. The Vault PIN controls access to the app, while vault files themselves are stored encrypted.",
+      "privacyModel": "The vault model is local and offline: protected files are not uploaded to DK App Tools, and there is no account, no cloud upload, no ads, and no tracking. Google Play may be used to check for and install app updates.",
+      "remoteRecovery": "DK App Tools cannot remotely recover vault files for you.",
+      "settingsCaption": "Security settings help control how the vault behaves on the device.",
+      "detailsCaption": "Encryption details make the local protection model visible."
+    },
+    "export": {
+      "kicker": "Export only when you choose",
+      "title": "Protected files leave the vault by explicit export",
+      "description": "Files stay protected inside the vault until you choose to export them. Exported files are decrypted copies outside vault protection, so choose export locations carefully.",
+      "caption": "Export creates a decrypted copy outside vault protection."
+    },
+    "plans": {
+      "title": "Free and Pro",
+      "description": "Same protection model. Pro adds more room and organization.",
+      "free": "Free",
+      "freeProtection": "Same local protection",
+      "freeLimit": "Up to 10 protected files",
+      "freeBasics": "Personal vault basics",
+      "pro": "Pro",
+      "proRemovesLimit": "Removes the Free 10-file limit",
+      "proStorage": "Limited by available device storage",
+      "proBatchImport": "Batch import",
+      "proCategoryDashboard": "Category dashboard",
+      "proThumbnailControls": "Thumbnail controls",
+      "proRecentlyAdded": "Recently added tools",
+      "note": "Pro adds convenience and capacity, not stronger security."
+    },
+    "boundaries": {
+      "title": "Important boundaries",
+      "description": "What the app protects, and what still depends on you.",
+      "originalsTitle": "Original files stay where they are",
+      "originalsDescription": "Adding to the vault creates a protected copy.",
+      "exportsTitle": "Exported files are outside the vault",
+      "exportsDescription": "Export creates a normal decrypted copy.",
+      "pinTitle": "Your PIN and recovery key matter",
+      "pinDescription": "Keep them safe.",
+      "recoveryTitle": "No remote recovery",
+      "recoveryDescription": "DK App Tools cannot restore lost vault data remotely."
+    }
+  },
+  "privacy": {
+    "meta": {
+      "title": "Offline FileSecure Privacy Policy | DK App Tools",
+      "description": "Privacy Policy for Offline FileSecure by DK App Tools."
+    },
+    "header": {
+      "kicker": "Privacy",
+      "title": "Privacy Policy for Offline FileSecure",
+      "updated": "Last updated: June 2026"
+    },
+    "summary": {
+      "title": "Summary",
+      "applies": "This privacy policy applies to Offline FileSecure by DK App Tools.",
+      "description": "Offline FileSecure is designed as a local, offline Android file vault. Files added to the vault stay on your device as encrypted protected copies. The app is built around a no-account, no-cloud-upload, no-ads, no-analytics, and no-tracking model. DK App Tools does not receive, upload, sell, or share your vault files. Google Play may be used to check for and install app updates."
+    },
+    "whoWeAre": {
+      "title": "Who we are",
+      "description": "Offline FileSecure is developed by DK App Tools.",
+      "contactLabel": "Contact:"
+    },
+    "whatItDoes": {
+      "title": "What Offline FileSecure does",
+      "description": "Offline FileSecure lets you choose files using Android's system file picker and creates encrypted protected copies in local vault storage. The app can preview supported common file types inside the app and can export decrypted copies only when you choose.",
+      "originals": "Original files are not automatically deleted. They remain where they were unless you delete them manually."
+    },
+    "deviceAccess": {
+      "title": "Data the app accesses on the device",
+      "intro": "This access is local to the app and device. Offline FileSecure may access or store:",
+      "selectedFiles": "User-selected files and file content.",
+      "fileNames": "File names and basic file information needed to show the vault list.",
+      "metadata": "Encrypted metadata needed for listing and organization.",
+      "settings": "Local settings such as screen protection, auto-lock, biometric preference, thumbnail display preferences, and app preferences.",
+      "authentication": "PIN and recovery authentication material stored locally for verification, not as plain PIN or plain recovery key storage."
+    },
+    "dataCollected": {
+      "title": "Data collected by DK App Tools through the app",
+      "noVaultFiles": "The app does not collect vault files.",
+      "noUpload": "The app does not upload vault files.",
+      "noTransmit": "Offline FileSecure does not transmit vault files or vault data over the internet.",
+      "noAccount": "The app does not collect account information because there is no account.",
+      "noAnalytics": "The app does not collect analytics or advertising identifiers.",
+      "noSensitiveReceipt": "DK App Tools does not receive your PIN, recovery key, vault keys, file names, or vault contents through the app."
+    },
+    "dataSharing": {
+      "title": "Data sharing",
+      "noSale": "DK App Tools does not sell user data.",
+      "noShare": "DK App Tools does not share vault files with third parties.",
+      "noSdks": "The app does not include ads, analytics, tracking, or cloud sync SDKs.",
+      "filesLeave": "Files leave the protected environment only when you deliberately export them or use exported copies outside the vault."
+    },
+    "storageEncryption": {
+      "title": "File storage and encryption",
+      "localStorage": "Protected copies are stored locally on your device. Files are encrypted inside the vault, and encryption and decryption happen on the device.",
+      "pinAndKeys": "The Vault PIN controls access to the app, but files are not merely hidden behind a PIN. Vault keys are protected using Android device security features where supported. Vault files use authenticated encryption to help detect changed or corrupted protected data. Large files may be processed in chunks instead of loading the whole file into memory.",
+      "exportWarning": "Exported files are decrypted copies outside the vault and should be handled carefully."
+    },
+    "temporaryFiles": {
+      "title": "Temporary files, previews, and export",
+      "previewData": "Supported previews may require temporary decrypted data inside app-private cache or storage. Temporary preview or export data is intended to be cleaned up by the app where applicable.",
+      "exportedFiles": "Exported files are saved where you choose. Exported files are outside vault protection. If you open exported files outside Offline FileSecure, external apps may keep their own history, cache, or copies."
+    },
+    "biometric": {
+      "title": "Biometric unlock and Android security",
+      "optional": "Biometric unlock is optional and depends on device support and your choice to enable it. Android and device security handle biometric authentication. Offline FileSecure does not receive or store fingerprint or face biometric data.",
+      "recoveryKey": "The recovery key is for the local PIN recovery or reset flow. It is not remote recovery, and DK App Tools cannot use it to restore vault files from a server.",
+      "deviceVariation": "Behavior may vary by device and Android version."
+    },
+    "permissions": {
+      "title": "Permissions and system access",
+      "filePicker": "Offline FileSecure uses Android's system file picker and Storage Access Framework. Files are accessed when you select them through Android's system file picker or when the app reads files already stored inside the local vault.",
+      "noScan": "Offline FileSecure does not scan the whole device storage or build an inventory of files outside the vault. The app may query Android-provided storage statistics, such as available storage space, to show storage status and help check whether there is enough room for import, preview, export, or vault operations.",
+      "internetPermission": "The app does not upload files and does not require the INTERNET permission. Google Play may still be used by Android/Google Play to check for and install app updates.",
+      "policyUpdates": "If the app's permissions or data practices materially change, this policy will be updated."
+    },
+    "accountsCloudAds": {
+      "title": "Accounts, cloud, ads, analytics, and tracking",
+      "noAccountRequired": "No account required.",
+      "noCloudBackup": "No cloud backup.",
+      "noCloudSync": "No cloud sync.",
+      "noAds": "No ads.",
+      "noAnalytics": "No analytics.",
+      "noTracking": "No tracking.",
+      "noSelling": "No selling of personal data."
+    },
+    "thirdParty": {
+      "title": "Third-party services and SDKs",
+      "description": "Offline FileSecure does not include advertising SDKs, analytics SDKs, tracking SDKs, crash reporting SDKs, or cloud sync SDKs. The app may use Google Play services for Google Play app update checks and installation flow."
+    },
+    "retention": {
+      "title": "Data retention",
+      "description": "Vault data stays on your device until you delete vault files, reset the app, clear app data, or uninstall the app. DK App Tools does not keep server copies.",
+      "noRestore": "If local app data is deleted or the app is uninstalled, DK App Tools cannot restore vault files remotely."
+    },
+    "deletion": {
+      "title": "Data deletion",
+      "description": "Offline FileSecure does not create user accounts. Because there is no account to delete, you can delete local vault data in the app, clear app data, or uninstall the app.",
+      "deleteFiles": "You can delete individual vault files inside the app.",
+      "resetData": "You can reset or delete vault data from app settings where available.",
+      "clearData": "You can clear app data or uninstall through Android settings.",
+      "deleteExports": "Exported files outside the app must be deleted by you from wherever they were saved."
+    },
+    "rights": {
+      "title": "Privacy rights",
+      "localControl": "Your vault files and vault data are stored locally on your device, and you control them through the app and Android device settings.",
+      "supportRecords": "If you contact DK App Tools by email, you may request access, correction, or deletion of support email records where applicable. To make a privacy request, contact dkapps.support@proton.me. This does not allow DK App Tools to recover or access vault files stored only on your device."
+    },
+    "supportEmail": {
+      "title": "Support email",
+      "description": "If you email support, DK App Tools receives your email address and whatever information you include. Do not send PINs, recovery keys, vault keys, private documents, or sensitive files by email.",
+      "retention": "Support emails are used to respond to the request and maintain support records. Support emails may be retained as needed for those purposes, unless deletion is requested or retention is required for legitimate operational or legal reasons."
+    },
+    "children": {
+      "title": "Children",
+      "description": "Offline FileSecure is not designed for children and does not knowingly collect data from children."
+    },
+    "international": {
+      "title": "International users",
+      "description": "The app's vault data stays on your device. Support emails may be processed by the email providers involved and may depend on your location or provider."
+    },
+    "changes": {
+      "title": "Changes to this policy",
+      "description": "This policy may be updated when Offline FileSecure changes, such as when visual, usability, productivity, security, or compatibility improvements are released.",
+      "materialChanges": "If the app's permissions, SDKs, or data practices materially change, this policy will be updated to reflect those changes."
+    },
+    "dataSafety": {
+      "title": "Google Play Data Safety summary",
+      "dataSent": "Data sent to DK App Tools automatically through the app: None.",
+      "supportEmails": "Voluntary support emails are handled separately and include only information the user chooses to send.",
+      "dataShared": "Data shared with third parties by the app: None.",
+      "filesAndVault": "Files and vault data: stored locally on the device as encrypted protected copies.",
+      "accountCreation": "Account creation: not required.",
+      "cloud": "Cloud backup or cloud sync: not used.",
+      "adsAnalyticsTracking": "Ads, analytics, and tracking: not used.",
+      "googlePlayUpdates": "Google Play app updates: Google Play may be used to check for and install app updates.",
+      "dataDeletion": "Data deletion: users can delete vault files in the app, reset the app, clear app data, or uninstall the app."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "For privacy questions, contact DK App Tools at dkapps.support@proton.me."
+    }
+  },
+  "support": {
+    "meta": {
+      "title": "Support | DK App Tools",
+      "description": "Contact DK App Tools support."
+    },
+    "hero": {
+      "kicker": "Support",
+      "title": "Support for DK App Tools apps",
+      "description": "Get help with DK App Tools apps, report issues, and find the right support information for each product."
+    },
+    "contact": {
+      "kicker": "Contact support",
+      "title": "Contact DK App Tools",
+      "description": "For support, send an email with the app name, device details, and a short description of what happened.",
+      "emailCta": "Email support"
+    },
+    "investigation": {
+      "title": "What helps us investigate",
+      "appName": "App name",
+      "device": "Device model and Android version",
+      "action": "What action you tried",
+      "message": "Any message shown by the app",
+      "frequency": "Whether the issue happens every time",
+      "privacyWarning": "Screenshots can help, but avoid showing private files, passwords, access codes, recovery information, or sensitive personal data."
+    },
+    "currentSupport": {
+      "title": "Current app support",
+      "description": "Include the app name when contacting support. Current support coverage is listed below.",
+      "productName": "Offline FileSecure",
+      "productDescription": "Support for the local encrypted file vault, including import/export behavior, supported previews, local vault actions, security settings, and Free/Pro feature questions."
+    },
+    "boundaries": {
+      "title": "Support and privacy boundaries",
+      "description": "DK App Tools can help with app behavior, troubleshooting, product questions, and privacy questions. Support can only review the information you choose to provide. Some app data may remain only on your device, depending on the product.",
+      "warning": "Do not send passwords, access codes, recovery information, private files, or sensitive personal data by email."
+    }
+  }
+}
