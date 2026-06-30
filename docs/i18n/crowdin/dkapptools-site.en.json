@@ -69,7 +69,7 @@
       "vaultAccessTitle": "Vault access",
       "vaultAccessDescription": "Unlock with PIN. Use your recovery key only for local PIN reset.",
       "planOptionsTitle": "Plan options",
-      "planOptionsDescription": "Free core vault. Pro adds organization features.",
+      "planOptionsDescription": "The Free plan includes a basic vault with a 10-file limit. Pro removes the file count limit and adds more organization options.",
       "productCta": "Open product page",
       "privacyCta": "Privacy details"
     },
@@ -151,7 +151,7 @@
     },
     "plans": {
       "title": "Free and Pro",
-      "description": "Same protection model. Pro adds more room and organization.",
+      "description": "The Free plan includes a basic vault with a 10-file limit. Pro removes the file count limit and adds more organization options.",
       "free": "Free",
       "freeProtection": "Same local protection",
       "freeLimit": "Up to 10 protected files",
