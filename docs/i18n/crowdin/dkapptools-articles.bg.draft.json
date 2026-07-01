@@ -5,317 +5,132 @@
         "title": "",
         "description": "",
         "category": "",
-        "tags": [
-          "",
-          "",
-          ""
-        ],
+        "tags": {
+          "tag1": "",
+          "tag2": "",
+          "tag3": ""
+        },
         "readTime": "",
         "cardImageAlt": ""
       },
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": ""
+      "blocks": {
+        "block1Text": "",
+        "block2Title": "",
+        "block2Text": "",
+        "block3Cards": {
+          "card1Title": "",
+          "card1Text": "",
+          "card2Title": "",
+          "card2Text": ""
         },
-        {
-          "type": "note",
-          "title": "",
-          "text": ""
-        },
-        {
-          "type": "cardGrid",
-          "cards": [
-            {
-              "title": "",
-              "text": ""
-            },
-            {
-              "title": "",
-              "text": ""
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "id": "limits",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "id": "habits",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        }
-      ]
+        "block4Text": "",
+        "block5Text": "",
+        "block6Text": "",
+        "block7Text": "",
+        "block8Text": "",
+        "block9Text": ""
+      }
     },
     "private-files-safer-on-android": {
       "meta": {
         "title": "",
         "description": "",
         "category": "",
-        "tags": [
-          "",
-          "",
-          ""
-        ],
+        "tags": {
+          "tag1": "",
+          "tag2": "",
+          "tag3": ""
+        },
         "cardImageAlt": ""
       },
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        }
-      ]
+      "blocks": {
+        "block1Text": "",
+        "block2Text": "",
+        "block3Text": "",
+        "block4Text": "",
+        "block5Text": "",
+        "block6Text": "",
+        "block7Text": "",
+        "block8Text": "",
+        "block9Text": "",
+        "block10Text": "",
+        "block11Text": "",
+        "block12Text": "",
+        "block13Text": "",
+        "block14Text": "",
+        "block15Text": "",
+        "block16Text": ""
+      }
     },
     "what-256-bit-encryption-means": {
       "meta": {
         "title": "",
         "description": "",
         "category": "",
-        "tags": [
-          "",
-          "",
-          ""
-        ],
+        "tags": {
+          "tag1": "",
+          "tag2": "",
+          "tag3": ""
+        },
         "readTime": "",
         "cardImageAlt": ""
       },
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": ""
+      "blocks": {
+        "block1Text": "",
+        "block2Title": "",
+        "block2Text": "",
+        "block3Text": "",
+        "block4Text": "",
+        "block5Text": "",
+        "block6Text": "",
+        "block7Text": "",
+        "block8Text": "",
+        "block9Text": "",
+        "block10Text": "",
+        "block11Text": "",
+        "block12Cards": {
+          "card1Title": "",
+          "card1Text": "",
+          "card2Title": "",
+          "card2Text": "",
+          "card3Title": "",
+          "card3Text": ""
         },
-        {
-          "type": "note",
-          "title": "",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "id": "key-length",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "id": "password-vs-key",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "id": "aes-256",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "cardGrid",
-          "cards": [
-            {
-              "title": "",
-              "text": ""
-            },
-            {
-              "title": "",
-              "text": ""
-            },
-            {
-              "title": "",
-              "text": ""
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "id": "authentication",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "id": "limits",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        }
-      ]
+        "block13Text": "",
+        "block14Text": "",
+        "block15Text": "",
+        "block16Text": "",
+        "block17Text": "",
+        "block18Text": ""
+      }
     },
     "why-offline-first-matters": {
       "meta": {
         "title": "",
         "description": "",
         "category": "",
-        "tags": [
-          "",
-          "",
-          ""
-        ],
+        "tags": {
+          "tag1": "",
+          "tag2": "",
+          "tag3": ""
+        },
         "cardImageAlt": ""
       },
-      "blocks": [
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "heading",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        },
-        {
-          "type": "paragraph",
-          "text": ""
-        }
-      ]
+      "blocks": {
+        "block1Text": "",
+        "block2Text": "",
+        "block3Text": "",
+        "block4Text": "",
+        "block5Text": "",
+        "block6Text": "",
+        "block7Text": "",
+        "block8Text": "",
+        "block9Text": "",
+        "block10Text": "",
+        "block11Text": "",
+        "block12Text": "",
+        "block13Text": ""
+      }
     }
   }
 }

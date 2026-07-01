@@ -8,6 +8,8 @@ Article translations for DK App Tools must be prepared and reviewed through Crow
 - Bulgarian draft/template strings live in `docs/i18n/crowdin/dkapptools-articles.bg.draft.json`.
 - Do not directly translate `src/articles/*.md` into Bulgarian article pages.
 - Do not create `src/bg/articles/...` article pages until reviewed translations are available.
+- Do not include technical block type values such as `paragraph`, `heading`, `note`, `cardGrid`, `figure`, or structural IDs in Crowdin source files.
+- Article structure is rebuilt from the original English article files; the Crowdin article JSON provides only translated human-facing strings.
 
 ## Review requirements
 
