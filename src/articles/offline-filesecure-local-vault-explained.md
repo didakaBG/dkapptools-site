@@ -17,6 +17,10 @@ cardImage: /assets/img/article-local-vaults.webp
 cardImageAlt: "Abstract local encrypted vault card illustration"
 permalink: /articles/offline-filesecure-local-vault-explained/index.html
 activeNav: articles
+lang: en
+alternateLabel: BG
+alternateUrl: /bg/articles/offline-filesecure-lokalen-kriptiran-seyf/
+canonicalUrl: /articles/offline-filesecure-local-vault-explained/
 blocks:
   - type: paragraph
     text: >-

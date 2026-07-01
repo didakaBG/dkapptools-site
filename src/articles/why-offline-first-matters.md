@@ -16,6 +16,10 @@ cardImage: /assets/img/article-offline-first.webp
 cardImageAlt: "Abstract offline-first security card illustration"
 permalink: /articles/why-offline-first-matters/index.html
 activeNav: articles
+lang: en
+alternateLabel: BG
+alternateUrl: /bg/articles/zashto-offline-first-podhodut-e-vazhen/
+canonicalUrl: /articles/why-offline-first-matters/
 blocks:
   - type: paragraph
     text: "Useful privacy tools often start by asking a plain question: does this file need to leave the device at all?"

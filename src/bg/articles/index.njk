@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Статии и практични ръководства | DK App Tools
-description: Статиите засега са достъпни на английски, но са подбрани за темите около DK App Tools, Offline FileSecure, поверителност и работа с файлове.
+description: Ясни обяснения, продуктови бележки и полезни идеи от DK App Tools на български.
 permalink: /bg/articles/index.html
 activeNav: articles
 lang: bg
@@ -12,22 +12,15 @@ alternateUrl: /articles/
   <header class="page-hero surface-panel articles-hero">
     <p class="kicker">Статии</p>
     <h1>Статии и практични ръководства</h1>
-    <p>Статиите засега са достъпни на английски, но са подбрани за темите около DK App Tools, Offline FileSecure, поверителност и работа с файлове.</p>
+    <p>Ясни обяснения, продуктови бележки и полезни идеи от DK App Tools на български.</p>
   </header>
 
-  <section class="compact-panel articles-list-panel" aria-labelledby="bg-articles-note-heading">
-    <div class="articles-section-head">
-      <p class="kicker">Бележка</p>
-      <h2 id="bg-articles-note-heading">Българските версии на статиите ще бъдат добавяни поетапно.</h2>
-    </div>
-  </section>
-
-  {% set latest = collections.publishedArticles | first %}
+  {% set latest = collections.publishedBgArticles | first %}
   {% if latest %}
     <section class="compact-panel articles-featured-panel" aria-labelledby="latest-article-heading">
       <div class="articles-section-head">
         <p class="kicker">Последна статия</p>
-        <h2 id="latest-article-heading">Избрана статия на английски</h2>
+        <h2 id="latest-article-heading">Избрана статия</h2>
       </div>
 
       <a class="featured-article-card" href="{{ latest.url }}">
@@ -36,7 +29,7 @@ alternateUrl: /articles/
         </span>
         <span class="featured-article-copy">
           <span class="article-card-meta">
-            <span class="chip">{{ latest.data.category or "Article" }}</span>
+            <span class="chip">{{ latest.data.category or "Статия" }}</span>
           </span>
           <strong>{{ latest.data.title }}</strong>
           <span>{{ latest.data.description }}</span>
@@ -53,20 +46,20 @@ alternateUrl: /articles/
     </section>
   {% endif %}
 
-  {% if collections.publishedArticles.length > 1 %}
+  {% if collections.publishedBgArticles.length > 1 %}
     <section class="compact-panel articles-list-panel" aria-labelledby="article-list-heading">
       <div class="articles-section-head">
         <p class="kicker">Още статии</p>
-        <h2 id="article-list-heading">Практични материали на английски</h2>
+        <h2 id="article-list-heading">Практични материали</h2>
       </div>
 
       <div class="article-list-grid">
-        {% for post in collections.publishedArticles %}
+        {% for post in collections.publishedBgArticles %}
           {% if loop.index > 1 and loop.index <= 6 %}
             <a class="article-card article-list-card" href="{{ post.url }}">
               <img src="{{ post.data.cardImage or post.data.image or '/assets/img/article-offline-first.webp' }}" alt="{{ post.data.cardImageAlt or '' }}" loading="lazy">
               <span class="article-card-meta">
-                <span class="chip">{{ post.data.category or "Article" }}</span>
+                <span class="chip">{{ post.data.category or "Статия" }}</span>
               </span>
               <strong>{{ post.data.title }}</strong>
               <p>{{ post.data.description }}</p>

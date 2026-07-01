@@ -16,6 +16,10 @@ cardImage: /assets/img/article-android-privacy.webp
 cardImageAlt: "Abstract Android privacy card illustration"
 permalink: /articles/private-files-safer-on-android/index.html
 activeNav: articles
+lang: en
+alternateLabel: BG
+alternateUrl: /bg/articles/lichni-faylove-po-sigurni-na-android/
+canonicalUrl: /articles/private-files-safer-on-android/
 blocks:
   - type: paragraph
     text: "Android can handle private files well when the workflow is deliberate. The important part is knowing which apps create copies and which ones sync by default."

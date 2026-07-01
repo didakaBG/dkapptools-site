@@ -37,6 +37,14 @@ module.exports = function(eleventyConfig) {
     );
   });
 
+  eleventyConfig.addCollection("publishedBgArticles", function(collectionApi) {
+    return sortNewestFirst(
+      collectionApi.getFilteredByGlob("src/bg/articles/*.md").filter((item) => {
+        return item.data.published !== false;
+      })
+    );
+  });
+
   return {
     dir: {
       input: "src",

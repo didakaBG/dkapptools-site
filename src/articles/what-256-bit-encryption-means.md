@@ -17,6 +17,10 @@ cardImage: /assets/img/article-256-bit-encryption.webp
 cardImageAlt: "Abstract encryption key and local vault card illustration"
 permalink: /articles/what-256-bit-encryption-means/index.html
 activeNav: articles
+lang: en
+alternateLabel: BG
+alternateUrl: /bg/articles/kakvo-oznachava-256-bitovo-kriptirane/
+canonicalUrl: /articles/what-256-bit-encryption-means/
 blocks:
   - type: paragraph
     text: >-

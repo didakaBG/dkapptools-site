@@ -37,8 +37,23 @@ eleventyExcludeFromCollections: true
   </url>
 {% endfor %}
 {% for article in collections.publishedArticles %}
+  {% if article.data.alternateUrl %}
+  <url>
+    <loc>{{ article.url | absoluteUrl }}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ article.url | absoluteUrl }}"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="{{ article.data.alternateUrl | absoluteUrl }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ article.url | absoluteUrl }}"/>
+  </url>
+  <url>
+    <loc>{{ article.data.alternateUrl | absoluteUrl }}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ article.url | absoluteUrl }}"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="{{ article.data.alternateUrl | absoluteUrl }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ article.url | absoluteUrl }}"/>
+  </url>
+  {% else %}
   <url>
     <loc>{{ article.url | absoluteUrl }}</loc>
   </url>
+  {% endif %}
 {% endfor %}
 </urlset>
