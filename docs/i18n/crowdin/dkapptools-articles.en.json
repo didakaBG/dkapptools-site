@@ -1,0 +1,321 @@
+{
+  "articles": {
+    "offline-filesecure-local-vault-explained": {
+      "meta": {
+        "title": "Offline FileSecure: what a local encrypted vault means",
+        "description": "A plain-English explanation of Offline FileSecure's local vault model and what it does, and does not, change about file safety.",
+        "category": "Offline FileSecure",
+        "tags": [
+          "Local vault",
+          "Encryption",
+          "Android"
+        ],
+        "readTime": "4 min read",
+        "cardImageAlt": "Abstract local encrypted vault card illustration"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Offline FileSecure is built around a simple idea: private files should not need to be uploaded to a server just to be organized and protected on your phone."
+        },
+        {
+          "type": "note",
+          "title": "Key idea",
+          "text": "A local vault is an intentional space on the device. You choose files through Android's file picker, the app creates protected copies in app-controlled storage, and the vault stays local by design."
+        },
+        {
+          "type": "cardGrid",
+          "cards": [
+            {
+              "title": "What this means",
+              "text": "The vault is not a cloud account. It does not sync files between devices or send documents to DK App Tools. The protected copies live on your Android device."
+            },
+            {
+              "title": "What encryption does",
+              "text": "Vault files are stored as encrypted protected copies. Export is the point where you choose to create a usable copy outside the vault."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "id": "limits",
+          "text": "What it does not promise"
+        },
+        {
+          "type": "paragraph",
+          "text": "A local vault cannot make a compromised device safe. It cannot control an exported copy after you move that copy into downloads, messages, email, or cloud backup. It also does not replace basic device security."
+        },
+        {
+          "type": "paragraph",
+          "text": "Offline FileSecure is local and offline by design, but the phone still matters. Use a strong screen lock, keep Android updated, and be careful about apps with broad file access."
+        },
+        {
+          "type": "heading",
+          "id": "habits",
+          "text": "Good habits around vault files"
+        },
+        {
+          "type": "paragraph",
+          "text": "Use the vault for files you intentionally want to separate from normal storage. Review exported copies when you are done with them. Avoid sending passwords, recovery information, or private documents through casual channels unless you have a specific reason."
+        },
+        {
+          "type": "paragraph",
+          "text": "The main benefit is clarity: you can see what is in the vault, decide when to export, and keep the workflow local unless you choose otherwise."
+        }
+      ]
+    },
+    "private-files-safer-on-android": {
+      "meta": {
+        "title": "Keeping private files safer on Android without cloud upload",
+        "description": "Practical Android habits for reducing exposure when you want to keep sensitive files local.",
+        "category": "Android Privacy",
+        "tags": [
+          "Android",
+          "File safety",
+          "Offline-first"
+        ],
+        "cardImageAlt": "Abstract Android privacy card illustration"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Android can handle private files well when the workflow is deliberate. The important part is knowing which apps create copies and which ones sync by default."
+        },
+        {
+          "type": "heading",
+          "text": "Key idea"
+        },
+        {
+          "type": "paragraph",
+          "text": "Cloud storage is useful, but it should not be the automatic path for every private file. Some documents, IDs, notes, and images are easier to manage with a local-first habit."
+        },
+        {
+          "type": "heading",
+          "text": "Check the upload default"
+        },
+        {
+          "type": "paragraph",
+          "text": "Before adding a private file to an app or folder, ask whether it really needs to sync. If the file only needs to live on one phone, upload may create more copies than you intended."
+        },
+        {
+          "type": "paragraph",
+          "text": "Review gallery, file manager, scanner, and note app backup settings. Many privacy surprises start with a helpful default that becomes too broad."
+        },
+        {
+          "type": "heading",
+          "text": "Device basics"
+        },
+        {
+          "type": "paragraph",
+          "text": "Use a strong screen lock, keep Android and important apps updated, and avoid installing apps from sources you do not trust."
+        },
+        {
+          "type": "heading",
+          "text": "Permissions"
+        },
+        {
+          "type": "paragraph",
+          "text": "Review app permissions occasionally. A private-file workflow is weaker if unrelated apps keep broad access they no longer need."
+        },
+        {
+          "type": "heading",
+          "text": "Be careful with exported and shared copies"
+        },
+        {
+          "type": "paragraph",
+          "text": "When you export a private file from a protected place, the exported copy follows the rules of wherever you put it next. It may be visible in downloads, recent files, thumbnails, messaging apps, or cloud backup tools."
+        },
+        {
+          "type": "paragraph",
+          "text": "After using an exported copy, delete it if you no longer need it. Also check the receiving app if it stores attachments or cached previews."
+        },
+        {
+          "type": "heading",
+          "text": "Use a local vault for intentional separation"
+        },
+        {
+          "type": "paragraph",
+          "text": "A local vault such as Offline FileSecure can help separate selected private files from everyday storage. The point is not to claim perfect protection. The point is to make the workflow more deliberate."
+        },
+        {
+          "type": "paragraph",
+          "text": "Choose what goes into the vault, keep the device itself protected, and export files only when needed. That combination is easier to understand than a workflow where everything syncs everywhere by default."
+        }
+      ]
+    },
+    "what-256-bit-encryption-means": {
+      "meta": {
+        "title": "What 256-bit encryption actually means",
+        "description": "A plain-English technical explanation of 256-bit encryption, encryption keys, and what strong local file protection depends on.",
+        "category": "Security",
+        "tags": [
+          "Security",
+          "Encryption",
+          "Local vault"
+        ],
+        "readTime": "5 min read",
+        "cardImageAlt": "Abstract encryption key and local vault card illustration"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "When an app says it uses 256-bit encryption, it is talking about the size of the cryptographic key used by the encryption algorithm. It is not saying your password is 256 characters long, and it is not a magic guarantee that every part of the system is safe."
+        },
+        {
+          "type": "note",
+          "title": "Key idea",
+          "text": "A 256-bit key is a very large number chosen from a huge range of possible values. The strength comes from the key space being too large to search directly with realistic computing power."
+        },
+        {
+          "type": "heading",
+          "id": "key-length",
+          "text": "What 256-bit means"
+        },
+        {
+          "type": "paragraph",
+          "text": "A bit is a single binary choice: zero or one. A 256-bit encryption key is made from 256 of those choices. That creates 2 to the power of 256 possible keys, which is an enormous number."
+        },
+        {
+          "type": "paragraph",
+          "text": "The practical point is not that humans should memorize something 256 bits long. The practical point is that software can generate a high-entropy key that attackers cannot simply guess by trying every possibility."
+        },
+        {
+          "type": "heading",
+          "id": "password-vs-key",
+          "text": "Passwords and keys are different"
+        },
+        {
+          "type": "paragraph",
+          "text": "A password or PIN is something a person can remember and type. A real encryption key is usually random-looking data used directly by the cryptographic algorithm. Good systems do not treat your short password as if it were already a strong encryption key."
+        },
+        {
+          "type": "paragraph",
+          "text": "Instead, an app may use a key derivation process, device-protected storage, or another platform mechanism to connect human authentication to the actual key material. The details matter because weak key handling can undermine strong encryption."
+        },
+        {
+          "type": "heading",
+          "id": "aes-256",
+          "text": "How AES-256 fits into a local vault"
+        },
+        {
+          "type": "paragraph",
+          "text": "AES-256 is a widely used symmetric encryption algorithm. Symmetric means the same secret key is used to encrypt and decrypt the data. In a local vault workflow, selected files can be stored as encrypted protected copies on the device, then decrypted only when the app is allowed to use them."
+        },
+        {
+          "type": "paragraph",
+          "text": "For Offline FileSecure, the important design direction is local protection and deliberate export. The vault model can reduce casual exposure and make private-file handling easier to reason about, but it should not be read as a promise that every risk disappears."
+        },
+        {
+          "type": "cardGrid",
+          "cards": [
+            {
+              "title": "Strong keys",
+              "text": "The encryption key needs enough randomness and must be generated with a reliable source of entropy."
+            },
+            {
+              "title": "Safe storage",
+              "text": "Key material needs protection at rest and should not be casually exposed to logs, backups, screenshots, or unrelated apps."
+            },
+            {
+              "title": "Correct implementation",
+              "text": "The algorithm, mode, authentication, file handling, and error paths all matter. Strong primitives can still be used badly."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "id": "authentication",
+          "text": "Encryption also needs authentication"
+        },
+        {
+          "type": "paragraph",
+          "text": "Encryption hides the contents of data, but a secure file format also needs a way to detect tampering. Modern designs typically pair encryption with authentication so the app can reject data that has been changed unexpectedly."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is one reason security is not just a label on a settings screen. The surrounding format, metadata handling, and checks are part of the protection story."
+        },
+        {
+          "type": "heading",
+          "id": "limits",
+          "text": "Encryption is not magic"
+        },
+        {
+          "type": "paragraph",
+          "text": "If someone has an unlocked device, active access to the app, or direct access to the key material, the math may no longer be the main problem. Device security, screen lock strength, operating system updates, app permissions, and user behavior all still matter."
+        },
+        {
+          "type": "paragraph",
+          "text": "Strong encryption is best understood as one layer in a local private-file workflow. It can protect stored vault data against many forms of offline inspection, but it does not replace careful exports, safe device habits, and clear decisions about where private files go next."
+        }
+      ]
+    },
+    "why-offline-first-matters": {
+      "meta": {
+        "title": "Why offline-first security still matters",
+        "description": "Why offline-first tools can reduce unnecessary exposure and make private workflows easier to reason about.",
+        "category": "Security",
+        "tags": [
+          "Offline-first",
+          "Privacy",
+          "Local tools"
+        ],
+        "cardImageAlt": "Abstract offline-first security card illustration"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Useful privacy tools often start by asking a plain question: does this file need to leave the device at all?"
+        },
+        {
+          "type": "heading",
+          "text": "Key idea"
+        },
+        {
+          "type": "paragraph",
+          "text": "Offline-first software starts with a narrower default: sensitive work stays on the device unless the user deliberately sends it somewhere else."
+        },
+        {
+          "type": "heading",
+          "text": "Why the default matters"
+        },
+        {
+          "type": "paragraph",
+          "text": "Many modern tools sync files, settings, and activity because that makes cross-device use convenient. Convenience is useful, but it can also create extra copies, account dependencies, server exposure, and recovery paths the user did not actively choose."
+        },
+        {
+          "type": "paragraph",
+          "text": "A local-first workflow is easier to reason about. The file begins on the device. Sharing, exporting, or uploading becomes a visible action instead of a quiet background assumption."
+        },
+        {
+          "type": "heading",
+          "text": "What this means"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fewer services need access to the work by default, and the user has a clearer moment to decide when a file should leave the device."
+        },
+        {
+          "type": "heading",
+          "text": "What it does not mean"
+        },
+        {
+          "type": "paragraph",
+          "text": "Offline-first is not a guarantee of safety. A compromised phone, weak screen lock, or careless export can still expose private files."
+        },
+        {
+          "type": "heading",
+          "text": "Good habits"
+        },
+        {
+          "type": "paragraph",
+          "text": "Use local tools when a file does not need collaboration or backup through a cloud account. Keep the phone updated, use a strong device lock, and treat every export as a new copy that needs its own care."
+        },
+        {
+          "type": "paragraph",
+          "text": "For private workflows, the benefit is clarity: fewer automatic paths, fewer surprises, and more deliberate decisions."
+        }
+      ]
+    }
+  }
+}
