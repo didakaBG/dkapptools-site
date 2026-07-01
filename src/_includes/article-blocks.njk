@@ -13,6 +13,16 @@ layout: base.njk
     {% for block in blocks %}
       {% if block.type == "paragraph" %}
         <p>{{ block.text | escape }}</p>
+      {% elif block.type == "linkedParagraph" %}
+        <p>
+          {%- for segment in block.segments -%}
+            {%- if segment.url -%}
+              <a href="{{ segment.url | escape }}">{{ segment.text | escape }}</a>
+            {%- else -%}
+              {{ segment.text | escape }}
+            {%- endif -%}
+          {%- endfor -%}
+        </p>
       {% elif block.type == "heading" %}
         <h2{% if block.id %} id="{{ block.id | escape }}"{% endif %}>{{ block.text | escape }}</h2>
       {% elif block.type == "note" %}
