@@ -80,28 +80,28 @@ alternateUrl: /
       <div>
         <p class="kicker">Последни статии</p>
         <h2>Статии и практични ръководства</h2>
-        <p>Статиите засега са достъпни на английски.</p>
+        <p>Практични статии за поверителност, локално съхранение и Offline FileSecure.</p>
       </div>
       <a href="/bg/articles/">Виж всички статии</a>
     </div>
     <div class="article-carousel" data-article-carousel>
-      <button class="carousel-button prev" type="button" data-prev aria-label="Previous articles"></button>
+      <button class="carousel-button prev" type="button" data-prev aria-label="Предишни статии"></button>
       <div class="article-window">
         <div class="article-track">
-          {% for article in collections.publishedArticles %}
+          {% for article in collections.publishedBgArticles %}
             {% if loop.index <= 6 %}
               <a class="article-card" href="{{ article.url }}">
                 <img src="{{ article.data.cardImage or article.data.image }}" alt="{{ article.data.cardImageAlt or article.data.title }}" loading="lazy">
                 <span class="chip">{{ article.data.category }}</span>
                 <strong>{{ article.data.title }}</strong>
                 <p>{{ article.data.description }}</p>
-                <em>Read article</em>
+                <em>Прочети статията</em>
               </a>
             {% endif %}
           {% endfor %}
         </div>
       </div>
-      <button class="carousel-button next" type="button" data-next aria-label="Next articles"></button>
+      <button class="carousel-button next" type="button" data-next aria-label="Следващи статии"></button>
     </div>
   </section>
 
