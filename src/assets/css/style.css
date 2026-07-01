@@ -1180,12 +1180,12 @@ a:hover { color: var(--gold-2); }
   outline: 0;
 }
 .footer-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.5rem 1rem;
+  display: block;
   padding-top: 0.75rem;
   border-top: 1px solid rgba(255,255,255,0.07);
+  color: rgba(245,241,232,0.50);
+  font-size: 0.74rem;
+  line-height: 1.45;
 }
 
 .page-hero {

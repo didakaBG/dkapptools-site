@@ -66,6 +66,7 @@ supportEmail: dkapps.support@proton.me
   {% set switcherUrl = alternateUrl or ('/' if isBg else '/bg/') %}
   {% set switcherLabel = alternateLabel or ('EN' if isBg else 'BG') %}
   {% set footerBrandCopy = 'Практични приложения, ясна продуктова информация, полезни статии и страници за поддръжка за реални продукти.' if isBg else 'Practical apps, clear product information, useful articles, and support pages for real products.' %}
+  {% set footerLegalLine = '© 2026 DK App Tools. Всички права запазени. Издателски бранд зад Offline FileSecure. Оригиналното съдържание и визуални елементи принадлежат на DK App Tools; външните компоненти остават под собствените си лицензи.' if isBg else '© 2026 DK App Tools. All rights reserved. Publisher brand behind Offline FileSecure. Original site content and visual assets belong to DK App Tools; third-party components remain under their own licenses.' %}
   {% set learnLabel = 'Материали' if isBg else 'Learn' %}
   {% set latestArticleLabel = 'Последна статия' if isBg else 'Latest article' %}
   {% set websitePrivacyLabel = 'Поверителност на сайта' if isBg else 'Website privacy' %}
@@ -137,8 +138,7 @@ supportEmail: dkapps.support@proton.me
       </nav>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 DK App Tools.</span>
-      <span>Built for practical software.</span>
+      <span>{{ footerLegalLine }}</span>
     </div>
   </footer>
 
